@@ -1,0 +1,7 @@
+plugins {
+  id 'com.lemmus.common'
+}
+
+android {
+    namespace 'com.lemmus.common.coroutines'
+}

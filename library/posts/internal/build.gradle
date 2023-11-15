@@ -1,0 +1,11 @@
+plugins {
+    id 'com.lemmus.library.internal'
+}
+
+dependencies {
+    api projects.library.posts.public
+}
+
+android {
+    namespace 'com.lemmus.library.posts.internal'
+}

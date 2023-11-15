@@ -1,0 +1,23 @@
+plugins {
+  id 'com.lemmus.app'
+}
+
+android {
+  defaultConfig {
+    applicationId "com.lemmus"
+  }
+  namespace 'com.lemmus.app'
+}
+
+dependencies {
+  implementation libs.material
+  implementation projects.common.android
+  implementation projects.common.coroutines
+  implementation projects.common.resultlistener
+  implementation projects.common.retrofit
+  implementation projects.common.theme
+  implementation projects.common.ui
+  implementation projects.feature.posts.internal
+  implementation projects.feature.splash.internal
+  implementation projects.library.posts.internal
+}

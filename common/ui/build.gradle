@@ -1,0 +1,8 @@
+plugins {
+  id 'com.lemmus.common'
+  id 'com.lemmus.compose'
+}
+
+android {
+    namespace 'com.lemmus.common.ui'
+}

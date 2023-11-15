@@ -1,0 +1,13 @@
+plugins {
+    id "com.android.library"
+    id "com.lemmus.android"
+}
+
+android {
+    buildFeatures.compose = false
+    namespace 'com.lemmus.common.di'
+}
+
+dependencies {
+    implementation libs.bundles.dagger
+}

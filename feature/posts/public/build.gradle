@@ -1,0 +1,7 @@
+plugins {
+  id 'com.lemmus.feature.public'
+}
+
+android {
+    namespace 'com.lemmus.feature.posts'
+}

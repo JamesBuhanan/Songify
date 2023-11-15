@@ -1,0 +1,24 @@
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+rootProject.name = "Lemmus"
+
+include(
+        ":app",
+        ":common:android",
+        ":common:coroutines",
+        ":common:di",
+        ":common:resultlistener",
+        ":common:retrofit",
+        ":common:theme",
+        ":common:ui",
+        ":feature:posts:public", ":feature:posts:internal",
+        ":feature:splash:public", ":feature:splash:internal",
+        ":library:posts:public", ":library:posts:internal",
+)

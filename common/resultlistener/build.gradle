@@ -1,0 +1,12 @@
+plugins {
+    id 'com.lemmus.common'
+    id "com.lemmus.android"
+}
+
+dependencies {
+    implementation libs.bundles.compose
+}
+
+android {
+    namespace 'com.lemmus.common.resultlistener'
+}

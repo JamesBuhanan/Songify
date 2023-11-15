@@ -1,0 +1,14 @@
+plugins {
+    id "com.lemmus.feature.internal"
+}
+
+android {
+    testOptions.unitTests.includeAndroidResources = true
+    namespace 'com.lemmus.feature.posts.internal'
+}
+
+dependencies {
+    api projects.feature.posts.public
+    implementation projects.library.posts.public
+}
+
