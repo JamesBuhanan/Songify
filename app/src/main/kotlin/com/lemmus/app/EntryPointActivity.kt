@@ -10,8 +10,8 @@ import com.lemmus.common.theme.LemmusTheme
 import com.lemmus.feature.splash.SplashScreen
 import com.slack.circuit.backstack.rememberSaveableBackStack
 import com.slack.circuit.foundation.Circuit
+import com.slack.circuit.foundation.CircuitCompositionLocals
 import com.slack.circuit.foundation.NavigableCircuitContent
-import com.slack.circuit.foundation.push
 import com.slack.circuit.foundation.rememberCircuitNavigator
 import com.squareup.anvil.annotations.ContributesMultibinding
 import javax.inject.Inject
@@ -26,15 +26,13 @@ class EntryPointActivity @Inject constructor(
         super.onCreate(savedInstanceState)
 
         setContent {
-            val backstack = rememberSaveableBackStack { push(SplashScreen) }
-            val circuitNavigator = rememberCircuitNavigator(backstack)
+            val backStack = rememberSaveableBackStack(SplashScreen)
+            val navigator = rememberCircuitNavigator(backStack)
 
             LemmusTheme {
-                NavigableCircuitContent(
-                    navigator = circuitNavigator,
-                    backstack = backstack,
-                    circuit = circuit,
-                )
+                CircuitCompositionLocals(circuit) {
+                    NavigableCircuitContent(navigator, backStack)
+                }
             }
         }
     }
