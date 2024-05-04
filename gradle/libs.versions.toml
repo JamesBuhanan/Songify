@@ -1,22 +1,22 @@
 [versions]
-agp = "8.1.1"
+agp = "8.1.4"
 anvil = "2.4.7-1-8"
 circuit = "0.13.0-beta01"
 coil = "2.4.0"
-compose = "1.5.0"
-composeCompiler = "1.5.0"
+compose = "1.6.7"
+composeCompiler = "1.5.5"
 coroutines = "1.7.3"
-dagger = "2.47"
-kotlin = "1.9.0"
-kspPlugin = "1.9.0-1.0.13"
+dagger = "2.51.1"
+kotlin = "1.9.20"
+kspPlugin = "1.9.20-1.0.14"
 leakcanary = "2.12"
-material3 = "1.1.1"
+material3 = "1.2.1"
 molecule = "1.2.0"
 moshi = "1.15.0"
 orchestrator = "1.5.2"
 retrofit = "2.9.0"
 robolectric = "4.10.3"
-paging = "3.2.0"
+paging = "3.2.1"
 
 [plugins]
 ksp = { id = "com.google.devtools.ksp", version.ref = "kspPlugin" }
@@ -39,7 +39,7 @@ kotlinReflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = 
 
 # https://developer.android.com/jetpack/androidx/versions
 # Androidx
-androidx-corektx = "androidx.core:core-ktx:1.10.1"
+androidx-corektx = "androidx.core:core-ktx:1.13.0"
 androidx-appcompat = "androidx.appcompat:appcompat:1.6.1"
 
 # Androidx Test
@@ -54,7 +54,7 @@ androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compos
 androidx-compose-uitooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 androidx-compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
 androidx-compose-material = { module = "androidx.compose.material3:material3", version.ref = "material3" }
-androidx-compose-activity = "androidx.activity:activity-compose:1.7.2"
+androidx-compose-activity = "androidx.activity:activity-compose:1.9.0"
 androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "compose" }
 androidx-compose-constraint-layout = { module = "androidx.constraintlayout:constraintlayout-compose", version = "1.0.1" }
 
@@ -102,7 +102,7 @@ paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "pag
 paging-compose = { module = "androidx.paging:paging-compose", version.ref = "paging" }
 
 # Misc
-material = "com.google.android.material:material:1.9.0"
+material = "com.google.android.material:material:1.12.0"
 androidGradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 timber = "com.jakewharton.timber:timber:5.0.1"
 
