@@ -6,3 +6,10 @@ dependencyResolutionManagement {
         }
     }
 }
+
+buildCache {
+    local {
+        isEnabled = true
+        isPush = true
+    }
+}
