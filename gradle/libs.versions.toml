@@ -22,6 +22,8 @@ paging = "3.2.1"
 ksp = { id = "com.google.devtools.ksp", version.ref = "kspPlugin" }
 
 [libraries]
+kspGradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "kspPlugin" }
+
 # Retrofit
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }

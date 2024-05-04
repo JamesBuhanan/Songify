@@ -11,6 +11,7 @@ repositories {
 dependencies {
     implementation(libs.androidGradlePlugin)
     implementation(libs.kotlin.gradle)
+    implementation(libs.kspGradlePlugin)
     implementation(gradleApi())
     implementation(localGroovy())
 }
