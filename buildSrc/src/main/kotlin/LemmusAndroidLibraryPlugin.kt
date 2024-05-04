@@ -9,6 +9,7 @@ import com.lemmus.extension.anvil
 import com.lemmus.extension.applyOnce
 import com.lemmus.extension.coreLibraryDesugaring
 import com.lemmus.extension.dynamicNamespace
+import com.lemmus.extension.jetpackCompose
 import com.lemmus.extension.moshi
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -40,5 +41,5 @@ open class LemmusAndroidLibraryExtension(private val project: Project) {
 //
 //    fun glide() = project.glide()
 //
-//    fun jetpackCompose() = project.jetpackCompose()
+    fun jetpackCompose() = project.jetpackCompose()
 }

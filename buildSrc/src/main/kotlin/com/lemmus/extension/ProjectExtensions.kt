@@ -65,5 +65,11 @@ fun Project.findDependency(dependency: String): Provider<MinimalExternalModuleDe
     )
 }
 
+fun Project.findBundle(bundle: String): Provider<ExternalModuleDependencyBundle> {
+    return libs.resolveBundle(bundle) ?: throw NullPointerException(
+        exceptionTemplate("bundle", bundle)
+    )
+}
+
 private fun exceptionTemplate(type: String, name: String) =
     "Couldn't resolve $type $name is it defined in the version catalog? (toml file)"

@@ -1,3 +1,7 @@
 plugins {
-  id 'lemmus.android.library'
+    id 'lemmus.android.library'
+}
+
+lemmus {
+    jetpackCompose()
 }

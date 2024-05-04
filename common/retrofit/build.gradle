@@ -2,6 +2,10 @@ plugins {
     id 'lemmus.android.library'
 }
 
+lemmus {
+    anvil()
+}
+
 dependencies {
     // Retrofit
     api libs.retrofit

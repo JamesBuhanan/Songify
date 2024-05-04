@@ -2,6 +2,10 @@ plugins {
     id "lemmus.android.library"
 }
 
+lemmus {
+    jetpackCompose()
+}
+
 dependencies {
     api projects.feature.splash.public
     implementation projects.feature.posts.public
