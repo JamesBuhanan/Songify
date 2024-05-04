@@ -6,15 +6,13 @@ package com.lemmus.extension
 
 import org.gradle.api.Project
 import org.gradle.api.tasks.compile.JavaCompile
-import org.gradle.kotlin.dsl.buildscript
 import org.gradle.kotlin.dsl.repositories
 import org.jetbrains.kotlin.gradle.plugin.KaptExtension
 
 fun Project.allProjects() {
-    buildscript {
-        repositories {
-            mavenCentral()
-        }
+    repositories {
+        mavenCentral()
+        google()
     }
 
     tasks.withType(JavaCompile::class.java).configureEach {

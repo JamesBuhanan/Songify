@@ -1,14 +1,22 @@
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+pluginManagement {
     repositories {
-        google()
         mavenCentral()
         gradlePluginPortal()
     }
+    plugins {
+        id "lemmus.settings"
+        id "lemmus.root"
+        id "lemmus.android.application"
+        id "lemmus.android.library"
+        id "lemmus.kotlin.library"
+    }
 }
 
-rootProject.name = "Lemmus"
+plugins {
+//    id "lemmus.settings"
+}
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include(
         ":app",

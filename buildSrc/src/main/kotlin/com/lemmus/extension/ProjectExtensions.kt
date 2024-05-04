@@ -4,7 +4,7 @@
 
 package com.lemmus.extension
 
-import java.util.Optional
+import java.util.*
 import org.gradle.api.Project
 import org.gradle.api.artifacts.ExternalModuleDependencyBundle
 import org.gradle.api.artifacts.MinimalExternalModuleDependency
@@ -47,23 +47,20 @@ private fun <T> VersionCatalog.resolveCatalogItem(
 val Project.libs
     get(): VersionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
-val Project.buildLibs
-    get(): VersionCatalog = extensions.getByType<VersionCatalogsExtension>().named("buildLibs")
-
 fun Project.findVersion(version: String): String {
-    return libs.resolveVersion(version) ?: buildLibs.resolveVersion(version) ?: throw NullPointerException(
+    return libs.resolveVersion(version) ?: throw NullPointerException(
         exceptionTemplate("version", version)
     )
 }
 
 fun Project.findVersionInt(versionInt: String): Int {
-    return libs.resolveVersionInt(versionInt) ?: buildLibs.resolveVersionInt(versionInt) ?: throw NullPointerException(
+    return libs.resolveVersionInt(versionInt) ?: throw NullPointerException(
         exceptionTemplate("versionInt", versionInt)
     )
 }
 
 fun Project.findDependency(dependency: String): Provider<MinimalExternalModuleDependency> {
-    return libs.resolveDependency(dependency) ?: buildLibs.resolveDependency(dependency) ?: throw NullPointerException(
+    return libs.resolveDependency(dependency) ?: throw NullPointerException(
         exceptionTemplate("dependency", dependency)
     )
 }

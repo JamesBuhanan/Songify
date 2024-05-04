@@ -1,14 +1,10 @@
 plugins {
-  id 'com.lemmus.common'
+    id 'lemmus.android.library'
 }
 
 dependencies {
-  // Retrofit
-  api libs.retrofit
-  implementation libs.retrofit.converter.moshi
-  implementation libs.moshi
-}
-
-android {
-    namespace 'com.lemmus.common.retrofit'
+    // Retrofit
+    api libs.retrofit
+    implementation libs.retrofit.converter.moshi
+    implementation libs.moshi
 }

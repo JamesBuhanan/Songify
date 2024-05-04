@@ -1,57 +1,48 @@
 [versions]
 agp = "8.1.4"
-anvil = "2.4.7-1-8"
+anvil = "2.4.9"
 circuit = "0.20.0"
 coil = "2.4.0"
+compileSdk = "34"
 compose = "1.6.7"
 composeCompiler = "1.5.10"
 coroutines = "1.8.0"
 dagger = "2.51.1"
+desugarJdkLibs = "2.0.4"
 kotlin = "1.9.22"
 kspPlugin = "1.9.22-1.0.17"
 leakcanary = "2.12"
 material3 = "1.2.1"
+minSdk = "24"
 molecule = "1.4.1"
 moshi = "1.15.0"
 orchestrator = "1.5.2"
 retrofit = "2.9.0"
 robolectric = "4.10.3"
 paging = "3.2.1"
+targetSdk = "33"
 
 [plugins]
 ksp = { id = "com.google.devtools.ksp", version.ref = "kspPlugin" }
 
 [libraries]
 kspGradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "kspPlugin" }
-
-# Retrofit
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
-
-# Moshi
 moshi = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
 moshiCodeGen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
-
-# Kotlin
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlin-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlinReflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
-
-# https://developer.android.com/jetpack/androidx/versions
-# Androidx
 androidx-corektx = "androidx.core:core-ktx:1.13.1"
 androidx-appcompat = "androidx.appcompat:appcompat:1.6.1"
-
-# Androidx Test
 androidx-test-corektx = "androidx.test:core-ktx:1.5.0"
 androidx-test-junit = "androidx.test.ext:junit:1.1.5"
 androidx-test-espresso-core = "androidx.test.espresso:espresso-core:3.5.1"
 androidx-test-runner = { module = "androidx.test:runner", version.ref = "orchestrator" }
 androidx-test-orchestrator = { module = "androidx.test:orchestrator", version.ref = "orchestrator" }
-
-# Compose
 androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
 androidx-compose-uitooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 androidx-compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
@@ -59,37 +50,22 @@ androidx-compose-material = { module = "androidx.compose.material3:material3", v
 androidx-compose-activity = "androidx.activity:activity-compose:1.9.0"
 androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "compose" }
 androidx-compose-constraint-layout = { module = "androidx.constraintlayout:constraintlayout-compose", version = "1.0.1" }
-
-# Image loading
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
-
-# Dagger kapt
 dagger-android-processor = { module = "com.google.dagger:dagger-android-processor", version.ref = "dagger" }
 dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
-
-# Dagger
 dagger-lib = { module = "com.google.dagger:dagger", version.ref = "dagger" }
 dagger-android = { module = "com.google.dagger:dagger-android", version.ref = "dagger" }
 dagger-android-support = { module = "com.google.dagger:dagger-android-support", version.ref = "dagger" }
-
-# Anvil
 anvil-gradlePlugin = { module = "com.squareup.anvil:gradle-plugin", version.ref = "anvil" }
-
-# UnitTest
 androidx-compose-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
 junit4 = "junit:junit:4.13.2"
 assertk = "com.willowtreeapps.assertk:assertk-jvm:0.26.1"
 turbine = "app.cash.turbine:turbine:1.1.0"
 kotlin-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
-
-# AndroidTest
 androidx-compose-ui-testing-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
 leakcanary-android-instrumentation = { module = "com.squareup.leakcanary:leakcanary-android-instrumentation", version.ref = "leakcanary" }
 truth = "com.google.truth:truth:1.1.5"
-
-
-# Circuit
 circuitCodegenAnnotations = { module = "com.slack.circuit:circuit-codegen-annotations", version.ref = "circuit" }
 circuitCodegen = { module = "com.slack.circuit:circuit-codegen", version.ref = "circuit" }
 circuitRuntime = { module = "com.slack.circuit:circuit-runtime", version.ref = "circuit" }
@@ -98,19 +74,14 @@ circuitRuntimeUi = { module = "com.slack.circuit:circuit-runtime-ui", version.re
 circuitFoundation = { module = "com.slack.circuit:circuit-foundation", version.ref = "circuit" }
 circuitTest = { module = "com.slack.circuit:circuit-test", version.ref = "circuit" }
 molecule-runtime = { module = "app.cash.molecule:molecule-runtime", version.ref = "molecule" }
-
-# Paging
 paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "paging" }
 paging-compose = { module = "androidx.paging:paging-compose", version.ref = "paging" }
-
-# Misc
 material = "com.google.android.material:material:1.12.0"
 androidGradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 timber = "com.jakewharton.timber:timber:5.0.1"
+desugarJdkLibs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugarJdkLibs" }
 
 [bundles]
 compose = ["androidx-compose-ui", "androidx-compose-uitooling", "androidx-compose-foundation", "androidx-compose-material", "androidx-compose-material-icons-extended", "androidx-compose-activity", "androidx-compose-constraint-layout"]
-daggerKapt = ["dagger-compiler", "dagger-android-processor"]
-dagger = ["dagger-lib", "dagger-android", "dagger-android-support"]
 circuit = ["circuitFoundation", "circuitRuntime", "circuitRuntimePresenter", "circuitRuntimeUi"]
 paging = ["paging-runtime", "paging-compose"]

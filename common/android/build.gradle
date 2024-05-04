@@ -1,7 +1,3 @@
 plugins {
-  id 'com.lemmus.common'
-}
-
-android {
-    namespace 'com.lemmus.common.android'
+  id 'lemmus.android.library'
 }

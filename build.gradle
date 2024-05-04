@@ -11,9 +11,9 @@ buildscript {
   }
 }
 
-plugins {
-  alias(libs.plugins.ksp)
-}
+//plugins {
+//  alias(libs.plugins.ksp)
+//}
 
 task clean(type: Delete) {
   delete rootProject.buildDir

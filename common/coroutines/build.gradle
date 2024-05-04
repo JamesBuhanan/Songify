@@ -1,7 +1,7 @@
 plugins {
-  id 'com.lemmus.common'
+    id 'lemmus.android.library'
 }
 
-android {
-    namespace 'com.lemmus.common.coroutines'
+lemmus {
+    anvil()
 }

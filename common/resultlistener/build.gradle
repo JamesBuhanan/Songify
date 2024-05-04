@@ -1,12 +1,11 @@
 plugins {
-    id 'com.lemmus.common'
-    id "com.lemmus.android"
+    id 'lemmus.android.library'
+}
+
+lemmus {
+    anvil()
 }
 
 dependencies {
     implementation libs.bundles.compose
-}
-
-android {
-    namespace 'com.lemmus.common.resultlistener'
 }

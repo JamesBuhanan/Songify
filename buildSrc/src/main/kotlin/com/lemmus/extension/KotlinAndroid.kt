@@ -42,10 +42,10 @@ internal fun Project.kotlinAndroid(
 
 internal fun Project.coreLibraryDesugaring() {
     extensions.findByType(LibraryExtension::class)?.apply {
-        coreLibraryDesugaring(this)
+//        coreLibraryDesugaring(this)
     }
     extensions.findByType(ApplicationExtension::class)?.apply {
-        coreLibraryDesugaring(this)
+//        coreLibraryDesugaring(this)
     }
 }
 

@@ -1,11 +1,7 @@
 plugins {
-    id 'com.lemmus.library.internal'
+    id 'lemmus.android.library'
 }
 
 dependencies {
     api projects.library.posts.public
-}
-
-android {
-    namespace 'com.lemmus.library.posts.internal'
 }
