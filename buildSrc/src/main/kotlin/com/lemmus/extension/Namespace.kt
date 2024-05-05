@@ -16,6 +16,8 @@ internal fun Project.dynamicNamespace() {
 }
 
 internal fun Project.dynamicNamespace2(commonExtension: CommonExtension<*, *, *, *, *>) {
-    val packageSuffix = path.replace(":", ".")
+    val packageSuffix = path
+        .replace(":public", "")
+        .replace(":", ".")
     commonExtension.namespace = "com.lemmus$packageSuffix"
 }
