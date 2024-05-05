@@ -5,10 +5,17 @@
 import com.android.build.gradle.AppPlugin
 import com.lemmus.extension.allProjects
 import com.lemmus.extension.androidApplication
+import com.lemmus.extension.anvil
 import com.lemmus.extension.applyOnce
+import com.lemmus.extension.circuit
+import com.lemmus.extension.coreLibraryDesugaring
+import com.lemmus.extension.coroutines
 import com.lemmus.extension.dynamicNamespace
+import com.lemmus.extension.findDependency
+import com.lemmus.extension.jetpackCompose
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.kotlin.dsl.dependencies
 
 class LemmusAndroidApplicationPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -24,6 +31,15 @@ class LemmusAndroidApplicationPlugin : Plugin<Project> {
             // detekt()
             // checkstyle()
             // gradleDependenciesSorter()
+            circuit()
+            anvil()
+            jetpackCompose()
+            coreLibraryDesugaring()
+            coroutines()
+
+            dependencies {
+                "implementation"(findDependency("timber"))
+            }
 
             extensions.create("lemmus", LemmusAndroidApplicationExtension::class.java, this)
         }
@@ -31,12 +47,5 @@ class LemmusAndroidApplicationPlugin : Plugin<Project> {
 }
 
 open class LemmusAndroidApplicationExtension(private val project: Project) {
-//    fun anvil() = project.anvil()
-//
-//    fun jetpackCompose() = project.jetpackCompose()
-//    fun jetpackCompose(useComposeCompiler: Boolean) = project.jetpackCompose(useComposeCompiler)
-//
-//    fun moshi() = project.moshi()
-//
-//    fun coreLibraryDesugaring() = project.coreLibraryDesugaring()
+
 }

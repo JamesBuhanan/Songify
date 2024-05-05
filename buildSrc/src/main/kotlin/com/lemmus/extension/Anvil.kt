@@ -7,15 +7,16 @@ package com.lemmus.extension
 import com.google.devtools.ksp.gradle.KspGradleSubplugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
+import org.jetbrains.kotlin.gradle.internal.Kapt3GradleSubplugin
 
 fun Project.anvil() {
-    applyOnce<KspGradleSubplugin>()
+    applyOnce<Kapt3GradleSubplugin>()
     applyOnce("com.squareup.anvil")
 
     dependencies {
         "implementation"(findDependency("dagger.lib"))
         "implementation"(project(":common:di"))
 
-        "ksp"(findDependency("dagger.compiler"))
+        "kapt"(findDependency("dagger.compiler"))
     }
 }

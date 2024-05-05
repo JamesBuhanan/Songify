@@ -4,10 +4,16 @@ plugins {
 
 lemmus {
     jetpackCompose()
+    coroutines()
+    feature()
+    circuit()
+    anvil()
 }
 
 dependencies {
     api projects.feature.posts.public
+
+    implementation libs.bundles.paging
+    implementation libs.coil
     implementation projects.library.posts.public
 }
-

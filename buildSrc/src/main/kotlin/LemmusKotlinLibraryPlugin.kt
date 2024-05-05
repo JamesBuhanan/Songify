@@ -9,6 +9,7 @@ import com.lemmus.extension.findDependency
 import com.lemmus.extension.kotlinJvm
 import com.lemmus.extension.kotlinLibrary
 import com.lemmus.extension.moshi
+import com.lemmus.extension.retrofit
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
@@ -40,4 +41,6 @@ open class LemmusKotlinLibraryExtension(private val project: Project) {
     fun anvil() = project.anvil()
 
     fun moshi() = project.moshi()
+
+    fun retrofit() = project.retrofit()
 }
