@@ -23,12 +23,6 @@ targetSdk = "33"
 [libraries]
 androidGradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 androidx-appcompat = "androidx.appcompat:appcompat:1.6.1"
-androidx-corektx = "androidx.core:core-ktx:1.13.1"
-androidx-test-corektx = "androidx.test:core-ktx:1.5.0"
-androidx-test-junit = "androidx.test.ext:junit:1.1.5"
-androidx-test-espresso-core = "androidx.test.espresso:espresso-core:3.5.1"
-androidx-test-runner = { module = "androidx.test:runner", version.ref = "orchestrator" }
-androidx-test-orchestrator = { module = "androidx.test:orchestrator", version.ref = "orchestrator" }
 androidx-compose-activity = "androidx.activity:activity-compose:1.9.0"
 androidx-compose-constraint-layout = { module = "androidx.constraintlayout:constraintlayout-compose", version = "1.0.1" }
 androidx-compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
@@ -38,14 +32,14 @@ androidx-compose-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", 
 androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
 androidx-compose-ui-testing-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
 androidx-compose-uitooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+androidx-corektx = "androidx.core:core-ktx:1.13.1"
+androidx-test-corektx = "androidx.test:core-ktx:1.5.0"
+androidx-test-espresso-core = "androidx.test.espresso:espresso-core:3.5.1"
+androidx-test-junit = "androidx.test.ext:junit:1.1.5"
+androidx-test-orchestrator = { module = "androidx.test:orchestrator", version.ref = "orchestrator" }
+androidx-test-runner = { module = "androidx.test:runner", version.ref = "orchestrator" }
 anvil-gradlePlugin = { module = "com.squareup.anvil:gradle-plugin", version.ref = "anvil" }
 assertk = "com.willowtreeapps.assertk:assertk-jvm:0.28.1"
-coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
-dagger-android-processor = { module = "com.google.dagger:dagger-android-processor", version.ref = "dagger" }
-dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
-dagger-lib = { module = "com.google.dagger:dagger", version.ref = "dagger" }
-dagger-android = { module = "com.google.dagger:dagger-android", version.ref = "dagger" }
-dagger-android-support = { module = "com.google.dagger:dagger-android-support", version.ref = "dagger" }
 circuitCodegen = { module = "com.slack.circuit:circuit-codegen", version.ref = "circuit" }
 circuitCodegenAnnotations = { module = "com.slack.circuit:circuit-codegen-annotations", version.ref = "circuit" }
 circuitFoundation = { module = "com.slack.circuit:circuit-foundation", version.ref = "circuit" }
@@ -53,6 +47,9 @@ circuitRuntime = { module = "com.slack.circuit:circuit-runtime", version.ref = "
 circuitRuntimePresenter = { module = "com.slack.circuit:circuit-runtime-presenter", version.ref = "circuit" }
 circuitRuntimeUi = { module = "com.slack.circuit:circuit-runtime-ui", version.ref = "circuit" }
 circuitTest = { module = "com.slack.circuit:circuit-test", version.ref = "circuit" }
+coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
+dagger-lib = { module = "com.google.dagger:dagger", version.ref = "dagger" }
 junit4 = "junit:junit:4.13.2"
 kotlin-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
@@ -65,8 +62,8 @@ material = "com.google.android.material:material:1.12.0"
 molecule-runtime = { module = "app.cash.molecule:molecule-runtime", version.ref = "molecule" }
 moshi = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
 moshiCodeGen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
-paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "paging" }
 paging-compose = { module = "androidx.paging:paging-compose", version.ref = "paging" }
+paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "paging" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
 timber = "com.jakewharton.timber:timber:5.0.1"
