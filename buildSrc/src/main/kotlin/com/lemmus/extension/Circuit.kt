@@ -8,9 +8,9 @@ fun Project.circuit() {
     applyOnce<KspGradleSubplugin>()
 
     dependencies {
-        "implementation"(findBundle("circuit"))
-        "implementation"(findDependency("circuitCodegenAnnotations"))
+        "implementation"(libs.bundles.circuit)
+        "implementation"(libs.circuitCodegenAnnotations)
 
-        "ksp"(findDependency("circuitCodegen"))
+        "ksp"(libs.circuitCodegen)
     }
 }

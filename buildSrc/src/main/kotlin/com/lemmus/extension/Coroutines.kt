@@ -5,7 +5,7 @@ import org.gradle.kotlin.dsl.dependencies
 
 fun Project.coroutines() {
     dependencies {
-        "implementation"(findDependency("kotlin.coroutines.core"))
-        "implementation"(findDependency("kotlin.coroutines.android"))
+        "implementation"(libs.kotlin.coroutines.core)
+        "implementation"(libs.kotlin.coroutines.android)
     }
 }

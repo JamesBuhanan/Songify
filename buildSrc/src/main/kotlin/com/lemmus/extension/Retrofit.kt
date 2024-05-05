@@ -5,7 +5,7 @@ import org.gradle.kotlin.dsl.dependencies
 
 internal fun Project.retrofit() {
     dependencies {
-        "implementation"(findDependency("retrofit"))
-        "implementation"(findDependency("retrofit.converter.moshi"))
+        "implementation"(libs.retrofit)
+        "implementation"(libs.retrofit.converter.moshi)
     }
 }

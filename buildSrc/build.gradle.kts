@@ -15,6 +15,7 @@ dependencies {
     implementation(libs.kotlin.gradle)
     implementation(libs.kspGradlePlugin)
     implementation(localGroovy())
+    implementation(files(libs.javaClass.superclass.protectionDomain.codeSource.location))
 }
 
 gradlePlugin {

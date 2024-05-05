@@ -12,7 +12,7 @@ fun Project.moshi() {
     applyOnce<KspGradleSubplugin>()
 
     dependencies {
-        "ksp"(findDependency("moshiCodeGen"))
-        "implementation"(findDependency("moshi"))
+        "ksp"(libs.moshiCodeGen)
+        "implementation"(libs.moshi)
     }
 }

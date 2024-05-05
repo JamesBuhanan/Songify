@@ -15,15 +15,11 @@ fun Project.androidApplication() {
         defaultConfig {
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
 
-            targetSdk = findVersionInt("targetSdk")
+            targetSdk = libs.versions.targetSdk.get().toInt()
             versionCode = 1
             versionName = "1.0"
             applicationId = "com.lemmus"
             testApplicationId = "com.lemmus.test"
-        }
-
-        aaptOptions {
-            noCompress += "apk"
         }
 
         testOptions {

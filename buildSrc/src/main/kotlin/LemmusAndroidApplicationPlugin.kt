@@ -8,11 +8,10 @@ import com.lemmus.extension.androidApplication
 import com.lemmus.extension.anvil
 import com.lemmus.extension.applyOnce
 import com.lemmus.extension.circuit
-import com.lemmus.extension.coreLibraryDesugaring
 import com.lemmus.extension.coroutines
 import com.lemmus.extension.dynamicNamespace
-import com.lemmus.extension.findDependency
 import com.lemmus.extension.jetpackCompose
+import com.lemmus.extension.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
@@ -34,11 +33,10 @@ class LemmusAndroidApplicationPlugin : Plugin<Project> {
             circuit()
             anvil()
             jetpackCompose()
-            coreLibraryDesugaring()
             coroutines()
 
             dependencies {
-                "implementation"(findDependency("timber"))
+                "implementation"(libs.timber)
             }
 
             extensions.create("lemmus", LemmusAndroidApplicationExtension::class.java, this)

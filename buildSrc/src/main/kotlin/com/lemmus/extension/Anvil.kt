@@ -13,9 +13,9 @@ fun Project.anvil() {
     applyOnce("com.squareup.anvil")
 
     dependencies {
-        "implementation"(findDependency("dagger.lib"))
+        "implementation"(libs.dagger.lib)
         "implementation"(project(":common:di"))
 
-        "kapt"(findDependency("dagger.compiler"))
+        "kapt"(libs.dagger.compiler)
     }
 }

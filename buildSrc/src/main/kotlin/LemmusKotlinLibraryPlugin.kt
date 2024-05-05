@@ -5,9 +5,9 @@
 import com.lemmus.extension.allProjects
 import com.lemmus.extension.anvil
 import com.lemmus.extension.applyOnce
-import com.lemmus.extension.findDependency
 import com.lemmus.extension.kotlinJvm
 import com.lemmus.extension.kotlinLibrary
+import com.lemmus.extension.libs
 import com.lemmus.extension.moshi
 import com.lemmus.extension.retrofit
 import org.gradle.api.Plugin
@@ -32,7 +32,7 @@ class LemmusKotlinLibraryPlugin : Plugin<Project> {
 
     private fun Project.circuitRuntime() {
         dependencies {
-            "implementation"(findDependency("circuitRuntime"))
+            "implementation"(libs.circuitRuntime)
         }
     }
 }

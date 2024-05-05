@@ -8,12 +8,11 @@ import com.lemmus.extension.androidLibrary
 import com.lemmus.extension.anvil
 import com.lemmus.extension.applyOnce
 import com.lemmus.extension.circuit
-import com.lemmus.extension.coreLibraryDesugaring
 import com.lemmus.extension.coroutines
 import com.lemmus.extension.dynamicNamespace
 import com.lemmus.extension.feature
-import com.lemmus.extension.findDependency
 import com.lemmus.extension.jetpackCompose
+import com.lemmus.extension.libs
 import com.lemmus.extension.moshi
 import com.lemmus.extension.retrofit
 import org.gradle.api.Plugin
@@ -33,12 +32,11 @@ class LemmusAndroidLibraryPlugin : Plugin<Project> {
             // checkstyle()
             // configureLint()
             // gradleDependenciesSorter()
-            coreLibraryDesugaring()
             dynamicNamespace()
             coroutines()
 
             dependencies {
-                "implementation"(findDependency("timber"))
+                "implementation"(libs.timber)
             }
 
             extensions.create("lemmus", LemmusAndroidLibraryExtension::class.java, this)

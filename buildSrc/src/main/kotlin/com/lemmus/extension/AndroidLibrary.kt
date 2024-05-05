@@ -13,7 +13,7 @@ fun Project.androidLibrary() {
     configure<LibraryExtension> {
         kotlinAndroid(this)
         defaultConfig {
-            targetSdk = findVersionInt("targetSdk")
+            targetSdk = libs.versions.targetSdk.get().toInt()
         }
         sourceSets {
             getByName("main") {

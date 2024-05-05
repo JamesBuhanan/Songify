@@ -12,10 +12,10 @@ import org.gradle.kotlin.dsl.findByType
 
 fun Project.jetpackCompose() {
     dependencies {
-        "implementation"(findBundle("compose"))
+        "implementation"(libs.bundles.compose)
     }
 
-    val compilerVersion = findVersion("composeCompiler")
+    val compilerVersion = libs.versions.composeCompiler.get()
     extensions.findByType(LibraryExtension::class)?.apply {
         jetpackComposeCompiler(compilerVersion)
     }
