@@ -14,7 +14,6 @@ dependencies {
 
     implementation projects.common.android
     implementation projects.common.coroutines
-    implementation projects.common.resultlistener
     implementation projects.common.retrofit
     implementation projects.common.theme
     implementation projects.common.ui

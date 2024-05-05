@@ -23,7 +23,6 @@ include(
         ":common:android",
         ":common:coroutines",
         ":common:di",
-        ":common:resultlistener",
         ":common:retrofit",
         ":common:theme",
         ":common:ui",
