@@ -2,7 +2,7 @@
 agp = "8.1.4"
 anvil = "2.4.9"
 circuit = "0.20.0"
-coil = "2.4.0"
+coil = "2.5.0"
 compileSdk = "34"
 compose = "1.6.7"
 composeCompiler = "1.5.10"
@@ -11,19 +11,14 @@ dagger = "2.51.1"
 desugarJdkLibs = "2.0.4"
 kotlin = "1.9.22"
 kspPlugin = "1.9.22-1.0.17"
-leakcanary = "2.12"
 material3 = "1.2.1"
 minSdk = "24"
-molecule = "1.4.1"
+molecule = "1.4.2"
 moshi = "1.15.0"
 orchestrator = "1.5.2"
-retrofit = "2.9.0"
-robolectric = "4.10.3"
+retrofit = "2.11.0"
 paging = "3.2.1"
 targetSdk = "33"
-
-[plugins]
-ksp = { id = "com.google.devtools.ksp", version.ref = "kspPlugin" }
 
 [libraries]
 kspGradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "kspPlugin" }
@@ -62,10 +57,7 @@ junit4 = "junit:junit:4.13.2"
 assertk = "com.willowtreeapps.assertk:assertk-jvm:0.26.1"
 turbine = "app.cash.turbine:turbine:1.1.0"
 kotlin-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
-robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
 androidx-compose-ui-testing-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
-leakcanary-android-instrumentation = { module = "com.squareup.leakcanary:leakcanary-android-instrumentation", version.ref = "leakcanary" }
-truth = "com.google.truth:truth:1.1.5"
 circuitCodegenAnnotations = { module = "com.slack.circuit:circuit-codegen-annotations", version.ref = "circuit" }
 circuitCodegen = { module = "com.slack.circuit:circuit-codegen", version.ref = "circuit" }
 circuitRuntime = { module = "com.slack.circuit:circuit-runtime", version.ref = "circuit" }

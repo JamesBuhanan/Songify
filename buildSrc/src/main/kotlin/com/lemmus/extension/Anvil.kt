@@ -4,7 +4,6 @@
 
 package com.lemmus.extension
 
-import com.google.devtools.ksp.gradle.KspGradleSubplugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
 import org.jetbrains.kotlin.gradle.internal.Kapt3GradleSubplugin
