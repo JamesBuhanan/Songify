@@ -1,19 +1,18 @@
 ## About Lemmus
 
-Welcome to our project! This is a Lemmy using App made in Kotlin for Android Devices.
-With this App, users can navigate through a native android-client using Lemmy.
+An Android client for Lemmy.
 
-Some technologies used are as follows -
 - Circuit
 - Compose
 - Moshi
 - Anvil
-- Blood
-- Sweat
-- Tears
+- Convention Plugins
+- Multi-module
 
-### Built With
+TODO:
 
-- [Android Jetpack Compose](https://developer.android.com/jetpack/compose)
-- [Kotlin](https://kotlinlang.org/)
-
+- Focus plugin/Twigs/Dynamic Feature Modules?
+- Detekt
+- Lint
+- ModuleChecker?
+- UnitTest + AndroidTest
