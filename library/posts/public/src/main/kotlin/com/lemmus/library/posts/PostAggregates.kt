@@ -5,7 +5,7 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class PostAggregates(
-    val id: Int,
+    val id: Int? = null,
     val post_id: PostId,
     @Json(name = "comments")
     val numComments: Int,
@@ -13,8 +13,8 @@ data class PostAggregates(
     val upvotes: Int,
     val downvotes: Int,
     val published: String,
-    val newest_comment_time_necro: String,
+    val newest_comment_time_necro: String? = null,
     val newest_comment_time: String,
-    val featured_community: Boolean,
-    val featured_local: Boolean,
+    val featured_community: Boolean? = null,
+    val featured_local: Boolean? = null,
 )

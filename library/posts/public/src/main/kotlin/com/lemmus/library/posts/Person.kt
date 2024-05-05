@@ -17,7 +17,7 @@ data class Person(
     val banner: String? = null,
     val deleted: Boolean,
     val matrix_user_id: String? = null,
-    val admin: Boolean,
+    val admin: Boolean? = null,
     val bot_account: Boolean,
     val ban_expires: String? = null,
     val instance_id: InstanceId,
