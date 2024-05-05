@@ -9,19 +9,16 @@ repositories {
 }
 
 dependencies {
+    implementation(gradleApi())
     implementation(libs.androidGradlePlugin)
+    implementation(libs.anvil.gradlePlugin)
     implementation(libs.kotlin.gradle)
     implementation(libs.kspGradlePlugin)
-    implementation(gradleApi())
     implementation(localGroovy())
 }
 
 gradlePlugin {
     plugins {
-        register("lemmusSettings") {
-            id = "lemmus.settings"
-            implementationClass = "LemmusSettingsPlugin"
-        }
         register("lemmusRoot") {
             id = "lemmus.root"
             implementationClass = "LemmusRootPlugin"

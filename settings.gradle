@@ -1,22 +1,6 @@
-pluginManagement {
-    repositories {
-        mavenCentral()
-        gradlePluginPortal()
-    }
-    plugins {
-        id "lemmus.settings"
-        id "lemmus.root"
-        id "lemmus.android.application"
-        id "lemmus.android.library"
-        id "lemmus.kotlin.library"
-    }
-}
-
-plugins {
-//    id "lemmus.settings"
-}
-
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
+rootProject.name = "Lemmus"
 
 include(
         ":app",

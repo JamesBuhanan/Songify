@@ -13,7 +13,6 @@ kotlin = "1.9.22"
 kspPlugin = "1.9.22-1.0.17"
 material3 = "1.2.1"
 minSdk = "24"
-molecule = "1.4.2"
 moshi = "1.15.0"
 orchestrator = "1.5.2"
 retrofit = "2.11.0"
@@ -22,7 +21,6 @@ targetSdk = "33"
 
 [libraries]
 androidGradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
-androidx-appcompat = "androidx.appcompat:appcompat:1.6.1"
 androidx-compose-activity = "androidx.activity:activity-compose:1.9.0"
 androidx-compose-constraint-layout = { module = "androidx.constraintlayout:constraintlayout-compose", version = "1.0.1" }
 androidx-compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
@@ -32,12 +30,7 @@ androidx-compose-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", 
 androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
 androidx-compose-ui-testing-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
 androidx-compose-uitooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
-androidx-corektx = "androidx.core:core-ktx:1.13.1"
-androidx-test-corektx = "androidx.test:core-ktx:1.5.0"
 androidx-test-espresso-core = "androidx.test.espresso:espresso-core:3.5.1"
-androidx-test-junit = "androidx.test.ext:junit:1.1.5"
-androidx-test-orchestrator = { module = "androidx.test:orchestrator", version.ref = "orchestrator" }
-androidx-test-runner = { module = "androidx.test:runner", version.ref = "orchestrator" }
 anvil-gradlePlugin = { module = "com.squareup.anvil:gradle-plugin", version.ref = "anvil" }
 assertk = "com.willowtreeapps.assertk:assertk-jvm:0.28.1"
 circuitCodegen = { module = "com.slack.circuit:circuit-codegen", version.ref = "circuit" }
@@ -59,7 +52,6 @@ kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "
 kotlinReflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
 kspGradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "kspPlugin" }
 material = "com.google.android.material:material:1.12.0"
-molecule-runtime = { module = "app.cash.molecule:molecule-runtime", version.ref = "molecule" }
 moshi = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
 moshiCodeGen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
 paging-compose = { module = "androidx.paging:paging-compose", version.ref = "paging" }
