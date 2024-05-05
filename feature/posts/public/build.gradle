@@ -1,3 +1,7 @@
 plugins {
-    id 'lemmus.kotlin.library'
+    id 'lemmus.android.library'
+}
+
+lemmus {
+    circuit()
 }

@@ -49,4 +49,3 @@ class PostsPresenter @AssistedInject constructor(
         fun create(navigator: Navigator): PostsPresenter
     }
 }
-

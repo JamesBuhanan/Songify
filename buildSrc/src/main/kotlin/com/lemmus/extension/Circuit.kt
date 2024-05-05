@@ -6,6 +6,7 @@ import org.gradle.kotlin.dsl.dependencies
 
 fun Project.circuit() {
     applyOnce<KspGradleSubplugin>()
+    applyOnce("kotlin-parcelize")
 
     dependencies {
         "implementation"(libs.bundles.circuit)
