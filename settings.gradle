@@ -20,7 +20,6 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include(
         ":app",
-        ":common:android",
         ":common:coroutines",
         ":common:di",
         ":common:retrofit",

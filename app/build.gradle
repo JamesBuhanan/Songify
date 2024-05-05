@@ -12,7 +12,6 @@ dependencies {
     implementation libs.bundles.paging
     implementation libs.material
 
-    implementation projects.common.android
     implementation projects.common.coroutines
     implementation projects.common.retrofit
     implementation projects.common.theme
