@@ -1,4 +1,4 @@
-package com.lemmus.app
+package com.songify.app
 
 import java.lang.reflect.Proxy
 

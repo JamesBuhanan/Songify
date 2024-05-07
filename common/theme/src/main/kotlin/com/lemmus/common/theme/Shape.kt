@@ -1,4 +1,4 @@
-package com.lemmus.common.theme
+package com.songify.common.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Shapes

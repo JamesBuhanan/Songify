@@ -1,7 +1,7 @@
-package com.lemmus.library.posts.internal
+package com.songify.library.posts.internal
 
-import com.lemmus.library.posts.GetPostResponse
-import com.lemmus.library.posts.GetPostsResponse
+import com.songify.library.posts.GetPostResponse
+import com.songify.library.posts.GetPostsResponse
 import retrofit2.http.GET
 import retrofit2.http.QueryMap
 

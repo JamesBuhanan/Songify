@@ -1,4 +1,4 @@
-package com.lemmus.feature.splash.internal
+package com.songify.feature.splash.internal
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -16,8 +16,8 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.lemmus.common.di.AppScope
-import com.lemmus.feature.splash.SplashScreen
+import com.songify.common.di.AppScope
+import com.songify.feature.splash.SplashScreen
 import com.slack.circuit.codegen.annotations.CircuitInject
 import kotlinx.coroutines.delay
 
@@ -43,7 +43,7 @@ fun SplashView(
             contentScale = ContentScale.Crop
         )
         Text(
-            text = "Lemmus",
+            text = "Songify",
             color = Color.Black,
             fontSize = 80.sp,
             fontWeight = FontWeight.SemiBold,

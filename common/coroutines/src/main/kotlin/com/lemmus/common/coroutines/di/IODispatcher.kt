@@ -1,4 +1,4 @@
-package com.lemmus.common.coroutines.di
+package com.songify.common.coroutines.di
 
 import javax.inject.Qualifier
 import kotlin.annotation.AnnotationRetention.RUNTIME

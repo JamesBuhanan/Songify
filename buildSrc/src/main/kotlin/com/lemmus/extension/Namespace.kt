@@ -1,4 +1,4 @@
-package com.lemmus.extension
+package com.songify.extension
 
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.dsl.CommonExtension
@@ -19,5 +19,5 @@ internal fun Project.dynamicNamespace2(commonExtension: CommonExtension<*, *, *,
     val packageSuffix = path
         .replace(":public", "")
         .replace(":", ".")
-    commonExtension.namespace = "com.lemmus$packageSuffix"
+    commonExtension.namespace = "com.songify$packageSuffix"
 }

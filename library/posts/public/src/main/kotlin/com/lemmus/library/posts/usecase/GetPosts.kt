@@ -1,6 +1,6 @@
-package com.lemmus.library.posts.usecase
+package com.songify.library.posts.usecase
 
-import com.lemmus.library.posts.GetPostsResponse
+import com.songify.library.posts.GetPostsResponse
 
 interface GetPosts {
     suspend operator fun invoke(page: Int): GetPostsResponse

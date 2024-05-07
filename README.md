@@ -1,4 +1,4 @@
-## About Lemmus
+## About Songify
 
 An Android client for Lemmy.
 

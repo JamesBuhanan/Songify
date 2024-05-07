@@ -1,11 +1,11 @@
-package com.lemmus.feature.posts.internal
+package com.songify.feature.posts.internal
 
-import com.lemmus.library.posts.Community
-import com.lemmus.library.posts.Person
-import com.lemmus.library.posts.Post
-import com.lemmus.library.posts.PostAggregates
-import com.lemmus.library.posts.PostView
-import com.lemmus.library.posts.SubscribedType
+import com.songify.library.posts.Community
+import com.songify.library.posts.Person
+import com.songify.library.posts.Post
+import com.songify.library.posts.PostAggregates
+import com.songify.library.posts.PostView
+import com.songify.library.posts.SubscribedType
 
 val samplePost = Post(
     id = 135129,

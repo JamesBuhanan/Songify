@@ -1,4 +1,4 @@
-package com.lemmus.common.di
+package com.songify.common.di
 
 import android.app.Activity
 import dagger.MapKey

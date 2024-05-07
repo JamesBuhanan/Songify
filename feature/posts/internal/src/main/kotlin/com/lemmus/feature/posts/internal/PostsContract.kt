@@ -1,11 +1,11 @@
-package com.lemmus.feature.posts.internal
+package com.songify.feature.posts.internal
 
 import androidx.paging.PagingData
-import com.lemmus.feature.posts.internal.Post.PostWithExternalLink
-import com.lemmus.feature.posts.internal.Post.PostWithExternalLinkWithThumbnail
-import com.lemmus.feature.posts.internal.Post.PostWithImage
-import com.lemmus.feature.posts.internal.Post.PostWithJustText
-import com.lemmus.library.posts.PostView
+import com.songify.feature.posts.internal.Post.PostWithExternalLink
+import com.songify.feature.posts.internal.Post.PostWithExternalLinkWithThumbnail
+import com.songify.feature.posts.internal.Post.PostWithImage
+import com.songify.feature.posts.internal.Post.PostWithJustText
+import com.songify.library.posts.PostView
 import com.slack.circuit.runtime.CircuitUiEvent
 import com.slack.circuit.runtime.CircuitUiState
 import kotlinx.coroutines.flow.Flow

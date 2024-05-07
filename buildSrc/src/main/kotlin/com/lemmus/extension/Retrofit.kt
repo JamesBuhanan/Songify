@@ -1,4 +1,4 @@
-package com.lemmus.extension
+package com.songify.extension
 
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies

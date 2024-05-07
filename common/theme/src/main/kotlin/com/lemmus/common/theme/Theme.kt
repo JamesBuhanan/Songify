@@ -1,4 +1,4 @@
-package com.lemmus.common.theme
+package com.songify.common.theme
 
 import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -33,7 +33,7 @@ onSurface = Color.Black,
 )
 
 @Composable
-fun LemmusTheme(
+fun SongifyTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit,
 ) {

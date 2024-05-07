@@ -1,13 +1,13 @@
-package com.lemmus.app
+package com.songify.app
 
 import android.app.Activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.lemmus.common.di.ActivityKey
-import com.lemmus.common.di.AppScope
-import com.lemmus.common.theme.LemmusTheme
-import com.lemmus.feature.splash.SplashScreen
+import com.songify.common.di.ActivityKey
+import com.songify.common.di.AppScope
+import com.songify.common.theme.SongifyTheme
+import com.songify.feature.splash.SplashScreen
 import com.slack.circuit.backstack.rememberSaveableBackStack
 import com.slack.circuit.foundation.Circuit
 import com.slack.circuit.foundation.CircuitCompositionLocals
@@ -29,7 +29,7 @@ class EntryPointActivity @Inject constructor(
             val backStack = rememberSaveableBackStack(SplashScreen)
             val navigator = rememberCircuitNavigator(backStack)
 
-            LemmusTheme {
+            SongifyTheme {
                 CircuitCompositionLocals(circuit) {
                     NavigableCircuitContent(navigator, backStack)
                 }

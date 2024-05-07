@@ -1,4 +1,4 @@
-package com.lemmus.feature.splash.internal
+package com.songify.feature.splash.internal
 
 import com.slack.circuit.runtime.CircuitUiEvent
 import com.slack.circuit.runtime.CircuitUiState

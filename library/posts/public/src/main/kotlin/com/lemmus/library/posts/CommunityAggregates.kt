@@ -1,4 +1,4 @@
-package com.lemmus.library.posts
+package com.songify.library.posts
 
 data class CommunityAggregates(
     val id: Int,

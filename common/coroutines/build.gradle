@@ -1,7 +1,7 @@
 plugins {
-    id 'lemmus.android.library'
+    id 'songify.android.library'
 }
 
-lemmus {
+songify {
     anvil()
 }

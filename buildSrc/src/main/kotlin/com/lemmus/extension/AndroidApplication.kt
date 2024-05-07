@@ -2,7 +2,7 @@
  * © 2023 Match Group, LLC.
  */
 
-package com.lemmus.extension
+package com.songify.extension
 
 import com.android.build.api.dsl.ApplicationExtension
 import org.gradle.api.Project
@@ -18,8 +18,8 @@ fun Project.androidApplication() {
             targetSdk = libs.versions.targetSdk.get().toInt()
             versionCode = 1
             versionName = "1.0"
-            applicationId = "com.lemmus"
-            testApplicationId = "com.lemmus.test"
+            applicationId = "com.songify"
+            testApplicationId = "com.songify.test"
         }
 
         testOptions {

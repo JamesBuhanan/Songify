@@ -1,4 +1,4 @@
-package com.lemmus.library.posts
+package com.songify.library.posts
 
 import com.squareup.moshi.Json
 

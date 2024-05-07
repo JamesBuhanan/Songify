@@ -1,4 +1,4 @@
-package com.lemmus.feature.posts.internal
+package com.songify.feature.posts.internal
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
@@ -43,19 +43,19 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemKey
 import coil.compose.AsyncImage
-import com.lemmus.common.di.AppScope
-import com.lemmus.common.theme.LemmusTheme
-import com.lemmus.common.theme.MEDIUM_PADDING
-import com.lemmus.common.theme.SMALL_PADDING
-import com.lemmus.common.theme.THUMBNAIL_SIZE
-import com.lemmus.common.ui.LoadingBar
-import com.lemmus.feature.posts.PostsScreen
-import com.lemmus.feature.posts.internal.Post.PostWithExternalLink
-import com.lemmus.feature.posts.internal.Post.PostWithExternalLinkWithThumbnail
-import com.lemmus.feature.posts.internal.Post.PostWithImage
-import com.lemmus.feature.posts.internal.Post.PostWithJustText
-import com.lemmus.feature.posts.internal.PostsConstants.POST_LIST_TAG
-import com.lemmus.feature.posts.internal.common.getImageRequest
+import com.songify.common.di.AppScope
+import com.songify.common.theme.SongifyTheme
+import com.songify.common.theme.MEDIUM_PADDING
+import com.songify.common.theme.SMALL_PADDING
+import com.songify.common.theme.THUMBNAIL_SIZE
+import com.songify.common.ui.LoadingBar
+import com.songify.feature.posts.PostsScreen
+import com.songify.feature.posts.internal.Post.PostWithExternalLink
+import com.songify.feature.posts.internal.Post.PostWithExternalLinkWithThumbnail
+import com.songify.feature.posts.internal.Post.PostWithImage
+import com.songify.feature.posts.internal.Post.PostWithJustText
+import com.songify.feature.posts.internal.PostsConstants.POST_LIST_TAG
+import com.songify.feature.posts.internal.common.getImageRequest
 import com.slack.circuit.codegen.annotations.CircuitInject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -81,7 +81,7 @@ fun ShowPosts(postsState: PostsState.Success) {
     BackHandler {
         postsState.eventSink(PostsEvent.TappedBack)
     }
-    LemmusNavigationDrawer {
+    SongifyNavigationDrawer {
         Box(modifier = Modifier.padding(it)) {
             PostItemList(
                 posts = postsState.posts,
@@ -120,7 +120,7 @@ fun PostItemList(
 @Preview
 @Composable
 fun PostItemListPreview() {
-    LemmusTheme {
+    SongifyTheme {
         PostItemList(
             posts = flow {
                 PagingData.from(

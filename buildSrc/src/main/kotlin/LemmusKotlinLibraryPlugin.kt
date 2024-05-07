@@ -2,19 +2,19 @@
  * © 2023 Match Group, LLC.
  */
 
-import com.lemmus.extension.allProjects
-import com.lemmus.extension.anvil
-import com.lemmus.extension.applyOnce
-import com.lemmus.extension.kotlinJvm
-import com.lemmus.extension.kotlinLibrary
-import com.lemmus.extension.libs
-import com.lemmus.extension.moshi
-import com.lemmus.extension.retrofit
+import com.songify.extension.allProjects
+import com.songify.extension.anvil
+import com.songify.extension.applyOnce
+import com.songify.extension.kotlinJvm
+import com.songify.extension.kotlinLibrary
+import com.songify.extension.libs
+import com.songify.extension.moshi
+import com.songify.extension.retrofit
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
 
-class LemmusKotlinLibraryPlugin : Plugin<Project> {
+class SongifyKotlinLibraryPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             applyOnce("kotlin")
@@ -26,7 +26,7 @@ class LemmusKotlinLibraryPlugin : Plugin<Project> {
             // detekt()
             circuitRuntime()
 
-            extensions.create("lemmus", LemmusKotlinLibraryExtension::class.java, this)
+            extensions.create("songify", SongifyKotlinLibraryExtension::class.java, this)
         }
     }
 
@@ -37,7 +37,7 @@ class LemmusKotlinLibraryPlugin : Plugin<Project> {
     }
 }
 
-open class LemmusKotlinLibraryExtension(private val project: Project) {
+open class SongifyKotlinLibraryExtension(private val project: Project) {
     fun anvil() = project.anvil()
 
     fun moshi() = project.moshi()

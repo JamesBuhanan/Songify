@@ -3,23 +3,23 @@
  */
 
 import com.android.build.gradle.LibraryPlugin
-import com.lemmus.extension.allProjects
-import com.lemmus.extension.androidLibrary
-import com.lemmus.extension.anvil
-import com.lemmus.extension.applyOnce
-import com.lemmus.extension.circuit
-import com.lemmus.extension.coroutines
-import com.lemmus.extension.dynamicNamespace
-import com.lemmus.extension.feature
-import com.lemmus.extension.jetpackCompose
-import com.lemmus.extension.libs
-import com.lemmus.extension.moshi
-import com.lemmus.extension.retrofit
+import com.songify.extension.allProjects
+import com.songify.extension.androidLibrary
+import com.songify.extension.anvil
+import com.songify.extension.applyOnce
+import com.songify.extension.circuit
+import com.songify.extension.coroutines
+import com.songify.extension.dynamicNamespace
+import com.songify.extension.feature
+import com.songify.extension.jetpackCompose
+import com.songify.extension.libs
+import com.songify.extension.moshi
+import com.songify.extension.retrofit
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
 
-class LemmusAndroidLibraryPlugin : Plugin<Project> {
+class SongifyAndroidLibraryPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             applyOnce<LibraryPlugin>()
@@ -39,12 +39,12 @@ class LemmusAndroidLibraryPlugin : Plugin<Project> {
                 "implementation"(libs.timber)
             }
 
-            extensions.create("lemmus", LemmusAndroidLibraryExtension::class.java, this)
+            extensions.create("songify", SongifyAndroidLibraryExtension::class.java, this)
         }
     }
 }
 
-open class LemmusAndroidLibraryExtension(private val project: Project) {
+open class SongifyAndroidLibraryExtension(private val project: Project) {
     fun anvil() = project.anvil()
 
     fun moshi() = project.moshi()

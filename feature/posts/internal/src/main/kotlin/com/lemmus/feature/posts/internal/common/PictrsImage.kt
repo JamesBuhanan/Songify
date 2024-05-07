@@ -1,9 +1,9 @@
-package com.lemmus.feature.posts.internal.common
+package com.songify.feature.posts.internal.common
 
 import android.content.Context
 import android.os.Build
 import coil.request.ImageRequest
-import com.lemmus.feature.posts.internal.pictrsImageThumbnail
+import com.songify.feature.posts.internal.pictrsImageThumbnail
 
 fun getImageRequest(
     context: Context,

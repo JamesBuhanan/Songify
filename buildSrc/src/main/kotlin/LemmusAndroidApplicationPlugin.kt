@@ -3,20 +3,20 @@
  */
 
 import com.android.build.gradle.AppPlugin
-import com.lemmus.extension.allProjects
-import com.lemmus.extension.androidApplication
-import com.lemmus.extension.anvil
-import com.lemmus.extension.applyOnce
-import com.lemmus.extension.circuit
-import com.lemmus.extension.coroutines
-import com.lemmus.extension.dynamicNamespace
-import com.lemmus.extension.jetpackCompose
-import com.lemmus.extension.libs
+import com.songify.extension.allProjects
+import com.songify.extension.androidApplication
+import com.songify.extension.anvil
+import com.songify.extension.applyOnce
+import com.songify.extension.circuit
+import com.songify.extension.coroutines
+import com.songify.extension.dynamicNamespace
+import com.songify.extension.jetpackCompose
+import com.songify.extension.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
 
-class LemmusAndroidApplicationPlugin : Plugin<Project> {
+class SongifyAndroidApplicationPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             applyOnce<AppPlugin>()
@@ -39,11 +39,11 @@ class LemmusAndroidApplicationPlugin : Plugin<Project> {
                 "implementation"(libs.timber)
             }
 
-            extensions.create("lemmus", LemmusAndroidApplicationExtension::class.java, this)
+            extensions.create("songify", SongifyAndroidApplicationExtension::class.java, this)
         }
     }
 }
 
-open class LemmusAndroidApplicationExtension(private val project: Project) {
+open class SongifyAndroidApplicationExtension(private val project: Project) {
 
 }

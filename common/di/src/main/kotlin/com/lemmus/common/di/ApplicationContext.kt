@@ -1,4 +1,4 @@
-package com.lemmus.common.di
+package com.songify.common.di
 
 import javax.inject.Qualifier
 

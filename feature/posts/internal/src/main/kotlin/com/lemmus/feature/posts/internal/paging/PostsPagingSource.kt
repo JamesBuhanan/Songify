@@ -1,12 +1,12 @@
-package com.lemmus.feature.posts.internal.paging
+package com.songify.feature.posts.internal.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.lemmus.common.di.AppScope
-import com.lemmus.common.di.SingleIn
-import com.lemmus.feature.posts.internal.Post
-import com.lemmus.feature.posts.internal.toPosts
-import com.lemmus.library.posts.usecase.GetPosts
+import com.songify.common.di.AppScope
+import com.songify.common.di.SingleIn
+import com.songify.feature.posts.internal.Post
+import com.songify.feature.posts.internal.toPosts
+import com.songify.library.posts.usecase.GetPosts
 import javax.inject.Inject
 
 @SingleIn(AppScope::class)

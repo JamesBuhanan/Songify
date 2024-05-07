@@ -1,6 +1,6 @@
 // Copyright (C) 2022 Slack Technologies, LLC
 // SPDX-License-Identifier: Apache-2.0
-package com.lemmus.app
+package com.songify.app
 
 import android.app.Activity
 import android.app.Application
@@ -10,7 +10,7 @@ import androidx.core.app.AppComponentFactory
 import javax.inject.Provider
 
 @Keep
-class LemmusAppComponentFactory : AppComponentFactory() {
+class SongifyAppComponentFactory : AppComponentFactory() {
 
   private inline fun <reified T> getInstance(
     cl: ClassLoader,
@@ -33,7 +33,7 @@ class LemmusAppComponentFactory : AppComponentFactory() {
 
   override fun instantiateApplicationCompat(cl: ClassLoader, className: String): Application {
     val app = super.instantiateApplicationCompat(cl, className)
-    activityProviders = (app as LemmusApplication).appComponent().activityProviders
+    activityProviders = (app as SongifyApplication).appComponent().activityProviders
     return app
   }
 

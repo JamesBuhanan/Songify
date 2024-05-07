@@ -20,21 +20,21 @@ dependencies {
 
 gradlePlugin {
     plugins {
-        register("lemmusRoot") {
-            id = "lemmus.root"
-            implementationClass = "LemmusRootPlugin"
+        register("songifyRoot") {
+            id = "songify.root"
+            implementationClass = "SongifyRootPlugin"
         }
-        register("lemmusAndroidApplication") {
-            id = "lemmus.android.application"
-            implementationClass = "LemmusAndroidApplicationPlugin"
+        register("songifyAndroidApplication") {
+            id = "songify.android.application"
+            implementationClass = "SongifyAndroidApplicationPlugin"
         }
-        register("lemmusAndroidLibrary") {
-            id = "lemmus.android.library"
-            implementationClass = "LemmusAndroidLibraryPlugin"
+        register("songifyAndroidLibrary") {
+            id = "songify.android.library"
+            implementationClass = "SongifyAndroidLibraryPlugin"
         }
-        register("lemmusKotlinLibrary") {
-            id = "lemmus.kotlin.library"
-            implementationClass = "LemmusKotlinLibraryPlugin"
+        register("songifyKotlinLibrary") {
+            id = "songify.kotlin.library"
+            implementationClass = "SongifyKotlinLibraryPlugin"
         }
     }
 }

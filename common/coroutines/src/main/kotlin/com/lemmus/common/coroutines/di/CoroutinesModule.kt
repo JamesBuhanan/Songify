@@ -1,6 +1,6 @@
-package com.lemmus.common.coroutines.di
+package com.songify.common.coroutines.di
 
-import com.lemmus.common.di.AppScope
+import com.songify.common.di.AppScope
 import com.squareup.anvil.annotations.ContributesTo
 import dagger.Module
 import dagger.Provides

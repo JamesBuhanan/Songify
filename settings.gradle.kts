@@ -1,6 +1,6 @@
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-rootProject.name = "Lemmus"
+rootProject.name = "Songify"
 
 buildCache {
     local {

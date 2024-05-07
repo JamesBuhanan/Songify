@@ -1,4 +1,4 @@
-package com.lemmus.common.theme
+package com.songify.common.theme
 
 import androidx.compose.ui.unit.dp
 

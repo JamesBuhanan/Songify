@@ -2,7 +2,7 @@
  * © 2023 Match Group, LLC.
  */
 
-package com.lemmus.extension
+package com.songify.extension
 
 import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.JavaVersion

@@ -1,4 +1,4 @@
-package com.lemmus.feature.posts
+package com.songify.feature.posts
 
 import com.slack.circuit.runtime.screen.Screen
 import kotlinx.parcelize.Parcelize

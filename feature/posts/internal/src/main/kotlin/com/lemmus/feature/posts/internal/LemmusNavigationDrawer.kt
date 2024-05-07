@@ -1,4 +1,4 @@
-package com.lemmus.feature.posts.internal
+package com.songify.feature.posts.internal
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
@@ -43,7 +43,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.lemmus.common.theme.LemmusTheme
+import com.songify.common.theme.SongifyTheme
 import kotlinx.coroutines.launch
 
 data class NavigationItem(
@@ -56,7 +56,7 @@ data class NavigationItem(
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun LemmusNavigationDrawer(content: @Composable (PaddingValues) -> Unit) {
+fun SongifyNavigationDrawer(content: @Composable (PaddingValues) -> Unit) {
 
     val items = listOf(
         NavigationItem(
@@ -141,7 +141,7 @@ fun LemmusNavigationDrawer(content: @Composable (PaddingValues) -> Unit) {
                             containerColor = MaterialTheme.colorScheme.background,
                         ),
                         title = {
-                            Text(text = "Lemmus")
+                            Text(text = "Songify")
                         },
                         navigationIcon = {
                             IconButton(onClick = {
@@ -169,8 +169,8 @@ fun LemmusNavigationDrawer(content: @Composable (PaddingValues) -> Unit) {
 @Preview
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun LemmusNavigationDrawerPreview() {
-    LemmusTheme {
-        LemmusNavigationDrawer() {}
+fun SongifyNavigationDrawerPreview() {
+    SongifyTheme {
+        SongifyNavigationDrawer() {}
     }
 }

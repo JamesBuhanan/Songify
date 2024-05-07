@@ -1,3 +1,3 @@
-package com.lemmus.library.posts
+package com.songify.library.posts
 
 typealias PersonId = Int

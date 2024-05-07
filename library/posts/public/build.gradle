@@ -1,7 +1,7 @@
 plugins {
-    id 'lemmus.kotlin.library'
+    id 'songify.kotlin.library'
 }
 
-lemmus {
+songify {
     moshi()
 }

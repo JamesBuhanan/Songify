@@ -2,7 +2,7 @@
  * © 2023 Match Group, LLC.
  */
 
-package com.lemmus.extension
+package com.songify.extension
 
 import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.api.Project

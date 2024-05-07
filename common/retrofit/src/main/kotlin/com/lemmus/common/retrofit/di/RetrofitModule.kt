@@ -1,7 +1,7 @@
-package com.lemmus.common.retrofit.di
+package com.songify.common.retrofit.di
 
-import com.lemmus.common.di.AppScope
-import com.lemmus.common.di.SingleIn
+import com.songify.common.di.AppScope
+import com.songify.common.di.SingleIn
 import com.squareup.anvil.annotations.ContributesTo
 import dagger.Module
 import dagger.Provides

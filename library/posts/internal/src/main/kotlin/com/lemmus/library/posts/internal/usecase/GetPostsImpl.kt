@@ -1,10 +1,10 @@
-package com.lemmus.library.posts.internal.usecase
+package com.songify.library.posts.internal.usecase
 
-import com.lemmus.common.di.AppScope
-import com.lemmus.common.di.SingleIn
-import com.lemmus.library.posts.GetPostsResponse
-import com.lemmus.library.posts.internal.PostsService
-import com.lemmus.library.posts.usecase.GetPosts
+import com.songify.common.di.AppScope
+import com.songify.common.di.SingleIn
+import com.songify.library.posts.GetPostsResponse
+import com.songify.library.posts.internal.PostsService
+import com.songify.library.posts.usecase.GetPosts
 import com.squareup.anvil.annotations.ContributesBinding
 import javax.inject.Inject
 

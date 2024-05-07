@@ -1,4 +1,4 @@
-package com.lemmus.feature.posts.internal
+package com.songify.feature.posts.internal
 
 import java.text.ParseException
 import java.text.SimpleDateFormat

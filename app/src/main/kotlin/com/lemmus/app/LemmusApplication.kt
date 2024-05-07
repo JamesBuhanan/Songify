@@ -1,10 +1,10 @@
-package com.lemmus.app
+package com.songify.app
 
 import android.app.Application
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 
-class LemmusApplication : Application() {
+class SongifyApplication : Application() {
     private val appComponent by lazy { AppComponent.create(this) }
 
     fun appComponent() = appComponent

@@ -3,8 +3,8 @@
 
     <issue
         id="Instantiatable"
-        message="This class should provide a default constructor (a public constructor with no arguments) (`com.lemmus.app.EntryPointActivity`)"
-        errorLine1="            android:name=&quot;com.lemmus.app.EntryPointActivity&quot;"
+        message="This class should provide a default constructor (a public constructor with no arguments) (`com.songify.app.EntryPointActivity`)"
+        errorLine1="            android:name=&quot;com.songify.app.EntryPointActivity&quot;"
         errorLine2="                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="src/main/AndroidManifest.xml"

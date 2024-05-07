@@ -1,13 +1,13 @@
-package com.lemmus.feature.posts.internal
+package com.songify.feature.posts.internal
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
-import com.lemmus.common.di.AppScope
-import com.lemmus.feature.posts.PostsScreen
-import com.lemmus.feature.posts.internal.paging.PostsPagingSource
+import com.songify.common.di.AppScope
+import com.songify.feature.posts.PostsScreen
+import com.songify.feature.posts.internal.paging.PostsPagingSource
 import com.slack.circuit.codegen.annotations.CircuitInject
 import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.presenter.Presenter

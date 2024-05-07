@@ -7,7 +7,7 @@
         errorLine1="        Log.d(&quot;jerboa&quot;, &quot;Uploading image...&quot;)"
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/kotlin/com/lemmus/feature/posts/internal/common/PictrsImage.kt"
+            file="src/main/kotlin/com/songify/feature/posts/internal/common/PictrsImage.kt"
             line="217"
             column="9"/>
     </issue>
@@ -18,7 +18,7 @@
         errorLine1="        Log.d(&quot;jerboa&quot;, uri.toString())"
         errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/kotlin/com/lemmus/feature/posts/internal/common/PictrsImage.kt"
+            file="src/main/kotlin/com/songify/feature/posts/internal/common/PictrsImage.kt"
             line="218"
             column="9"/>
     </issue>
@@ -29,7 +29,7 @@
         errorLine1="    Log.e(&quot;jerboa&quot;, error.toString())"
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/kotlin/com/lemmus/feature/posts/internal/Utils.kt"
+            file="src/main/kotlin/com/songify/feature/posts/internal/Utils.kt"
             line="87"
             column="5"/>
     </issue>
@@ -40,7 +40,7 @@
         errorLine1="    Log.d(&quot;jerboa&quot;, &quot;decodeUriToBitmap INPUT: $uri&quot;)"
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/kotlin/com/lemmus/feature/posts/internal/Utils.kt"
+            file="src/main/kotlin/com/songify/feature/posts/internal/Utils.kt"
             line="777"
             column="5"/>
     </issue>
@@ -51,7 +51,7 @@
         errorLine1="        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/kotlin/com/lemmus/feature/posts/internal/common/MarkdownHelper.kt"
+            file="src/main/kotlin/com/songify/feature/posts/internal/common/MarkdownHelper.kt"
             line="247"
             column="13"/>
     </issue>
@@ -62,7 +62,7 @@
         errorLine1="    return if (SDK_INT &lt; 28) {"
         errorLine2="               ~~~~~~~~~~~~">
         <location
-            file="src/main/kotlin/com/lemmus/feature/posts/internal/Utils.kt"
+            file="src/main/kotlin/com/songify/feature/posts/internal/Utils.kt"
             line="778"
             column="16"/>
     </issue>

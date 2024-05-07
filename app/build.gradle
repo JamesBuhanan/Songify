@@ -1,10 +1,10 @@
 plugins {
-    id 'lemmus.android.application'
+    id 'songify.android.application'
 }
 
 android {
     defaultConfig {
-        applicationId "com.lemmus"
+        applicationId "com.songify"
     }
 }
 

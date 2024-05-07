@@ -1,8 +1,8 @@
 // Copyright (C) 2022 Slack Technologies, LLC
 // SPDX-License-Identifier: Apache-2.0
-package com.lemmus.app
+package com.songify.app
 
-import com.lemmus.common.di.AppScope
+import com.songify.common.di.AppScope
 import com.slack.circuit.foundation.Circuit
 import com.slack.circuit.runtime.presenter.Presenter
 import com.slack.circuit.runtime.ui.Ui

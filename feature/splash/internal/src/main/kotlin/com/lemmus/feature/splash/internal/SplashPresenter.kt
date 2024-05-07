@@ -1,9 +1,9 @@
-package com.lemmus.feature.splash.internal
+package com.songify.feature.splash.internal
 
 import androidx.compose.runtime.Composable
-import com.lemmus.common.di.AppScope
-import com.lemmus.feature.posts.PostsScreen
-import com.lemmus.feature.splash.SplashScreen
+import com.songify.common.di.AppScope
+import com.songify.feature.posts.PostsScreen
+import com.songify.feature.splash.SplashScreen
 import com.slack.circuit.codegen.annotations.CircuitInject
 import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.presenter.Presenter

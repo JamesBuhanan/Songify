@@ -1,7 +1,7 @@
-package com.lemmus.library.posts.internal.di
+package com.songify.library.posts.internal.di
 
-import com.lemmus.common.di.AppScope
-import com.lemmus.library.posts.internal.PostsService
+import com.songify.common.di.AppScope
+import com.songify.library.posts.internal.PostsService
 import com.squareup.anvil.annotations.ContributesTo
 import dagger.Module
 import dagger.Provides

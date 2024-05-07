@@ -1,4 +1,4 @@
-package com.lemmus.library.posts
+package com.songify.library.posts
 
 data class GetPostResponse(
     val post_view: PostView,
