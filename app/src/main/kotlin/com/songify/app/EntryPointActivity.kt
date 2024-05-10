@@ -55,10 +55,18 @@ class EntryPointActivity @Inject constructor(
     }
 
     private fun getAuthenticationRequest(type: AuthorizationResponse.Type): AuthorizationRequest {
+//        val scopes = arrayOf(
+//            "playlist-read-private",
+//            "playlist-read-collaborative",
+//            "streaming",
+//            "user-library-read",
+//            "user-read-private",
+//            "user-top-read"
+//        )
         return AuthorizationRequest.Builder(CLIENT_ID, type, "Songify://callback")
             .setShowDialog(false)
             .setScopes(arrayOf("user-read-email"))
-            .setCampaign("your-campaign-token")
+            //.setCampaign("your-campaign-token")
             .build()
     }
 
