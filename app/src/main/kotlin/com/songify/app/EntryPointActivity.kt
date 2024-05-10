@@ -20,7 +20,7 @@ import com.squareup.anvil.annotations.ContributesMultibinding
 import timber.log.Timber
 import javax.inject.Inject
 
-const val CLIENT_ID = "ff860a635b3545b5b9bdb8b30821deca"
+const val CLIENT_ID = "9ec02e7f10514c15842363d73f64f985"
 const val AUTH_TOKEN_REQUEST_CODE = 0x10
 
 @ContributesMultibinding(AppScope::class, boundType = Activity::class)
@@ -63,10 +63,10 @@ class EntryPointActivity @Inject constructor(
 //            "user-read-private",
 //            "user-top-read"
 //        )
-        return AuthorizationRequest.Builder(CLIENT_ID, type, "Songify://callback")
+        return AuthorizationRequest.Builder(CLIENT_ID, type, "songify://callback")
             .setShowDialog(false)
             .setScopes(arrayOf("user-read-email"))
-            //.setCampaign("your-campaign-token")
+            .setCampaign("your-campaign-token")
             .build()
     }
 

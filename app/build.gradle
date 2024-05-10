@@ -5,14 +5,20 @@ plugins {
 android {
     defaultConfig {
         applicationId "com.songify"
-        manifestPlaceholders = [redirectSchemeName: "Songify", redirectHostName: "callback"]
+        manifestPlaceholders = [redirectSchemeName: "songify", redirectHostName: "callback"]
     }
     signingConfigs {
         debug {
             storeFile file('debug.keystore')
             storePassword 'android'
-//            keyAlias 'example_alias'
-//            keyPassword 'example'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+    }
+    buildTypes {
+        debug {
+            debuggable true
+            signingConfig signingConfigs.debug
         }
     }
 }
