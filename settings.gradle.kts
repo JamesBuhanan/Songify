@@ -14,6 +14,7 @@ include(
     ":common:coroutines",
     ":common:di",
     ":common:retrofit",
+    ":common:session",
     ":common:theme",
     ":common:ui",
     ":feature:posts:public", ":feature:posts:internal",

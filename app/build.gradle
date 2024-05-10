@@ -30,6 +30,7 @@ dependencies {
 
     implementation projects.common.coroutines
     implementation projects.common.retrofit
+    implementation projects.common.session
     implementation projects.common.theme
     implementation projects.common.ui
     implementation projects.feature.posts.internal
