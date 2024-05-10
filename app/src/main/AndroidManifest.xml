@@ -23,6 +23,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.songify.app.EntryPointActivity2"
+            android:exported="true"
+            android:theme="@style/Theme.ComposeSample.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "Songify://callback” -->
+                <data
+                    android:host="callback"
+                    android:scheme="Songify" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

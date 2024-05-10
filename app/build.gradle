@@ -5,12 +5,22 @@ plugins {
 android {
     defaultConfig {
         applicationId "com.songify"
+        manifestPlaceholders = [redirectSchemeName: "Songify", redirectHostName: "callback"]
+    }
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword 'android'
+//            keyAlias 'example_alias'
+//            keyPassword 'example'
+        }
     }
 }
 
 dependencies {
     implementation libs.bundles.paging
     implementation libs.material
+    implementation libs.spotify.auth
 
     implementation projects.common.coroutines
     implementation projects.common.retrofit
