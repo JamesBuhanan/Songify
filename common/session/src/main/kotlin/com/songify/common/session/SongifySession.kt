@@ -1,11 +1,10 @@
 package com.songify.common.session
 
-//object SongifySession {
-    var accessToken: String?
-        get() {
-            return this
-        }
-        set(value) {
+import com.songify.common.di.AppScope
+import com.songify.common.di.SingleIn
+import javax.inject.Inject
 
-        }
-//}
+@SingleIn(AppScope::class)
+class SongifySession @Inject constructor() {
+    var accessToken: String? = null
+}

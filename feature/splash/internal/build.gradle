@@ -10,5 +10,7 @@ songify {
 
 dependencies {
     api projects.feature.splash.public
+
+    implementation projects.common.session
     implementation projects.feature.posts.public
 }
