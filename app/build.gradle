@@ -24,7 +24,9 @@ android {
 }
 
 dependencies {
+    implementation libs.androidx.lifecycle.runtime.ktx
     implementation libs.bundles.paging
+    implementation libs.core.splashscreen
     implementation libs.material
     implementation libs.spotify.auth
 

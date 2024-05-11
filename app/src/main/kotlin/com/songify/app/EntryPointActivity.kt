@@ -5,6 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.lifecycle.lifecycleScope
 import com.slack.circuit.backstack.rememberSaveableBackStack
 import com.slack.circuit.foundation.Circuit
 import com.slack.circuit.foundation.CircuitCompositionLocals
@@ -14,11 +16,13 @@ import com.songify.common.di.ActivityKey
 import com.songify.common.di.AppScope
 import com.songify.common.session.SongifySession
 import com.songify.common.theme.SongifyTheme
-import com.songify.feature.splash.SplashScreen
+import com.songify.feature.posts.PostsScreen
 import com.spotify.sdk.android.auth.AuthorizationClient
 import com.spotify.sdk.android.auth.AuthorizationRequest
 import com.spotify.sdk.android.auth.AuthorizationResponse
 import com.squareup.anvil.annotations.ContributesMultibinding
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 const val CLIENT_ID = "9ec02e7f10514c15842363d73f64f985"
@@ -34,28 +38,23 @@ class EntryPointActivity @Inject constructor(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        fetchToken()
+        lifecycleScope.launch {
+            val taskOne = async { installSplashScreen() }
+            val taskTwo = async { fetchToken() }
 
-        setContent {
-            val backStack = rememberSaveableBackStack(SplashScreen)
-            val navigator = rememberCircuitNavigator(backStack)
-
-            SongifyTheme {
-                CircuitCompositionLocals(circuit) {
-                    NavigableCircuitContent(navigator, backStack)
-                }
-            }
+            taskOne.await()
+            taskTwo.await()
         }
     }
 
     // val scopes = arrayOf(
-    //     "playlist-read-private",
-    //     "playlist-read-collaborative",
-    //     "streaming",
-    //     "user-library-read",
-    //     "user-read-private",
-    //     "user-top-read"
-    // )
+//     "playlist-read-private",
+//     "playlist-read-collaborative",
+//     "streaming",
+//     "user-library-read",
+//     "user-read-private",
+//     "user-top-read"
+// )
     private fun fetchToken() {
         val request = AuthorizationRequest.Builder(
             CLIENT_ID,
@@ -75,6 +74,18 @@ class EntryPointActivity @Inject constructor(
         val response = AuthorizationClient.getResponse(resultCode, data)
         if (requestCode == AUTH_TOKEN_REQUEST_CODE) {
             songifySession.accessToken = response.accessToken
+            lifecycleScope.launch {
+                setContent {
+                    val backStack = rememberSaveableBackStack(PostsScreen)
+                    val navigator = rememberCircuitNavigator(backStack)
+
+                    SongifyTheme {
+                        CircuitCompositionLocals(circuit) {
+                            NavigableCircuitContent(navigator, backStack)
+                        }
+                    }
+                }
+            }
         }
     }
 }
