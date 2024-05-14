@@ -1,8 +1,5 @@
 package com.songify.remote.musicservice
 
-import com.songify.remote.musicservice.SearchQueryType
-import com.songify.remote.musicservice.buildSearchQueryWithTypes
-
 /**
  * An object that contains the different end points
  * used by [SpotifyService]. It also contains certain defaults for the
