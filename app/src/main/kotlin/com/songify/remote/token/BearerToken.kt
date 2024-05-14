@@ -1,5 +1,7 @@
 package com.example.musify.data.remote.token
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import java.time.LocalDateTime
 
 /**
@@ -23,6 +25,7 @@ data class BearerToken(
 }
 
 val BearerToken.isExpired: Boolean
+    @RequiresApi(Build.VERSION_CODES.O)
     get() {
         val timeOfExpiration = timeOfCreation.plusSeconds(secondsUntilExpiration.toLong())
         return LocalDateTime.now() > timeOfExpiration

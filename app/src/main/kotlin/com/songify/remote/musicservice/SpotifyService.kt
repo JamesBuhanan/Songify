@@ -1,6 +1,6 @@
 package com.songify.remote.musicservice
 
-import com.songify.remote.token.BearerToken
+import com.example.musify.data.remote.token.BearerToken
 import com.songify.domain.Genre
 import retrofit2.http.GET
 import retrofit2.http.Header

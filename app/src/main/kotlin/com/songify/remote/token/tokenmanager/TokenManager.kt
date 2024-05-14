@@ -1,7 +1,7 @@
 package com.songify.remote.token.tokenmanager
 
-import com.example.musify.data.remote.musicservice.SpotifyEndPoints
 import com.example.musify.data.remote.token.AccessTokenResponse
+import com.songify.remote.musicservice.SpotifyEndPoints
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.Header
