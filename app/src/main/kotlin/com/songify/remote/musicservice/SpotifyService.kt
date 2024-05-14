@@ -2,6 +2,19 @@ package com.songify.remote.musicservice
 
 import com.example.musify.data.remote.token.BearerToken
 import com.songify.domain.Genre
+import com.songify.remote.response.AlbumResponse
+import com.songify.remote.response.AlbumsMetadataResponse
+import com.songify.remote.response.ArtistResponse
+import com.songify.remote.response.BrowseCategoriesResponse
+import com.songify.remote.response.EpisodeResponse
+import com.songify.remote.response.EpisodesWithPreviewUrlResponse
+import com.songify.remote.response.FeaturedPlaylistsResponse
+import com.songify.remote.response.NewReleasesResponse
+import com.songify.remote.response.PlaylistItemsResponse
+import com.songify.remote.response.PlaylistsForSpecificCategoryResponse
+import com.songify.remote.response.SearchResultsResponse
+import com.songify.remote.response.ShowResponse
+import com.songify.remote.response.TracksWithAlbumMetadataListResponse
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Path
