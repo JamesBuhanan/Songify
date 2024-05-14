@@ -1,5 +1,6 @@
 package com.songify.remote.musicservice
-
+//I started bringing in the musicservice from musify and then I began bringing in other folders
+//with responses and tokens and what not to help get an idea of whats required to make it work
 /**
  * An object that contains the different end points
  * used by [SpotifyService]. It also contains certain defaults for the
