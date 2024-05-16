@@ -12,6 +12,7 @@ import com.songify.extension.coroutines
 import com.songify.extension.dynamicNamespace
 import com.songify.extension.jetpackCompose
 import com.songify.extension.libs
+import com.songify.extension.moshi
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
@@ -32,6 +33,7 @@ class SongifyAndroidApplicationPlugin : Plugin<Project> {
             // gradleDependenciesSorter()
             circuit()
             anvil()
+            moshi()
             jetpackCompose()
             coroutines()
 

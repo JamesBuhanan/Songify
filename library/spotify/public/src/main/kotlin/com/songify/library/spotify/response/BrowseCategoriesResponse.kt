@@ -1,4 +1,4 @@
-package com.songify.remote.response
+package com.songify.library.spotify.response
 
 /**
  * A response object that contains a list of different [categories] that

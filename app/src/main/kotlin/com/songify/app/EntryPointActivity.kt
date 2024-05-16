@@ -17,11 +17,11 @@ import com.songify.common.di.AppScope
 import com.songify.common.session.SongifySession
 import com.songify.common.theme.SongifyTheme
 import com.songify.feature.posts.PostsScreen
+import com.songify.library.spotify.usecase.GetNewReleases
 import com.spotify.sdk.android.auth.AuthorizationClient
 import com.spotify.sdk.android.auth.AuthorizationRequest
 import com.spotify.sdk.android.auth.AuthorizationResponse
 import com.squareup.anvil.annotations.ContributesMultibinding
-import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -33,17 +33,15 @@ const val AUTH_TOKEN_REQUEST_CODE = 1337
 class EntryPointActivity @Inject constructor(
     private val circuit: Circuit,
     private val songifySession: SongifySession,
+    private val getNewReleases: GetNewReleases,
 ) : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         lifecycleScope.launch {
-            val taskOne = async { installSplashScreen() }
-            val taskTwo = async { fetchToken() }
-
-            taskOne.await()
-            taskTwo.await()
+            installSplashScreen()
+            fetchToken()
         }
     }
 
@@ -74,7 +72,10 @@ class EntryPointActivity @Inject constructor(
         val response = AuthorizationClient.getResponse(resultCode, data)
         if (requestCode == AUTH_TOKEN_REQUEST_CODE) {
             songifySession.accessToken = response.accessToken
+
             lifecycleScope.launch {
+                val test = getNewReleases()
+                val breakpointHere = test
                 setContent {
                     val backStack = rememberSaveableBackStack(PostsScreen)
                     val navigator = rememberCircuitNavigator(backStack)

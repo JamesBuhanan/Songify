@@ -1,4 +1,4 @@
-package com.songify.remote.musicservice
+package com.songify.library.spotify
 //I started bringing in the musicservice from musify and then I began bringing in other folders
 //with responses and tokens and what not to help get an idea of whats required to make it work
 /**

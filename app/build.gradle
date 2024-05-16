@@ -38,4 +38,5 @@ dependencies {
     implementation projects.feature.posts.internal
     implementation projects.feature.splash.internal
     implementation projects.library.posts.internal
+    implementation projects.library.spotify.internal
 }

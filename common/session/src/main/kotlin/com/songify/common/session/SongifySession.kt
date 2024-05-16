@@ -7,4 +7,8 @@ import javax.inject.Inject
 @SingleIn(AppScope::class)
 class SongifySession @Inject constructor() {
     var accessToken: String? = null
+
+    fun requireAccessToken(): String {
+        return requireNotNull(accessToken)
+    }
 }

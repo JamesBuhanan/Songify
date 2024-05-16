@@ -1,6 +1,4 @@
-package com.songify.domain
-
-import com.songify.remote.musicservice.SupportedSpotifyGenres
+package com.songify.library.spotify
 
 /**
  * A class that models a specific genre.

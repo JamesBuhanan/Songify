@@ -1,20 +1,18 @@
-package com.songify.remote.musicservice
+package com.songify.library.spotify
 
-import com.example.musify.data.remote.token.BearerToken
-import com.songify.domain.Genre
-import com.songify.remote.response.AlbumResponse
-import com.songify.remote.response.AlbumsMetadataResponse
-import com.songify.remote.response.ArtistResponse
-import com.songify.remote.response.BrowseCategoriesResponse
-import com.songify.remote.response.EpisodeResponse
-import com.songify.remote.response.EpisodesWithPreviewUrlResponse
-import com.songify.remote.response.FeaturedPlaylistsResponse
-import com.songify.remote.response.NewReleasesResponse
-import com.songify.remote.response.PlaylistItemsResponse
-import com.songify.remote.response.PlaylistsForSpecificCategoryResponse
-import com.songify.remote.response.SearchResultsResponse
-import com.songify.remote.response.ShowResponse
-import com.songify.remote.response.TracksWithAlbumMetadataListResponse
+import com.songify.library.spotify.response.AlbumResponse
+import com.songify.library.spotify.response.AlbumsMetadataResponse
+import com.songify.library.spotify.response.ArtistResponse
+import com.songify.library.spotify.response.BrowseCategoriesResponse
+import com.songify.library.spotify.response.EpisodeResponse
+import com.songify.library.spotify.response.EpisodesWithPreviewUrlResponse
+import com.songify.library.spotify.response.FeaturedPlaylistsResponse
+import com.songify.library.spotify.response.NewReleasesResponse
+import com.songify.library.spotify.response.PlaylistItemsResponse
+import com.songify.library.spotify.response.PlaylistsForSpecificCategoryResponse
+import com.songify.library.spotify.response.SearchResultsResponse
+import com.songify.library.spotify.response.ShowResponse
+import com.songify.library.spotify.response.TracksWithAlbumMetadataListResponse
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Path
@@ -93,14 +91,14 @@ interface SpotifyService {
     @GET(SpotifyEndPoints.SPECIFIC_ARTIST_ENDPOINT)
     suspend fun getArtistInfoWithId(
         @Path("id") artistId: String,
-        @Header("Authorization") token: BearerToken,
+        @Header("Authorization") token: String,
     ): ArtistResponse
 
     @GET(SpotifyEndPoints.SPECIFIC_ARTIST_ALBUMS_ENDPOINT)
     suspend fun getAlbumsOfArtistWithId(
         @Path("id") artistId: String,
         @Query("market") market: String,
-        @Header("Authorization") token: BearerToken,
+        @Header("Authorization") token: String,
         @Query("limit") limit: Int = 20,
         @Query("offset") offset: Int = 0,
         @Query("include_groups") includeGroups: String? = null,
@@ -110,21 +108,21 @@ interface SpotifyService {
     suspend fun getTopTenTracksForArtistWithId(
         @Path("id") artistId: String,
         @Query("market") market: String,
-        @Header("Authorization") token: BearerToken
+        @Header("Authorization") token: String
     ): TracksWithAlbumMetadataListResponse
 
     @GET(SpotifyEndPoints.SPECIFIC_ALBUM_ENDPOINT)
     suspend fun getAlbumWithId(
         @Path("id") albumId: String,
         @Query("market") market: String,
-        @Header("Authorization") token: BearerToken
+        @Header("Authorization") token: String
     ): AlbumResponse
 
     @GET(SpotifyEndPoints.SEARCH_ENDPOINT)
     suspend fun search(
         @Query("q") searchQuery: String,
         @Query("market") market: String,
-        @Header("Authorization") token: BearerToken,
+        @Header("Authorization") token: String,
         @Query("limit") limit: Int = 20,
         @Query("offset") offset: Int = 0,
         @Query("type") type: String = SpotifyEndPoints.Defaults.defaultSearchQueryTypes,
@@ -134,7 +132,7 @@ interface SpotifyService {
     suspend fun getTracksForGenre(
         @Query("seed_genres") genre: SupportedSpotifyGenres,
         @Query("market") market: String,
-        @Header("Authorization") token: BearerToken,
+        @Header("Authorization") token: String,
         @Query("limit") limit: Int = 20
     ): TracksWithAlbumMetadataListResponse
 
@@ -142,22 +140,22 @@ interface SpotifyService {
     suspend fun getTracksForPlaylist(
         @Path("playlist_id") playlistId: String,
         @Query("market") market: String,
-        @Header("Authorization") token: BearerToken,
+        @Header("Authorization") token: String,
         @Query("limit") limit: Int = 20,
         @Query("offset") offset: Int = 0
     ): PlaylistItemsResponse
 
     @GET(SpotifyEndPoints.NEW_RELEASES_ENDPOINT)
     suspend fun getNewReleases(
-        @Header("Authorization") token: BearerToken,
-        @Query("country") market: String,
+        @Header("Authorization") token: String,
+//        @Query("country") market: String,
         @Query("limit") limit: Int = 20,
         @Query("offset") offset: Int = 0
     ): NewReleasesResponse
 
     @GET(SpotifyEndPoints.FEATURED_PLAYLISTS)
     suspend fun getFeaturedPlaylists(
-        @Header("Authorization") token: BearerToken,
+        @Header("Authorization") token: String,
         @Query("country") market: String,
         @Query("locale") locale: String = "", // ISO 639-1 language code and an uppercase ISO 3166-1 alpha-2 country code, joined by an underscore.
         @Query("timestamp") timestamp: String = "", // A timestamp in ISO 8601 format: yyyy-MM-ddTHH:mm:ss
@@ -167,7 +165,7 @@ interface SpotifyService {
 
     @GET(SpotifyEndPoints.BROWSE_CATEGORIES_FOR_COUNTRY_AND_LOCALE_ENDPOINT)
     suspend fun getBrowseCategories(
-        @Header("Authorization") token: BearerToken,
+        @Header("Authorization") token: String,
         @Query("country") market: String,
         @Query("locale") locale: String, // ISO 639-1 language code and an uppercase ISO 3166-1 alpha-2 country code, joined by an underscore.
         @Query("limit") limit: Int = 20,
@@ -176,7 +174,7 @@ interface SpotifyService {
 
     @GET(SpotifyEndPoints.PLAYLISTS_FOR_BESPOKE_CATEGORY)
     suspend fun getPlaylistsForCategory(
-        @Header("Authorization") token: BearerToken,
+        @Header("Authorization") token: String,
         @Path("category_id") categoryId: String,
         @Query("country") market: String,
         @Query("limit") limit: Int = 20,
@@ -185,21 +183,21 @@ interface SpotifyService {
 
     @GET(SpotifyEndPoints.SPECIFIC_EPISODE_ENDPOINT)
     suspend fun getEpisodeWithId(
-        @Header("Authorization") token: BearerToken,
+        @Header("Authorization") token: String,
         @Path("id") id: String,
         @Query("market") market: String
     ): EpisodeResponse
 
     @GET(SpotifyEndPoints.SPECIFIC_SHOW_ENDPOINT)
     suspend fun getShowWithId(
-        @Header("Authorization") token: BearerToken,
+        @Header("Authorization") token: String,
         @Path("id") id: String,
         @Query("market") market: String
     ): ShowResponse
 
     @GET(SpotifyEndPoints.SHOW_EPISODES_ENDPOINT)
     suspend fun getEpisodesForShowWithId(
-        @Header("Authorization") token: BearerToken,
+        @Header("Authorization") token: String,
         @Path("id") id: String,
         @Query("market") market: String,
         @Query("limit") limit: Int = 20,

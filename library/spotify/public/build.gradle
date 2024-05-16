@@ -1,0 +1,8 @@
+plugins {
+    id 'songify.kotlin.library'
+}
+
+songify {
+    moshi()
+    retrofit()
+}
