@@ -1,0 +1,19 @@
+plugins {
+    id "songify.android.library"
+}
+
+songify {
+    jetpackCompose()
+    coroutines()
+    feature()
+    circuit()
+    anvil()
+}
+
+dependencies {
+    api projects.feature.spotify.public
+
+    implementation libs.bundles.paging
+    implementation libs.coil
+    implementation projects.library.spotify.public
+}
