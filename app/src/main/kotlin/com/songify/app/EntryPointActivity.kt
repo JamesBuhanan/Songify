@@ -6,7 +6,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.lifecycle.lifecycleScope
 import com.slack.circuit.backstack.rememberSaveableBackStack
 import com.slack.circuit.foundation.Circuit
 import com.slack.circuit.foundation.CircuitCompositionLocals
@@ -16,13 +15,11 @@ import com.songify.common.di.ActivityKey
 import com.songify.common.di.AppScope
 import com.songify.common.session.SongifySession
 import com.songify.common.theme.SongifyTheme
-import com.songify.feature.posts.PostsScreen
-import com.songify.library.spotify.usecase.GetNewReleases
+import com.songify.feature.spotify.SpotifyScreen
 import com.spotify.sdk.android.auth.AuthorizationClient
 import com.spotify.sdk.android.auth.AuthorizationRequest
 import com.spotify.sdk.android.auth.AuthorizationResponse
 import com.squareup.anvil.annotations.ContributesMultibinding
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 const val CLIENT_ID = "9ec02e7f10514c15842363d73f64f985"
@@ -33,16 +30,13 @@ const val AUTH_TOKEN_REQUEST_CODE = 1337
 class EntryPointActivity @Inject constructor(
     private val circuit: Circuit,
     private val songifySession: SongifySession,
-    private val getNewReleases: GetNewReleases,
 ) : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        lifecycleScope.launch {
-            installSplashScreen()
-            fetchToken()
-        }
+        installSplashScreen()
+        fetchToken()
     }
 
     // val scopes = arrayOf(
@@ -73,17 +67,13 @@ class EntryPointActivity @Inject constructor(
         if (requestCode == AUTH_TOKEN_REQUEST_CODE) {
             songifySession.accessToken = response.accessToken
 
-            lifecycleScope.launch {
-                val test = getNewReleases()
-                val breakpointHere = test
-                setContent {
-                    val backStack = rememberSaveableBackStack(PostsScreen)
-                    val navigator = rememberCircuitNavigator(backStack)
+            setContent {
+                val backStack = rememberSaveableBackStack(SpotifyScreen)
+                val navigator = rememberCircuitNavigator(backStack)
 
-                    SongifyTheme {
-                        CircuitCompositionLocals(circuit) {
-                            NavigableCircuitContent(navigator, backStack)
-                        }
+                SongifyTheme {
+                    CircuitCompositionLocals(circuit) {
+                        NavigableCircuitContent(navigator, backStack)
                     }
                 }
             }
