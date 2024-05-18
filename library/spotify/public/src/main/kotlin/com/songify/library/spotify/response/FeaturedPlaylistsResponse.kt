@@ -1,7 +1,6 @@
-package com.songify.remote.response
+package com.songify.library.spotify.response
 
-import com.example.musify.domain.FeaturedPlaylists
-import com.fasterxml.jackson.annotation.JsonProperty
+import com.squareup.moshi.Json
 
 /**
  * A response class that contains an instance of [FeaturedPlaylistsResponse]
@@ -10,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
  * description of all the playlists.
  */
 data class FeaturedPlaylistsResponse(
-    @JsonProperty("message") val playlistsDescription: String,
+    @Json(name = "message") val playlistsDescription: String,
     val playlists: FeaturedPlaylistItemsResponse
 ) {
     /**
@@ -18,13 +17,3 @@ data class FeaturedPlaylistsResponse(
      */
     data class FeaturedPlaylistItemsResponse(val items: List<PlaylistMetadataResponse>)
 }
-
-/**
- * A mapper method used to map an instance of [FeaturedPlaylistsResponse] to an
- * instance of [FeaturedPlaylists].
- */
-fun FeaturedPlaylistsResponse.toFeaturedPlaylists(): FeaturedPlaylists = FeaturedPlaylists(
-    playlistsDescription = playlistsDescription,
-    playlists = this.playlists.items.map { it.toPlaylistSearchResult() }
-)
-

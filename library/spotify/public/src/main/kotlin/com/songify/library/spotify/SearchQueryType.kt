@@ -1,4 +1,4 @@
-package com.songify.remote.musicservice
+package com.songify.library.spotify
 
 /**
  * An enum that contains the different applicable values

@@ -1,0 +1,14 @@
+plugins {
+    id 'songify.android.library'
+}
+
+songify {
+    retrofit()
+    anvil()
+}
+
+dependencies {
+    api projects.library.spotify.public
+
+    implementation projects.common.session
+}

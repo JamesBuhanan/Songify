@@ -1,4 +1,4 @@
-package com.songify.remote.response
+package com.songify.library.spotify.response
 
 /**
  * A response object the contains information about an image's [height],
