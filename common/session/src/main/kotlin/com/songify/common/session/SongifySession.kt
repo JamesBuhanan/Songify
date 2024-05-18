@@ -9,6 +9,6 @@ class SongifySession @Inject constructor() {
     var accessToken: String? = null
 
     fun requireAccessToken(): String {
-        return requireNotNull(accessToken)
+        return "Bearer " + requireNotNull(accessToken)
     }
 }
