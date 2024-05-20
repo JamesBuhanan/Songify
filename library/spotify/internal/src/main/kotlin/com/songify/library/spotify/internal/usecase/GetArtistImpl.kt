@@ -5,9 +5,7 @@ import com.songify.common.di.SingleIn
 import com.songify.common.session.SongifySession
 import com.songify.library.spotify.SpotifyService
 import com.songify.library.spotify.response.ArtistResponse
-import com.songify.library.spotify.response.NewReleasesResponse
 import com.songify.library.spotify.usecase.GetArtist
-import com.songify.library.spotify.usecase.GetNewReleases
 import com.squareup.anvil.annotations.ContributesBinding
 import retrofit2.HttpException
 import javax.inject.Inject
