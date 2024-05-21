@@ -62,7 +62,6 @@ interface SpotifyService {
     @GET(SpotifyEndPoints.TOP_TRACKS_ENDPOINT)
     suspend fun getTopTenTracksForArtistWithId(
         @Path("id") artistId: String,
-        @Query("market") market: String,
         @Header("Authorization") token: String
     ): TracksWithAlbumMetadataListResponse
 
