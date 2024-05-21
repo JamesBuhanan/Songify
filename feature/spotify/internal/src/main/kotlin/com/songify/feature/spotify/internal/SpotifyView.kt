@@ -13,7 +13,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
-import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import coil.request.ImageRequest
 import com.slack.circuit.codegen.annotations.CircuitInject
@@ -51,17 +50,16 @@ fun ShowSpotify(postsState: SpotifyState.Success) {
     LazyColumn(
         contentPadding = PaddingValues(bottom = 16.dp),
         modifier = Modifier.testTag("blah")
+
     ) {
         items(postsState.newReleasesResponse.albums.items) { item ->
-        ImageResponse(item.images.first().url)
-    }
-        items(postsState.newReleasesResponse.albums.items) { item ->
+            ImageResponse(item.images.first().url)
             Text(text = item.name)
         }
     }
 
 }
-@OptIn(ExperimentalCoilApi::class)
+
 @Composable
 fun ImageResponse(
     thumbnailUrl: Any?,
@@ -78,4 +76,3 @@ fun ImageResponse(
         contentDescription = "Album item thumbnail picture",
     )
 }
-
