@@ -53,7 +53,6 @@ interface SpotifyService {
     @GET(SpotifyEndPoints.SPECIFIC_ARTIST_ALBUMS_ENDPOINT)
     suspend fun getAlbumsOfArtistWithId(
         @Path("id") artistId: String,
-        @Query("market") market: String,
         @Header("Authorization") token: String,
         @Query("limit") limit: Int = 20,
         @Query("offset") offset: Int = 0,

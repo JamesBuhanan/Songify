@@ -8,8 +8,8 @@ import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.presenter.Presenter
 import com.songify.common.di.AppScope
 import com.songify.feature.spotify.SpotifyScreen
-import com.songify.library.spotify.internal.usecase.GetArtistImpl
 import com.songify.library.spotify.usecase.GetArtist
+import com.songify.library.spotify.usecase.GetArtistAlbums
 import com.songify.library.spotify.usecase.GetNewReleases
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
@@ -17,13 +17,15 @@ import dagger.assisted.AssistedInject
 
 class SpotifyPresenter @AssistedInject constructor(
     private val getNewReleases: GetNewReleases,
-    private val getArtist : GetArtist,
+    private val getArtist: GetArtist,
+    private val getArtistAlbums: GetArtistAlbums,
     @Assisted private val navigator: Navigator,
 ) : Presenter<SpotifyState> {
     @Composable
     override fun present(): SpotifyState {
         val state by produceState<SpotifyState>(SpotifyState.Loading) {
-            val test = getArtist("7AB7bdCR5saJ0b9C4RuceX")
+//            val test = getArtist("7AB7bdCR5saJ0b9C4RuceX")
+            val test2 = getArtistAlbums("7AB7bdCR5saJ0b9C4RuceX")
             getNewReleases().fold({ newReleasesResponse ->
                 value = SpotifyState.Success(
                     newReleasesResponse = newReleasesResponse,
