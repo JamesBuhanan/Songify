@@ -68,7 +68,6 @@ interface SpotifyService {
     @GET(SpotifyEndPoints.SPECIFIC_ALBUM_ENDPOINT)
     suspend fun getAlbumWithId(
         @Path("id") albumId: String,
-        @Query("market") market: String,
         @Header("Authorization") token: String
     ): AlbumResponse
 

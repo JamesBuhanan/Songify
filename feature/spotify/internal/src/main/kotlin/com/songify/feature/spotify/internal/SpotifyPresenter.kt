@@ -8,6 +8,7 @@ import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.presenter.Presenter
 import com.songify.common.di.AppScope
 import com.songify.feature.spotify.SpotifyScreen
+import com.songify.library.spotify.usecase.GetAlbum
 import com.songify.library.spotify.usecase.GetArtist
 import com.songify.library.spotify.usecase.GetArtistAlbums
 import com.songify.library.spotify.usecase.GetNewReleases
@@ -21,6 +22,7 @@ class SpotifyPresenter @AssistedInject constructor(
     private val getArtist: GetArtist,
     private val getArtistAlbums: GetArtistAlbums,
     private val getTopTracks: GetTopTracks,
+    private val getAlbum: GetAlbum,
     @Assisted private val navigator: Navigator,
 ) : Presenter<SpotifyState> {
     @Composable
@@ -28,8 +30,12 @@ class SpotifyPresenter @AssistedInject constructor(
         val state by produceState<SpotifyState>(SpotifyState.Loading) {
 //            val test = getArtist("7AB7bdCR5saJ0b9C4RuceX")
 //            val test2 = getArtistAlbums("7AB7bdCR5saJ0b9C4RuceX")
-            val test3 = getTopTracks("7AB7bdCR5saJ0b9C4RuceX")
-            val test = test3
+            getTopTracks("7AB7bdCR5saJ0b9C4RuceX").fold({
+                val albumId = it.tracks.first().albumMetadata.id
+                val test4 = getAlbum(albumId)
+            },{
+
+            })
             getNewReleases().fold({ newReleasesResponse ->
                 value = SpotifyState.Success(
                     newReleasesResponse = newReleasesResponse,
