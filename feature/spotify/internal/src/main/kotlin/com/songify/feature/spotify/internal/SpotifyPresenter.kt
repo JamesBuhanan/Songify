@@ -8,11 +8,13 @@ import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.presenter.Presenter
 import com.songify.common.di.AppScope
 import com.songify.feature.spotify.SpotifyScreen
+import com.songify.library.spotify.SupportedSpotifyGenres
 import com.songify.library.spotify.usecase.GetAlbum
 import com.songify.library.spotify.usecase.GetArtist
 import com.songify.library.spotify.usecase.GetArtistAlbums
 import com.songify.library.spotify.usecase.GetNewReleases
 import com.songify.library.spotify.usecase.GetTopTracks
+import com.songify.library.spotify.usecase.GetTrackforGenre
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
@@ -23,6 +25,8 @@ class SpotifyPresenter @AssistedInject constructor(
     private val getArtistAlbums: GetArtistAlbums,
     private val getTopTracks: GetTopTracks,
     private val getAlbum: GetAlbum,
+    private val getTrackforGenre: GetTrackforGenre,
+
     @Assisted private val navigator: Navigator,
 ) : Presenter<SpotifyState> {
     @Composable
@@ -33,6 +37,7 @@ class SpotifyPresenter @AssistedInject constructor(
             getTopTracks("7AB7bdCR5saJ0b9C4RuceX").fold({
                 val albumId = it.tracks.first().albumMetadata.id
                 val test4 = getAlbum(albumId)
+                val test5 = getTrackforGenre(SupportedSpotifyGenres.AMBIENT, limit = 20)
             },{
 
             })

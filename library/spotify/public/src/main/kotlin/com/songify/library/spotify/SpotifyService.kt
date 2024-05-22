@@ -84,7 +84,6 @@ interface SpotifyService {
     @GET(SpotifyEndPoints.RECOMMENDATIONS_ENDPOINT)
     suspend fun getTracksForGenre(
         @Query("seed_genres") genre: SupportedSpotifyGenres,
-        @Query("market") market: String,
         @Header("Authorization") token: String,
         @Query("limit") limit: Int = 20
     ): TracksWithAlbumMetadataListResponse
