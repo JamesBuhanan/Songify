@@ -5,20 +5,18 @@ import com.songify.common.di.SingleIn
 import com.songify.common.session.SongifySession
 import com.songify.library.spotify.SpotifyService
 import com.songify.library.spotify.SupportedSpotifyGenres
-import com.songify.library.spotify.response.AlbumResponse
 import com.songify.library.spotify.response.TracksWithAlbumMetadataListResponse
-import com.songify.library.spotify.usecase.GetAlbum
-import com.songify.library.spotify.usecase.GetTrackforGenre
+import com.songify.library.spotify.usecase.GetTracksForGenre
 import com.squareup.anvil.annotations.ContributesBinding
 import retrofit2.HttpException
 import javax.inject.Inject
 
 @SingleIn(AppScope::class)
 @ContributesBinding(AppScope::class)
-class GetTrackForGenreImpl @Inject constructor(
+class GetTracksForGenreImpl @Inject constructor(
     private val spotifyService: SpotifyService,
     private val songifySession: SongifySession,
-) : GetTrackforGenre {
+) : GetTracksForGenre {
     override suspend operator fun invoke(genre: SupportedSpotifyGenres, limit: Int): Result<TracksWithAlbumMetadataListResponse> {
         return try {
             val artist = spotifyService.getTracksForGenre(

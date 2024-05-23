@@ -12,9 +12,10 @@ import com.songify.library.spotify.SupportedSpotifyGenres
 import com.songify.library.spotify.usecase.GetAlbum
 import com.songify.library.spotify.usecase.GetArtist
 import com.songify.library.spotify.usecase.GetArtistAlbums
+import com.songify.library.spotify.usecase.GetFeaturedPlaylists
 import com.songify.library.spotify.usecase.GetNewReleases
 import com.songify.library.spotify.usecase.GetTopTracks
-import com.songify.library.spotify.usecase.GetTrackforGenre
+import com.songify.library.spotify.usecase.GetTracksForGenre
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
@@ -25,7 +26,8 @@ class SpotifyPresenter @AssistedInject constructor(
     private val getArtistAlbums: GetArtistAlbums,
     private val getTopTracks: GetTopTracks,
     private val getAlbum: GetAlbum,
-    private val getTrackforGenre: GetTrackforGenre,
+    private val getTracksForGenre: GetTracksForGenre,
+    private val getFeaturedPlaylists: GetFeaturedPlaylists,
 
     @Assisted private val navigator: Navigator,
 ) : Presenter<SpotifyState> {
@@ -37,7 +39,9 @@ class SpotifyPresenter @AssistedInject constructor(
             getTopTracks("7AB7bdCR5saJ0b9C4RuceX").fold({
                 val albumId = it.tracks.first().albumMetadata.id
                 val test4 = getAlbum(albumId)
-                val test5 = getTrackforGenre(SupportedSpotifyGenres.AMBIENT, limit = 20)
+                val test5 = getTracksForGenre(SupportedSpotifyGenres.AMBIENT, limit = 20)
+                val test6 = getFeaturedPlaylists(locale = "", timestamp = "", limit = 20, offset = 0)
+
             },{
 
             })

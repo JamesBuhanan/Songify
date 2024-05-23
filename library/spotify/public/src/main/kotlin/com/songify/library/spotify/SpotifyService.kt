@@ -91,7 +91,6 @@ interface SpotifyService {
     @GET(SpotifyEndPoints.PLAYLIST_TRACKS_ENDPOINT)
     suspend fun getTracksForPlaylist(
         @Path("playlist_id") playlistId: String,
-        @Query("market") market: String,
         @Header("Authorization") token: String,
         @Query("limit") limit: Int = 20,
         @Query("offset") offset: Int = 0
@@ -108,7 +107,6 @@ interface SpotifyService {
     @GET(SpotifyEndPoints.FEATURED_PLAYLISTS)
     suspend fun getFeaturedPlaylists(
         @Header("Authorization") token: String,
-        @Query("country") market: String,
         @Query("locale") locale: String = "", // ISO 639-1 language code and an uppercase ISO 3166-1 alpha-2 country code, joined by an underscore.
         @Query("timestamp") timestamp: String = "", // A timestamp in ISO 8601 format: yyyy-MM-ddTHH:mm:ss
         @Query("limit") limit: Int = 20,

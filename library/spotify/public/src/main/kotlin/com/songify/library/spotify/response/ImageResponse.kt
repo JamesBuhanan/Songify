@@ -5,7 +5,7 @@ package com.songify.library.spotify.response
  * [width] and [url].
  */
 data class ImageResponse(
-    val height: Int,
-    val width: Int,
+    val height: Int?,
+    val width: Int?,
     val url: String
 )
