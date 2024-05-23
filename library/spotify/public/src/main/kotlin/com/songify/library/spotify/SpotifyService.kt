@@ -139,7 +139,6 @@ interface SpotifyService {
     suspend fun getShowWithId(
         @Header("Authorization") token: String,
         @Path("id") id: String,
-        @Query("market") market: String
     ): ShowResponse
 
     @GET(SpotifyEndPoints.SHOW_EPISODES_ENDPOINT)
