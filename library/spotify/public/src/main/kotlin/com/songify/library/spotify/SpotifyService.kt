@@ -116,7 +116,6 @@ interface SpotifyService {
     @GET(SpotifyEndPoints.BROWSE_CATEGORIES_FOR_COUNTRY_AND_LOCALE_ENDPOINT)
     suspend fun getBrowseCategories(
         @Header("Authorization") token: String,
-        @Query("country") market: String,
         @Query("locale") locale: String, // ISO 639-1 language code and an uppercase ISO 3166-1 alpha-2 country code, joined by an underscore.
         @Query("limit") limit: Int = 20,
         @Query("offset") offset: Int = 0
