@@ -16,6 +16,7 @@ import com.songify.library.spotify.usecase.GetFeaturedPlaylists
 import com.songify.library.spotify.usecase.GetNewReleases
 import com.songify.library.spotify.usecase.GetTopTracks
 import com.songify.library.spotify.usecase.GetTracksForGenre
+import com.songify.library.spotify.usecase.GetTracksForPlaylist
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
@@ -28,6 +29,7 @@ class SpotifyPresenter @AssistedInject constructor(
     private val getAlbum: GetAlbum,
     private val getTracksForGenre: GetTracksForGenre,
     private val getFeaturedPlaylists: GetFeaturedPlaylists,
+    private val getTracksForPlaylist: GetTracksForPlaylist,
 
     @Assisted private val navigator: Navigator,
 ) : Presenter<SpotifyState> {
@@ -41,6 +43,7 @@ class SpotifyPresenter @AssistedInject constructor(
                 val test4 = getAlbum(albumId)
                 val test5 = getTracksForGenre(SupportedSpotifyGenres.AMBIENT, limit = 20)
                 val test6 = getFeaturedPlaylists(locale = "", timestamp = "", limit = 20, offset = 0)
+                val test7 = getTracksForPlaylist(playlistId = "", limit = 20, offset = 0)
 
             },{
 
