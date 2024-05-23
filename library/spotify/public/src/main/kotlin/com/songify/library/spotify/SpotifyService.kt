@@ -145,7 +145,6 @@ interface SpotifyService {
     suspend fun getEpisodesForShowWithId(
         @Header("Authorization") token: String,
         @Path("id") id: String,
-        @Query("market") market: String,
         @Query("limit") limit: Int = 20,
         @Query("offset") offset: Int = 0
     ): EpisodesWithPreviewUrlResponse

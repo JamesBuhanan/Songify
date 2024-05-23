@@ -14,6 +14,7 @@ import com.songify.library.spotify.usecase.GetArtist
 import com.songify.library.spotify.usecase.GetArtistAlbums
 import com.songify.library.spotify.usecase.GetBrowseCategories
 import com.songify.library.spotify.usecase.GetEpisodeWithId
+import com.songify.library.spotify.usecase.GetEpisodesForShowWithId
 import com.songify.library.spotify.usecase.GetFeaturedPlaylists
 import com.songify.library.spotify.usecase.GetNewReleases
 import com.songify.library.spotify.usecase.GetPlaylistsForCategory
@@ -38,6 +39,7 @@ class SpotifyPresenter @AssistedInject constructor(
     private val getPlaylistsForCategory: GetPlaylistsForCategory,
     private val getEpisodeWithId: GetEpisodeWithId,
     private val getShowWithId: GetShowWithId,
+    private val getEpisodesForShowWithId: GetEpisodesForShowWithId,
 
     @Assisted private val navigator: Navigator,
 ) : Presenter<SpotifyState> {
@@ -56,7 +58,7 @@ class SpotifyPresenter @AssistedInject constructor(
                 val test9 = getPlaylistsForCategory(categoryId = "", limit = 20, offset = 0)
                 val test10 = getEpisodeWithId(id = "")
                 val test11 = getShowWithId(id = "")
-
+                val test12 = getEpisodesForShowWithId(id = "", offset = 0)
             },{
 
             })
