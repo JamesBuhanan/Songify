@@ -11,7 +11,7 @@ songify {
 }
 
 dependencies {
-    api projects.feature.spotify.public
+    api projects.feature.home.public
 
     implementation libs.bundles.paging
     implementation libs.coil

@@ -17,7 +17,7 @@ include(
     ":common:session",
     ":common:theme",
     ":common:ui",
-    ":feature:spotify:public", ":feature:spotify:internal",
+    ":feature:home:public", ":feature:home:internal",
     ":library:bottom-navigation:public",
     ":library:spotify:public", ":library:spotify:internal",
 )

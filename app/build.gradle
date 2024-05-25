@@ -35,7 +35,7 @@ dependencies {
     implementation projects.common.session
     implementation projects.common.theme
     implementation projects.common.ui
-    implementation projects.feature.spotify.internal
+    implementation projects.feature.home.internal
     implementation projects.library.bottomNavigation.public
     implementation projects.library.spotify.internal
 }

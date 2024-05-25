@@ -1,4 +1,4 @@
-package com.songify.feature.spotify.internal
+package com.songify.feature.home.internal
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -7,8 +7,7 @@ import com.slack.circuit.codegen.annotations.CircuitInject
 import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.presenter.Presenter
 import com.songify.common.di.AppScope
-import com.songify.feature.spotify.SpotifyScreen
-import com.songify.library.spotify.SupportedSpotifyGenres
+import com.songify.feature.home.HomeScreen
 import com.songify.library.spotify.usecase.GetAlbum
 import com.songify.library.spotify.usecase.GetArtist
 import com.songify.library.spotify.usecase.GetArtistAlbums
@@ -26,7 +25,7 @@ import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 
-class SpotifyPresenter @AssistedInject constructor(
+class HomePresenter @AssistedInject constructor(
     private val getNewReleases: GetNewReleases,
     private val getArtist: GetArtist,
     private val getArtistAlbums: GetArtistAlbums,
@@ -41,10 +40,10 @@ class SpotifyPresenter @AssistedInject constructor(
     private val getShowWithId: GetShowWithId,
     private val getEpisodesForShowWithId: GetEpisodesForShowWithId,
     @Assisted private val navigator: Navigator,
-) : Presenter<SpotifyState> {
+) : Presenter<HomeState> {
     @Composable
-    override fun present(): SpotifyState {
-        val state by produceState<SpotifyState>(SpotifyState.Loading) {
+    override fun present(): HomeState {
+        val state by produceState<HomeState>(HomeState.Loading) {
 //            val test = getArtist("7AB7bdCR5saJ0b9C4RuceX")
 //            val test2 = getArtistAlbums("7AB7bdCR5saJ0b9C4RuceX")
 //            getTopTracks("7AB7bdCR5saJ0b9C4RuceX").fold({
@@ -62,25 +61,25 @@ class SpotifyPresenter @AssistedInject constructor(
 //
 //            })
             getNewReleases().fold({ newReleasesResponse ->
-                value = SpotifyState.Success(
+                value = HomeState.Success(
                     newReleasesResponse = newReleasesResponse,
                     eventSink = {
                         when (it) {
-                            SpotifyEvent.TappedBack -> navigator.pop()
+                            HomeEvent.TappedBack -> navigator.pop()
                         }
                     }
                 )
             }, {
-                value = SpotifyState.Error(it.message ?: "No message")
+                value = HomeState.Error(it.message ?: "No message")
             })
         }
 
         return state
     }
 
-    @CircuitInject(SpotifyScreen::class, AppScope::class)
+    @CircuitInject(HomeScreen::class, AppScope::class)
     @AssistedFactory
     interface Factory {
-        fun create(navigator: Navigator): SpotifyPresenter
+        fun create(navigator: Navigator): HomePresenter
     }
 }

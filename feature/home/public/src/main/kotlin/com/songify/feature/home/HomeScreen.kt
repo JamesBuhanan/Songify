@@ -1,7 +1,7 @@
-package com.songify.feature.spotify
+package com.songify.feature.home
 
 import com.slack.circuit.runtime.screen.Screen
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-object SpotifyScreen : Screen
+object HomeScreen : Screen

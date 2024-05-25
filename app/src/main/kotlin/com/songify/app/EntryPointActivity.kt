@@ -22,7 +22,7 @@ import com.songify.common.di.ActivityKey
 import com.songify.common.di.AppScope
 import com.songify.common.session.SongifySession
 import com.songify.common.theme.SongifyTheme
-import com.songify.feature.spotify.SpotifyScreen
+import com.songify.feature.home.HomeScreen
 import com.songify.library.bottomnavigation.SongifyBottomNavigation
 import com.spotify.sdk.android.auth.AuthorizationClient
 import com.spotify.sdk.android.auth.AuthorizationRequest
@@ -92,7 +92,7 @@ class EntryPointActivity @Inject constructor(
                 modifier = Modifier.fillMaxSize(),
                 color = MaterialTheme.colorScheme.background,
             ) {
-                val backStack = rememberSaveableBackStack(SpotifyScreen)
+                val backStack = rememberSaveableBackStack(HomeScreen)
                 val navigator = rememberCircuitNavigator(backStack)
 
                 Scaffold(
