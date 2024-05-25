@@ -18,5 +18,6 @@ include(
     ":common:theme",
     ":common:ui",
     ":feature:spotify:public", ":feature:spotify:internal",
+    ":library:bottom-navigation:public",
     ":library:spotify:public", ":library:spotify:internal",
 )

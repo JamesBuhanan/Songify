@@ -18,6 +18,7 @@ internal fun Project.dynamicNamespace() {
 internal fun Project.dynamicNamespace2(commonExtension: CommonExtension<*, *, *, *, *>) {
     val packageSuffix = path
         .replace(":public", "")
+        .replace("-","")
         .replace(":", ".")
     commonExtension.namespace = "com.songify$packageSuffix"
 }

@@ -1,4 +1,4 @@
-package com.songify.app
+package com.songify.library.bottomnavigation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

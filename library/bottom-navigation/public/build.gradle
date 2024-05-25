@@ -1,0 +1,8 @@
+plugins {
+    id 'songify.android.library'
+}
+
+songify {
+    circuit()
+    jetpackCompose()
+}
