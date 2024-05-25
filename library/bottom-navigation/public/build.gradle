@@ -6,3 +6,7 @@ songify {
     circuit()
     jetpackCompose()
 }
+
+dependencies {
+    implementation projects.feature.home.public
+}

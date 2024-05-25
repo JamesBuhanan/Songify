@@ -13,7 +13,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -32,13 +32,13 @@ object SongifyBottomNavigationConstants {
  * A bottom navigation bar composable with a background gradient.
  * Note: The bottom navigation bar has a fixed height of 80dp.
  *
- * @param navigationItems the [MusifyBottomNavigationDestinations] to
+ * @param navigationItems the [BottomNavItem] to
  * display in the navigation bar.
- * @param currentlySelectedItem the currently selected [MusifyBottomNavigationDestinations].
+ * @param currentlySelectedItem the currently selected [BottomNavItem].
  * The currently selected item will be highlighted and will also use the
- * [MusifyBottomNavigationDestinations.filledIconVariantResourceId] for the image resource.
+ * [BottomNavItem.filledIconVariantResourceId] for the image resource.
  * @param onItemClick the lambda to execute when an item is clicked. A reference to
- * an instance of [MusifyBottomNavigationDestinations] that was clicked will be provided
+ * an instance of [BottomNavItem] that was clicked will be provided
  * as a parameter to the lambda.
  * @param modifier the modifier to be applied to the navigation bar. The height of the
  * composable is fixed at 80dp.
@@ -46,9 +46,6 @@ object SongifyBottomNavigationConstants {
  */
 @Composable
 fun SongifyBottomNavigation(
-//    navigationItems: List<MusifyBottomNavigationDestinations>,
-//    currentlySelectedItem: MusifyBottomNavigationDestinations,
-//    onItemClick: (MusifyBottomNavigationDestinations) -> Unit,
     navigator: Navigator,
     modifier: Modifier = Modifier,
 ) {
@@ -66,9 +63,10 @@ fun SongifyBottomNavigation(
             endY = 0.0f
         )
     }
-    var currentlySelectedItem: Int by remember {
-        mutableIntStateOf(0)
+    var currentlySelectedItem: BottomNavItem by remember {
+        mutableStateOf(BottomNavItem.Home)
     }
+
     // use surface because the default height of bottom navigation
     // according to the material spec is lower than the height
     // used by spotify for it's navigation bar
@@ -86,21 +84,25 @@ fun SongifyBottomNavigation(
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             NavigationBar {
-//                navigationItems.forEach {
-                NavigationBarItem(
-                    selected = 0 == currentlySelectedItem,
-                    onClick = {
-                        currentlySelectedItem = 0
-                    },
-                    icon = {
-                        Icon(
-                            imageVector = ImageVector.vectorResource(androidx.core.R.drawable.ic_call_answer),
-                            contentDescription = null
-                        )
-                    },
-                    label = { Text(text = "Spotify") }
-                )
-//                }
+                bottomNavItems.forEach {
+                    NavigationBarItem(
+                        selected = it == currentlySelectedItem,
+                        onClick = {
+                            currentlySelectedItem = it
+                            navigator.resetRoot(it.screen)
+                        },
+                        icon = {
+                            Icon(
+                                imageVector = ImageVector.vectorResource(
+                                    if (it == currentlySelectedItem) it.filledIconVariantResourceId
+                                    else it.outlinedIconVariantResourceId
+                                ),
+                                contentDescription = null
+                            )
+                        },
+                        label = { Text(text = it.label) }
+                    )
+                }
             }
         }
     }
