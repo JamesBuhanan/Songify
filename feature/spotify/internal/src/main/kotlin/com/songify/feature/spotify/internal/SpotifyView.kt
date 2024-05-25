@@ -2,7 +2,6 @@ package com.songify.feature.spotify.internal
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -38,26 +37,23 @@ fun SpotifyView(
 }
 
 @Composable
-fun ShowSpotify(postsState: SpotifyState.Success) {
+fun ShowSpotify(
+    postsState: SpotifyState.Success,
+    modifier: Modifier = Modifier,
+) {
     BackHandler {
         postsState.eventSink(SpotifyEvent.TappedBack)
     }
 
-    Box {
-        Text(text = "it worked")
-    }
-
     LazyColumn(
         contentPadding = PaddingValues(bottom = 16.dp),
-        modifier = Modifier.testTag("blah")
-
+        modifier = Modifier.testTag("blah"),
     ) {
         items(postsState.newReleasesResponse.albums.items) { item ->
             ImageResponse(item.images.first().url)
             Text(text = item.name)
         }
     }
-
 }
 
 @Composable

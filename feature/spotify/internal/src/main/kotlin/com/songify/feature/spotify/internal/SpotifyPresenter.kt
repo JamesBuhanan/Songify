@@ -40,7 +40,6 @@ class SpotifyPresenter @AssistedInject constructor(
     private val getEpisodeWithId: GetEpisodeWithId,
     private val getShowWithId: GetShowWithId,
     private val getEpisodesForShowWithId: GetEpisodesForShowWithId,
-
     @Assisted private val navigator: Navigator,
 ) : Presenter<SpotifyState> {
     @Composable
@@ -48,20 +47,20 @@ class SpotifyPresenter @AssistedInject constructor(
         val state by produceState<SpotifyState>(SpotifyState.Loading) {
 //            val test = getArtist("7AB7bdCR5saJ0b9C4RuceX")
 //            val test2 = getArtistAlbums("7AB7bdCR5saJ0b9C4RuceX")
-            getTopTracks("7AB7bdCR5saJ0b9C4RuceX").fold({
-                val albumId = it.tracks.first().albumMetadata.id
-                val test4 = getAlbum(albumId)
-                val test5 = getTracksForGenre(SupportedSpotifyGenres.AMBIENT, limit = 20)
-                val test6 = getFeaturedPlaylists(locale = "", timestamp = "", limit = 20, offset = 0)
-                val test7 = getTracksForPlaylist(playlistId = "", limit = 20, offset = 0)
-                val test8 = getBrowseCategories(locale = "", limit = 20, offset = 0)
-                val test9 = getPlaylistsForCategory(categoryId = "", limit = 20, offset = 0)
-                val test10 = getEpisodeWithId(id = "")
-                val test11 = getShowWithId(id = "")
-                val test12 = getEpisodesForShowWithId(id = "", offset = 0)
-            },{
-
-            })
+//            getTopTracks("7AB7bdCR5saJ0b9C4RuceX").fold({
+//                val albumId = it.tracks.first().albumMetadata.id
+//                val test4 = getAlbum(albumId)
+//                val test5 = getTracksForGenre(SupportedSpotifyGenres.AMBIENT, limit = 20)
+//                val test6 = getFeaturedPlaylists(locale = "", timestamp = "", limit = 20, offset = 0)
+//                val test7 = getTracksForPlaylist(playlistId = "", limit = 20, offset = 0)
+//                val test8 = getBrowseCategories(locale = "", limit = 20, offset = 0)
+//                val test9 = getPlaylistsForCategory(categoryId = "", limit = 20, offset = 0)
+//                val test10 = getEpisodeWithId(id = "")
+//                val test11 = getShowWithId(id = "")
+//                val test12 = getEpisodesForShowWithId(id = "", offset = 0)
+//            },{
+//
+//            })
             getNewReleases().fold({ newReleasesResponse ->
                 value = SpotifyState.Success(
                     newReleasesResponse = newReleasesResponse,
@@ -74,7 +73,6 @@ class SpotifyPresenter @AssistedInject constructor(
             }, {
                 value = SpotifyState.Error(it.message ?: "No message")
             })
-
         }
 
         return state

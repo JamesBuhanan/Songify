@@ -1,10 +1,17 @@
 package com.songify.app
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.slack.circuit.backstack.rememberSaveableBackStack
 import com.slack.circuit.foundation.Circuit
@@ -61,6 +68,7 @@ class EntryPointActivity @Inject constructor(
         AuthorizationClient.openLoginActivity(this, AUTH_TOKEN_REQUEST_CODE, request)
     }
 
+    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         val response = AuthorizationClient.getResponse(resultCode, data)
@@ -68,10 +76,27 @@ class EntryPointActivity @Inject constructor(
             songifySession.accessToken = response.accessToken
 
             setContent {
+                ShowSpotify()
+            }
+        }
+    }
+
+    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+    @Composable
+    fun ShowSpotify(
+        modifier: Modifier = Modifier,
+    ) {
+        SongifyTheme {
+            Surface(
+                modifier = Modifier.fillMaxSize(),
+                color = MaterialTheme.colorScheme.background
+            ) {
                 val backStack = rememberSaveableBackStack(SpotifyScreen)
                 val navigator = rememberCircuitNavigator(backStack)
 
-                SongifyTheme {
+                Scaffold(
+                    bottomBar = { SongifyBottomNavigation(navigator) }
+                ) {
                     CircuitCompositionLocals(circuit) {
                         NavigableCircuitContent(navigator, backStack)
                     }
