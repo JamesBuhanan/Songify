@@ -10,3 +10,7 @@ songify {
 dependencies {
     implementation projects.feature.home.public
 }
+
+dependencies {
+    implementation projects.feature.home.public
+}

@@ -8,70 +8,55 @@ import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.presenter.Presenter
 import com.songify.common.di.AppScope
 import com.songify.feature.home.HomeScreen
-import com.songify.library.spotify.usecase.GetAlbum
-import com.songify.library.spotify.usecase.GetArtist
-import com.songify.library.spotify.usecase.GetArtistAlbums
 import com.songify.library.spotify.usecase.GetBrowseCategories
-import com.songify.library.spotify.usecase.GetEpisodeWithId
-import com.songify.library.spotify.usecase.GetEpisodesForShowWithId
 import com.songify.library.spotify.usecase.GetFeaturedPlaylists
 import com.songify.library.spotify.usecase.GetNewReleases
 import com.songify.library.spotify.usecase.GetPlaylistsForCategory
-import com.songify.library.spotify.usecase.GetShowWithId
-import com.songify.library.spotify.usecase.GetTopTracks
-import com.songify.library.spotify.usecase.GetTracksForGenre
-import com.songify.library.spotify.usecase.GetTracksForPlaylist
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
+import kotlinx.coroutines.async
 
 class HomePresenter @AssistedInject constructor(
     private val getNewReleases: GetNewReleases,
-    private val getArtist: GetArtist,
-    private val getArtistAlbums: GetArtistAlbums,
-    private val getTopTracks: GetTopTracks,
-    private val getAlbum: GetAlbum,
-    private val getTracksForGenre: GetTracksForGenre,
     private val getFeaturedPlaylists: GetFeaturedPlaylists,
-    private val getTracksForPlaylist: GetTracksForPlaylist,
-    private val getBrowseCategories: GetBrowseCategories,
     private val getPlaylistsForCategory: GetPlaylistsForCategory,
-    private val getEpisodeWithId: GetEpisodeWithId,
-    private val getShowWithId: GetShowWithId,
-    private val getEpisodesForShowWithId: GetEpisodesForShowWithId,
+    private val getBrowseCategories: GetBrowseCategories,
     @Assisted private val navigator: Navigator,
 ) : Presenter<HomeState> {
     @Composable
     override fun present(): HomeState {
         val state by produceState<HomeState>(HomeState.Loading) {
-//            val test = getArtist("7AB7bdCR5saJ0b9C4RuceX")
-//            val test2 = getArtistAlbums("7AB7bdCR5saJ0b9C4RuceX")
-//            getTopTracks("7AB7bdCR5saJ0b9C4RuceX").fold({
-//                val albumId = it.tracks.first().albumMetadata.id
-//                val test4 = getAlbum(albumId)
-//                val test5 = getTracksForGenre(SupportedSpotifyGenres.AMBIENT, limit = 20)
-//                val test6 = getFeaturedPlaylists(locale = "", timestamp = "", limit = 20, offset = 0)
-//                val test7 = getTracksForPlaylist(playlistId = "", limit = 20, offset = 0)
-//                val test8 = getBrowseCategories(locale = "", limit = 20, offset = 0)
-//                val test9 = getPlaylistsForCategory(categoryId = "", limit = 20, offset = 0)
-//                val test10 = getEpisodeWithId(id = "")
-//                val test11 = getShowWithId(id = "")
-//                val test12 = getEpisodesForShowWithId(id = "", offset = 0)
-//            },{
-//
-//            })
-            getNewReleases().fold({ newReleasesResponse ->
+            val newReleasesTask = async { getNewReleases() }
+            val featuredPlaylistsTask = async { getFeaturedPlaylists(locale = "", timestamp = "") }
+            val playlistsForCategoryTask = async { getPlaylistsForCategory(categoryId = "") }
+
+            newReleasesTask.await()
+            featuredPlaylistsTask.await()
+            playlistsForCategoryTask.await()
+
+            val newReleases = newReleasesTask.getCompleted()
+            val featuredPlaylists = featuredPlaylistsTask.getCompleted()
+            val playlistsForCategory = playlistsForCategoryTask.getCompleted()
+
+            if (
+                newReleases.isFailure ||
+                featuredPlaylists.isFailure ||
+                playlistsForCategory.isFailure
+            ) {
+                value = HomeState.Error("OH NOOOOOO!")
+            } else {
                 value = HomeState.Success(
-                    newReleasesResponse = newReleasesResponse,
+                    newReleasesResponse = newReleases.getOrThrow(),
+                    featuredPlaylistsResponse = featuredPlaylists.getOrThrow(),
+                    playlistsForSpecificCategoryResponse = playlistsForCategory.getOrThrow(),
                     eventSink = {
                         when (it) {
                             HomeEvent.TappedBack -> navigator.pop()
                         }
                     }
                 )
-            }, {
-                value = HomeState.Error(it.message ?: "No message")
-            })
+            }
         }
 
         return state
