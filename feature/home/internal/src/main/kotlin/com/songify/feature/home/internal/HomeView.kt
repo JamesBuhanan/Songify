@@ -49,7 +49,7 @@ fun ShowHome(
         contentPadding = PaddingValues(bottom = 16.dp),
         modifier = Modifier.testTag("blah"),
     ) {
-        items(homeState.newReleasesResponse.albums.items) { item ->
+        items(homeState.homeFeed.newReleasesResponse.albums.items) { item ->
             ImageResponse(item.images.first().url)
             Text(text = item.name)
         }

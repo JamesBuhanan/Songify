@@ -18,11 +18,7 @@ class GetNewReleasesImpl @Inject constructor(
 ) : GetNewReleases {
     override suspend operator fun invoke(): Result<NewReleasesResponse> {
         return try {
-            val newReleases = spotifyService.getNewReleases(
-                token = songifySession.requireAccessToken(),
-                limit = 20,
-                offset = 0,
-            )
+            val newReleases = spotifyService.getNewReleases(songifySession.requireAccessToken())
             Result.success(newReleases)
         } catch (ex: HttpException) {
             Result.failure(ex)

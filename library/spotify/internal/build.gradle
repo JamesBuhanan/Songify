@@ -5,6 +5,7 @@ plugins {
 songify {
     retrofit()
     anvil()
+    coroutines()
 }
 
 dependencies {

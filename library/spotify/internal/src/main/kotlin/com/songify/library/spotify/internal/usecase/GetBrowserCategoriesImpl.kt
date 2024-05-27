@@ -23,7 +23,6 @@ class GetBrowserCategoriesImpl @Inject constructor(
                                          offset: Int): Result<BrowseCategoriesResponse> {
         return try {
             val artist = spotifyService.getBrowseCategories(
-                locale = locale,
                 token = songifySession.requireAccessToken(),
                 limit = limit,
                 offset = offset
