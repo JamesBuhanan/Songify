@@ -1,0 +1,15 @@
+plugins {
+    id "songify.android.library"
+}
+
+songify {
+    jetpackCompose()
+}
+
+dependencies {
+    implementation libs.accompanist
+    implementation libs.coil
+    implementation libs.lottie.compose
+    implementation libs.material
+    implementation projects.common.theme
+}

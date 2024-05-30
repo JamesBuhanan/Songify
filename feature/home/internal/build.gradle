@@ -15,5 +15,6 @@ dependencies {
 
     implementation libs.bundles.paging
     implementation libs.coil
+    implementation projects.library.design.public
     implementation projects.library.spotify.internal
 }

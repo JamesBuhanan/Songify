@@ -21,6 +21,7 @@ paging = "3.2.1"
 targetSdk = "33"
 
 [libraries]
+accompanist = { module = "com.google.accompanist:accompanist-placeholder-material", version = "0.13.0" }
 androidGradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 androidx-compose-activity = "androidx.activity:activity-compose:1.9.0"
 androidx-compose-constraint-layout = { module = "androidx.constraintlayout:constraintlayout-compose", version = "1.0.1" }
@@ -53,6 +54,7 @@ kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 kotlinReflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
 kspGradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "kspPlugin" }
+lottie-compose = { module = "com.airbnb.android:lottie-compose", version = "6.1.0" }
 material = "com.google.android.material:material:1.12.0"
 moshi = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
 moshiCodeGen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }

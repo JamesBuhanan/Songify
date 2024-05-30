@@ -19,5 +19,6 @@ include(
     ":common:ui",
     ":feature:home:public", ":feature:home:internal",
     ":library:bottom-navigation:public",
+    ":library:design:public",
     ":library:spotify:public", ":library:spotify:internal",
 )
