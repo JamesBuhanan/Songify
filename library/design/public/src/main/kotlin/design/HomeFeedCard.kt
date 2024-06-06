@@ -35,7 +35,7 @@ import coil.compose.AsyncImage
  */
 @Composable
 fun HomeFeedCard(
-    imageUrlString: String,
+    imageUrlString: String?,
     caption: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier

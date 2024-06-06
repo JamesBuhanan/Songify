@@ -1,7 +1,7 @@
 [versions]
 agp = "8.1.4"
 anvil = "2.4.9"
-circuit = "0.20.0"
+circuit = "0.22.2"
 coil = "2.5.0"
 compileSdk = "34"
 compose = "1.6.7"
@@ -43,6 +43,7 @@ circuitRuntime = { module = "com.slack.circuit:circuit-runtime", version.ref = "
 circuitRuntimePresenter = { module = "com.slack.circuit:circuit-runtime-presenter", version.ref = "circuit" }
 circuitRuntimeUi = { module = "com.slack.circuit:circuit-runtime-ui", version.ref = "circuit" }
 circuitTest = { module = "com.slack.circuit:circuit-test", version.ref = "circuit" }
+circuitXEffects = { module = "com.slack.circuit:circuitx-effects", version.ref = "circuit" }
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
 dagger-lib = { module = "com.google.dagger:dagger", version.ref = "dagger" }
@@ -68,6 +69,6 @@ timber = "com.jakewharton.timber:timber:5.0.1"
 turbine = "app.cash.turbine:turbine:1.1.0"
 
 [bundles]
-circuit = ["circuitFoundation", "circuitRuntime", "circuitRuntimePresenter", "circuitRuntimeUi"]
+circuit = ["circuitFoundation", "circuitRuntime", "circuitRuntimePresenter", "circuitRuntimeUi", "circuitXEffects"]
 compose = ["androidx-compose-ui", "androidx-compose-uitooling", "androidx-compose-foundation", "androidx-compose-material", "androidx-compose-material-icons-extended", "androidx-compose-activity", "androidx-compose-constraint-layout"]
 paging = ["paging-runtime", "paging-compose"]

@@ -1,7 +1,7 @@
 package com.songify.library.spotify.internal.di
 
 import com.songify.common.di.AppScope
-import com.songify.library.spotify.SpotifyService
+import com.songify.library.spotify.internal.SpotifyService
 import com.squareup.anvil.annotations.ContributesTo
 import dagger.Module
 import dagger.Provides

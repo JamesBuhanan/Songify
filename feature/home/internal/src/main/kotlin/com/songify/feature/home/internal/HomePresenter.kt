@@ -26,6 +26,7 @@ class HomePresenter @AssistedInject constructor(
                     eventSink = {
                         when (it) {
                             HomeEvent.TappedBack -> navigator.pop()
+                            HomeEvent.TappedCard -> {}
                         }
                     }
                 )

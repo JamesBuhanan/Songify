@@ -2,10 +2,11 @@ package com.songify.feature.home.internal
 
 import com.slack.circuit.runtime.CircuitUiEvent
 import com.slack.circuit.runtime.CircuitUiState
-import com.songify.library.spotify.response.HomeFeed
+import com.songify.library.spotify.model.HomeFeed
 
 sealed interface HomeEvent : CircuitUiEvent {
     data object TappedBack : HomeEvent
+    data object TappedCard : HomeEvent
 }
 
 sealed interface HomeState : CircuitUiState {
