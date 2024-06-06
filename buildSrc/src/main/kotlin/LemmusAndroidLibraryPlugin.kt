@@ -13,6 +13,7 @@ import com.songify.extension.dynamicNamespace
 import com.songify.extension.feature
 import com.songify.extension.jetpackCompose
 import com.songify.extension.libs
+import com.songify.extension.moduleNameFix
 import com.songify.extension.moshi
 import com.songify.extension.retrofit
 import org.gradle.api.Plugin
@@ -27,6 +28,7 @@ class SongifyAndroidLibraryPlugin : Plugin<Project> {
 
             androidLibrary()
             allProjects()
+            moduleNameFix()
 
             // detekt()
             // checkstyle()

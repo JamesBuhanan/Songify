@@ -10,9 +10,8 @@ songify {
 }
 
 dependencies {
-    api projects.feature.home.public
+    api projects.feature.search.public
 
-    implementation libs.bundles.paging
     implementation libs.coil
     implementation projects.library.design.public
     implementation projects.library.spotify.public

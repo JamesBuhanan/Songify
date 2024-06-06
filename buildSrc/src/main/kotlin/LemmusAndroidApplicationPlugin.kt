@@ -12,6 +12,7 @@ import com.songify.extension.coroutines
 import com.songify.extension.dynamicNamespace
 import com.songify.extension.jetpackCompose
 import com.songify.extension.libs
+import com.songify.extension.moduleNameFix
 import com.songify.extension.moshi
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -26,6 +27,7 @@ class SongifyAndroidApplicationPlugin : Plugin<Project> {
             androidApplication()
             allProjects()
             dynamicNamespace()
+            moduleNameFix()
 
             // configureLint()
             // detekt()

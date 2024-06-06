@@ -18,6 +18,7 @@ include(
     ":common:theme",
     ":common:ui",
     ":feature:home:public", ":feature:home:internal",
+    ":feature:search:public", ":feature:search:internal",
     ":library:bottom-navigation:public",
     ":library:design:public",
     ":library:spotify:public", ":library:spotify:internal",
