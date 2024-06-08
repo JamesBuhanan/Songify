@@ -26,6 +26,7 @@ androidGradlePlugin = { module = "com.android.tools.build:gradle", version.ref =
 androidx-compose-activity = "androidx.activity:activity-compose:1.9.0"
 androidx-compose-constraint-layout = { module = "androidx.constraintlayout:constraintlayout-compose", version = "1.0.1" }
 androidx-compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
+androidx-compose-foundation-layout = { module = "androidx.compose.foundation:foundation-layout", version.ref = "compose" }
 androidx-compose-material = { module = "androidx.compose.material3:material3", version.ref = "material3" }
 androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "compose" }
 androidx-compose-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
@@ -70,5 +71,5 @@ turbine = "app.cash.turbine:turbine:1.1.0"
 
 [bundles]
 circuit = ["circuitFoundation", "circuitRuntime", "circuitRuntimePresenter", "circuitRuntimeUi", "circuitXEffects"]
-compose = ["androidx-compose-ui", "androidx-compose-uitooling", "androidx-compose-foundation", "androidx-compose-material", "androidx-compose-material-icons-extended", "androidx-compose-activity", "androidx-compose-constraint-layout"]
+compose = ["androidx-compose-ui", "androidx-compose-uitooling", "androidx-compose-foundation", "androidx-compose-material", "androidx-compose-material-icons-extended", "androidx-compose-activity", "androidx-compose-constraint-layout", "androidx-compose-foundation-layout"]
 paging = ["paging-runtime", "paging-compose"]

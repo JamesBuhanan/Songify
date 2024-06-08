@@ -2,7 +2,7 @@ package com.songify.feature.search.internal
 
 import com.slack.circuit.runtime.CircuitUiEvent
 import com.slack.circuit.runtime.CircuitUiState
-import com.songify.library.spotify.model.Genre
+import com.songify.feature.search.internal.model.Genre
 
 sealed interface SearchEvent : CircuitUiEvent {
     data object TappedBack : SearchEvent
