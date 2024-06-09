@@ -1,6 +1,5 @@
 package design
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
@@ -49,10 +48,12 @@ fun PodcastCard(
 ) {
     var isLoadingPlaceholderVisible by remember { mutableStateOf(true) }
     Card(
+        colors = CardDefaults.cardColors(
+            containerColor = Color.Transparent,
+        ),
         modifier = Modifier
             .width(160.dp)
             .height(IntrinsicSize.Min)
-            .background(Color.Transparent)
             .clickable { onClick() }
             .then(modifier),
         shape = RectangleShape,

@@ -42,10 +42,10 @@ fun HomeFeedCard(
 ) {
     val mediumContentAlpha = .66f
     Card(
+        colors = CardDefaults.cardColors(containerColor = Color.Transparent),
         modifier = Modifier
             .widthIn(min = 160.dp, max = 160.dp)
             .height(IntrinsicSize.Min)
-            .background(Color.Transparent)
             .clickable { onClick() }
             .then(modifier),
         shape = RectangleShape,

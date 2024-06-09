@@ -49,9 +49,9 @@
 //    }
 //    var isLoadingPlaceholderVisible by remember { mutableStateOf(true) }
 //    Card(
+//        colors = CardDefaults.cardColors(containerColor = backgroundColor),
 //        modifier = Modifier
 //            .height(114.dp)
-//            .background(backgroundColor)
 //            .then(modifier)
 //            .clickable { onClick() },
 //        elevation = CardDefaults.outlinedCardElevation(),

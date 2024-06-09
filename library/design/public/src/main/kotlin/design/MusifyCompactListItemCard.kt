@@ -103,10 +103,12 @@ fun MusifyCompactListItemCard(
     contentPadding: PaddingValues = PaddingValues(all = 8.dp)
 ) {
     Card(
+        colors = CardDefaults.cardColors(
+            containerColor = backgroundColor,
+        ),
         modifier = Modifier
             .sizeIn(minHeight = 56.dp, minWidth = 250.dp, maxHeight = 80.dp)
             .then(modifier)
-            .background(backgroundColor)
             .clickable { onClick() },
         shape = shape,
         elevation = CardDefaults.outlinedCardElevation(),

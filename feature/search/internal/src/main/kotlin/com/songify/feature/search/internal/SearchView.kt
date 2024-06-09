@@ -3,7 +3,6 @@ package com.songify.feature.search.internal
 import androidx.activity.compose.BackHandler
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -22,6 +21,7 @@ import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -116,10 +116,10 @@ fun GenreCard(
     backgroundColor: Color = MaterialTheme.colorScheme.surface
 ) {
     Card(
-        modifier = modifier
-            .clickable { onClick?.invoke() }
-            .background(color = backgroundColor)
-
+        colors = CardDefaults.cardColors(
+            containerColor = backgroundColor,
+        ),
+        modifier = modifier.clickable { onClick?.invoke() },
     ) {
         Box(
             modifier = Modifier.fillMaxSize()
