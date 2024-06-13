@@ -37,7 +37,7 @@ import com.slack.circuitx.effects.toastEffect
 import com.songify.common.di.AppScope
 import com.songify.common.ui.LoadingBar
 import com.songify.feature.search.SearchScreen
-import com.songify.feature.search.internal.model.Genre
+import com.songify.library.genre.Genre
 
 
 @CircuitInject(SearchScreen::class, AppScope::class)

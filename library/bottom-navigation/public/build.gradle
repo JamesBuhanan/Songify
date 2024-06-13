@@ -9,5 +9,6 @@ songify {
 
 dependencies {
     implementation projects.feature.home.public
+    implementation projects.feature.premium.public
     implementation projects.feature.search.public
 }

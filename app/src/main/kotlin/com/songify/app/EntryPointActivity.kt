@@ -18,11 +18,11 @@ import com.slack.circuit.foundation.Circuit
 import com.slack.circuit.foundation.CircuitCompositionLocals
 import com.slack.circuit.foundation.NavigableCircuitContent
 import com.slack.circuit.foundation.rememberCircuitNavigator
+import com.slack.circuit.runtime.screen.Screen
 import com.songify.common.di.ActivityKey
 import com.songify.common.di.AppScope
 import com.songify.common.session.SongifySession
 import com.songify.common.theme.SongifyTheme
-import com.songify.feature.home.HomeScreen
 import com.songify.library.bottomnavigation.SongifyBottomNavigation
 import com.spotify.sdk.android.auth.AuthorizationClient
 import com.spotify.sdk.android.auth.AuthorizationRequest
@@ -38,6 +38,7 @@ const val AUTH_TOKEN_REQUEST_CODE = 1337
 class EntryPointActivity @Inject constructor(
     private val circuit: Circuit,
     private val songifySession: SongifySession,
+    private val startScreen: Screen,
 ) : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,14 +48,6 @@ class EntryPointActivity @Inject constructor(
         fetchToken()
     }
 
-    // val scopes = arrayOf(
-//     "playlist-read-private",
-//     "playlist-read-collaborative",
-//     "streaming",
-//     "user-library-read",
-//     "user-read-private",
-//     "user-top-read"
-// )
     private fun fetchToken() {
         val request = AuthorizationRequest.Builder(
             CLIENT_ID,
@@ -92,11 +85,11 @@ class EntryPointActivity @Inject constructor(
                 modifier = Modifier.fillMaxSize(),
                 color = MaterialTheme.colorScheme.background,
             ) {
-                val backStack = rememberSaveableBackStack(HomeScreen)
+                val backStack = rememberSaveableBackStack(startScreen)
                 val navigator = rememberCircuitNavigator(backStack)
 
                 Scaffold(
-                    bottomBar = { SongifyBottomNavigation(navigator) }
+                    bottomBar = { SongifyBottomNavigation({ navigator.resetRoot(it) }) }
                 ) {
                     CircuitCompositionLocals(circuit) {
                         NavigableCircuitContent(navigator, backStack)

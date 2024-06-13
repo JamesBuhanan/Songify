@@ -27,34 +27,35 @@ class GetHomeFeedImpl @Inject constructor(
     private val spotifyService: SpotifyService,
     private val songifySession: SongifySession,
 ) : GetHomeFeed {
-    override suspend fun invoke(): Result<HomeFeed> = coroutineScope {
+    override suspend fun invoke(): Result<HomeFeed> =
         try {
-            val carousels = mutableListOf<HomeFeedCarousel>()
-            val newReleasesTask = async {
-                spotifyService.getNewReleases(songifySession.requireAccessToken())
-                    .toHomeFeedCarousel()
+            coroutineScope {
+                val carousels = mutableListOf<HomeFeedCarousel>()
+
+                val newReleasesTask = async {
+                    spotifyService.getNewReleases(songifySession.requireAccessToken())
+                        .toHomeFeedCarousel()
+                }
+                val featuredPlaylistsTask: Deferred<HomeFeedCarousel> = async {
+                    spotifyService.getFeaturedPlaylists(
+                        token = songifySession.requireAccessToken(),
+                        locale = "",
+                        timestamp = ""
+                    ).toHomeFeedCarousel()
+                }
+                val playlistsByCategoryTask = async { getPlaylists() }
+
+                awaitAll(newReleasesTask, featuredPlaylistsTask, playlistsByCategoryTask)
+
+                carousels.add(newReleasesTask.getCompleted())
+                carousels.add(featuredPlaylistsTask.getCompleted())
+                carousels.addAll(playlistsByCategoryTask.getCompleted())
+
+                Result.success(HomeFeed(carousels))
             }
-
-            val featuredPlaylistsTask: Deferred<HomeFeedCarousel> = async {
-                spotifyService.getFeaturedPlaylists(
-                    token = songifySession.requireAccessToken(),
-                    locale = "",
-                    timestamp = ""
-                ).toHomeFeedCarousel()
-            }
-            val playlistsByCategoryTask = async { getPlaylists() }
-
-            awaitAll(newReleasesTask, featuredPlaylistsTask, playlistsByCategoryTask)
-
-            carousels.add(newReleasesTask.getCompleted())
-            carousels.add(featuredPlaylistsTask.getCompleted())
-            carousels.addAll(playlistsByCategoryTask.getCompleted())
-
-            Result.success(HomeFeed(carousels))
         } catch (ex: HttpException) {
             Result.failure(ex)
         }
-    }
 
     private suspend fun getPlaylists(): List<HomeFeedCarousel> =
         coroutineScope {
@@ -66,10 +67,18 @@ class GetHomeFeedImpl @Inject constructor(
             // fetch it in parallel
             val playlistsMap = categories.map { category ->
                 async {
-                    category to spotifyService.getPlaylistsForCategory(
-                        token = songifySession.requireAccessToken(),
-                        categoryId = category.id,
-                    )
+                    if (category.id == "0JQ5DAqbMKFJhFzxyONOIo") {
+                        category to PlaylistsForSpecificCategoryResponse(
+                            PlaylistsForSpecificCategoryResponse.PlaylistsForSpecificCategoryResponseItems(
+                                emptyList()
+                            )
+                        )
+                    } else {
+                        category to spotifyService.getPlaylistsForCategory(
+                            token = songifySession.requireAccessToken(),
+                            categoryId = category.id,
+                        )
+                    }
                 }
             }
 

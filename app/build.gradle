@@ -2,41 +2,16 @@ plugins {
     id 'songify.android.application'
 }
 
-android {
-    defaultConfig {
-        applicationId "com.songify"
-        manifestPlaceholders = [redirectSchemeName: "songify", redirectHostName: "callback"]
-    }
-    signingConfigs {
-        debug {
-            storeFile file('debug.keystore')
-            storePassword 'android'
-            keyAlias 'androiddebugkey'
-            keyPassword 'android'
-        }
-    }
-    buildTypes {
-        debug {
-            debuggable true
-            signingConfig signingConfigs.debug
-        }
-    }
-}
-
 dependencies {
-    implementation libs.androidx.lifecycle.runtime.ktx
-    implementation libs.bundles.paging
     implementation libs.core.splashscreen
     implementation libs.material
     implementation libs.spotify.auth
 
-    implementation projects.common.coroutines
     implementation projects.common.retrofit
     implementation projects.common.session
     implementation projects.common.theme
-    implementation projects.common.ui
-    implementation projects.feature.home.internal
-    implementation projects.feature.search.internal
     implementation projects.library.bottomNavigation.public
-    implementation projects.library.spotify.internal
+
+    // Which app do we load?
+    implementation projects.feature.all.app
 }

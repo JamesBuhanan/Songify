@@ -22,7 +22,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
-import com.slack.circuit.runtime.Navigator
+import com.slack.circuit.runtime.screen.Screen
 
 object SongifyBottomNavigationConstants {
     val navigationHeight = 60.dp
@@ -46,7 +46,7 @@ object SongifyBottomNavigationConstants {
  */
 @Composable
 fun SongifyBottomNavigation(
-    navigator: Navigator,
+    onClick: (Screen) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val gradientBrush = remember {
@@ -89,7 +89,7 @@ fun SongifyBottomNavigation(
                         selected = it == currentlySelectedItem,
                         onClick = {
                             currentlySelectedItem = it
-                            navigator.resetRoot(it.screen)
+                            onClick(it.screen)
                         },
                         icon = {
                             Icon(

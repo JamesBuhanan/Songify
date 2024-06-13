@@ -2,6 +2,7 @@ package com.songify.library.bottomnavigation
 
 import com.slack.circuit.runtime.screen.Screen
 import com.songify.feature.home.HomeScreen
+import com.songify.feature.premium.PremiumScreen
 import com.songify.feature.search.SearchScreen
 
 val bottomNavItems = listOf(
@@ -31,7 +32,7 @@ sealed class BottomNavItem(
     )
 
     object Premium : BottomNavItem(
-        screen = HomeScreen,
+        screen = PremiumScreen,
         label = "Premium",
         outlinedIconVariantResourceId = R.drawable.ic_spotify_premium,
         filledIconVariantResourceId = R.drawable.ic_spotify_premium

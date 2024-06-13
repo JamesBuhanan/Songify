@@ -1,0 +1,13 @@
+plugins {
+    id "songify.android.library"
+}
+
+songify {
+    circuit()
+    anvil()
+}
+
+dependencies {
+    api projects.feature.home.internal
+    api projects.library.spotify.public
+}

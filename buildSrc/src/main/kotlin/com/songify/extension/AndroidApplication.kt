@@ -12,6 +12,23 @@ fun Project.androidApplication() {
     configure<ApplicationExtension> {
         kotlinAndroid(this)
 
+        signingConfigs {
+            maybeCreate("debug").apply {
+                storeFile = file("debug.keystore")
+                storePassword = "android"
+                keyAlias = "androiddebugkey"
+                keyPassword = "android"
+
+            }
+        }
+
+        buildTypes {
+            debug {
+                isDebuggable = true
+                signingConfig = signingConfigs.getByName("debug")
+            }
+        }
+
         defaultConfig {
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
 
@@ -20,6 +37,12 @@ fun Project.androidApplication() {
             versionName = "1.0"
             applicationId = "com.songify"
             testApplicationId = "com.songify.test"
+            manifestPlaceholders.putAll(
+                mapOf(
+                    "redirectSchemeName" to "songify",
+                    "redirectHostName" to "callback"
+                )
+            )
         }
 
         testOptions {
