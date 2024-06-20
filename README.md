@@ -9,10 +9,15 @@ A "Spotify-ish" app to showcase massively scalable architecture for Android.
 - Set which sample app you want to build in `:app/build.gradle`
 - Now "Focus" it by running:
     - `./gradlew :app:focus --no-configure-on-demand --no-configuration-cache`
+    - (Or for windows
+      users) `./gradlew :app:focus --project-cache-dir=../cache --no-watch-fs --no-configuration-cache --no-configure-on-demand`
 - Sync the project
 - All unnecessary modules have now been unloaded and you can iterate at maximum speed!
 - `:feature:detail:app` is an excellent example of the power of this architecture. `detail` is a
   leaf node to the main workflow and yet we can build it in isolation and launch directly to it.
+- You can see how many modules get unloaded when we "focus" on the Premium feature:
+
+![images/all.png](images%2Fapi-impl.png)![images/premium.png](images%2Fapi-impl.png)
 
 ## affectedModuleDetector
 
