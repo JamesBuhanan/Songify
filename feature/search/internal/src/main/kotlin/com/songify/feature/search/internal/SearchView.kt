@@ -34,13 +34,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.slack.circuit.codegen.annotations.CircuitInject
 import com.slack.circuitx.effects.toastEffect
-import com.songify.common.di.AppScope
-import com.songify.common.ui.LoadingBar
 import com.songify.feature.search.SearchScreen
 import com.songify.library.genre.Genre
+import com.songify.library.loading.LoadingBar
+import dagger.hilt.components.SingletonComponent
 
 
-@CircuitInject(SearchScreen::class, AppScope::class)
+@CircuitInject(SearchScreen::class, SingletonComponent::class)
 @Composable
 fun SearchView(
     postsState: SearchState,

@@ -1,13 +1,13 @@
 package com.songify.app
 
 import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 
+@HiltAndroidApp
 class SongifyApplication : Application() {
-    private val appComponent by lazy { AppComponent.create(this) }
 
-    fun appComponent() = appComponent
 
     override fun onCreate() {
         super.onCreate()

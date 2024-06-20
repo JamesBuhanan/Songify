@@ -1,0 +1,13 @@
+plugins {
+    id 'songify.android.library'
+}
+
+songify {
+    moshi()
+    retrofit()
+}
+
+dependencies {
+    api libs.androidx.paging.common.android
+    api projects.library.spotify.public
+}

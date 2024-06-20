@@ -1,0 +1,14 @@
+plugins {
+    id 'songify.android.library'
+}
+
+songify {
+    hilt()
+}
+
+dependencies {
+    api libs.retrofit
+
+    implementation libs.moshi
+    implementation libs.retrofit.converter.moshi
+}

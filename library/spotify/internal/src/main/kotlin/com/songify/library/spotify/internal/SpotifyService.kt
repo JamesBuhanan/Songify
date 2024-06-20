@@ -1,8 +1,8 @@
 package com.songify.library.spotify.internal
 
+import com.songify.library.spotify.internal.model.ArtistResponse
 import com.songify.library.spotify.internal.model.AlbumResponse
 import com.songify.library.spotify.internal.model.AlbumsMetadataResponse
-import com.songify.library.spotify.internal.model.ArtistResponse
 import com.songify.library.spotify.internal.model.BrowseCategoriesResponse
 import com.songify.library.spotify.internal.model.EpisodeResponse
 import com.songify.library.spotify.internal.model.EpisodesWithPreviewUrlResponse

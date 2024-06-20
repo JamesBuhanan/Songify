@@ -10,10 +10,16 @@ repositories {
 
 dependencies {
     implementation(gradleApi())
+    implementation(libs.affectedModuleDetector)
     implementation(libs.androidGradlePlugin)
-    implementation(libs.anvil.gradlePlugin)
+    implementation(libs.composeCompiler.gradlePlugin)
+    implementation(libs.detektGradlePlugin)
+    implementation(libs.graphAssert)
+    implementation(libs.hilt.android.gradle.plugin)
     implementation(libs.kotlin.gradle)
     implementation(libs.kspGradlePlugin)
+    implementation(libs.sortDependenciesGradlePlugin)
+
     implementation(localGroovy())
     implementation(files(libs.javaClass.superclass.protectionDomain.codeSource.location))
 }

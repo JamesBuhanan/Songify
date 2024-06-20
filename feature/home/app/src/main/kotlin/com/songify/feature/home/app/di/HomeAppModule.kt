@@ -1,18 +1,20 @@
 package com.songify.feature.home.app.di
 
+import androidx.paging.PagingData
 import com.slack.circuit.runtime.screen.Screen
-import com.songify.common.di.AppScope
 import com.songify.feature.home.HomeScreen
-import com.songify.library.spotify.model.CarouselCard
-import com.songify.library.spotify.model.HomeFeed
-import com.songify.library.spotify.model.HomeFeedCarousel
-import com.songify.library.spotify.usecase.GetHomeFeed
-import com.squareup.anvil.annotations.ContributesTo
+import com.songify.library.home.model.HomeFeed
+import com.songify.library.home.model.HomeFeedCarousel
+import com.songify.library.home.usecase.GetHomeFeed
+import com.songify.library.spotify.model.SpotifyModel.Playlist
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.flow.flowOf
 
-@ContributesTo(AppScope::class)
 @Module
+@InstallIn(SingletonComponent::class)
 interface HomeAppModule {
     companion object {
         @Provides
@@ -25,22 +27,26 @@ interface HomeAppModule {
                     HomeFeed(
                         listOf(
                             HomeFeedCarousel(
-                                "1", "Thing", listOf(
-                                    CarouselCard.PlaylistCard(
-                                        "1a",
-                                        "caption",
-                                        null,
-                                        "name",
-                                        "ownerName",
-                                        "totalNumberOfTracks"
-                                    ),
-                                    CarouselCard.PlaylistCard(
-                                        "1b",
-                                        "caption",
-                                        null,
-                                        "name",
-                                        "ownerName",
-                                        "totalNumberOfTracks"
+                                "1", "Thing", flowOf(
+                                    PagingData.from(
+                                        listOf(
+                                            Playlist(
+                                                "1a",
+                                                "caption",
+                                                null,
+                                                "name",
+                                                "ownerName",
+                                                "totalNumberOfTracks"
+                                            ),
+                                            Playlist(
+                                                "1b",
+                                                "caption",
+                                                null,
+                                                "name",
+                                                "ownerName",
+                                                "totalNumberOfTracks"
+                                            )
+                                        )
                                     )
                                 )
                             )

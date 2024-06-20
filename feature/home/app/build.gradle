@@ -4,10 +4,10 @@ plugins {
 
 songify {
     circuit()
-    anvil()
+    hilt()
 }
 
 dependencies {
     api projects.feature.home.internal
-    api projects.library.spotify.public
+    api projects.library.home.public
 }

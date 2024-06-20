@@ -2,16 +2,16 @@
 // SPDX-License-Identifier: Apache-2.0
 package com.songify.app
 
-import com.songify.common.di.AppScope
 import com.slack.circuit.foundation.Circuit
 import com.slack.circuit.runtime.presenter.Presenter
 import com.slack.circuit.runtime.ui.Ui
-import com.squareup.anvil.annotations.ContributesTo
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import dagger.multibindings.Multibinds
 
-@ContributesTo(AppScope::class)
+@InstallIn(SingletonComponent::class)
 @Module
 interface CircuitModule {
     @Multibinds

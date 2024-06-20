@@ -16,8 +16,8 @@ sealed interface Streamable {
  * preview url, where the preview url for certain tracks might be null.
  */
 data class StreamInfo(
-    val streamUrl: String?,
-    val imageUrl: String?,
+    val streamUrl: String,
+    val imageUrl: String,
     val title: String,
     val subtitle: String,
 )

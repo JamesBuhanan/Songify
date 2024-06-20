@@ -6,7 +6,9 @@ songify {
     jetpackCompose()
     feature()
     circuit()
-    anvil()
+    hilt()
+    test()
+    androidTest()
 }
 
 dependencies {
@@ -14,6 +16,12 @@ dependencies {
 
     implementation libs.bundles.paging
     implementation libs.coil
-    implementation projects.library.design.public
-    implementation projects.library.spotify.public
+    implementation libs.material
+    implementation projects.feature.detail.public
+    implementation projects.library.composeExtensions.public
+    implementation projects.library.home.public
+
+    testImplementation projects.feature.home.sharedTest
+
+    androidTestImplementation projects.feature.home.sharedTest
 }

@@ -2,18 +2,24 @@ package com.songify.feature.premium.app.di
 
 import androidx.compose.ui.graphics.Color
 import com.slack.circuit.runtime.screen.Screen
-import com.songify.common.di.AppScope
 import com.songify.feature.premium.PremiumScreen
 import com.songify.library.premium.PremiumPlan
 import com.songify.library.premium.usecase.GetPremiumPlans
-import com.squareup.anvil.annotations.ContributesTo
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 
-@ContributesTo(AppScope::class)
 @Module
+@InstallIn(SingletonComponent::class)
+@Suppress("MagicNumber")
 interface PremiumAppModule {
     companion object {
+        val miniStart = Color(0xFF4F99F4)
+        val miniEnd = Color(0xFF2F4ABC)
+        val individualStart = Color(0xFF045746)
+        val individualEnd = Color(0xFF16A96A)
+
         @Provides
         fun providesStartScreen(): Screen = PremiumScreen
 
@@ -35,8 +41,8 @@ interface PremiumAppModule {
                         cost = "From $7",
                         term = "For 1 day"
                     ),
-                    gradientStartColor = Color(0xFF4F99F4),
-                    gradientEndColor = Color(0xFF2F4ABC),
+                    gradientStartColor = miniStart,
+                    gradientEndColor = miniEnd,
                 ),
                 PremiumPlan(
                     id = "premium_individual",
@@ -52,8 +58,8 @@ interface PremiumAppModule {
                         cost = "Free",
                         term = "For 1 month"
                     ),
-                    gradientStartColor = Color(0xFF045746),
-                    gradientEndColor = Color(0xFF16A96A),
+                    gradientStartColor = individualStart,
+                    gradientEndColor = individualEnd,
                 ),
             )
         }

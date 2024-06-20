@@ -1,27 +1,27 @@
 [versions]
-agp = "8.1.4"
-anvil = "2.4.9"
+agp = "8.4.2"
 circuit = "0.22.2"
 coil = "2.5.0"
 compileSdk = "34"
-compose = "1.6.7"
-composeCompiler = "1.5.10"
-coroutines = "1.8.0"
+compose = "1.7.0-beta03"
+composeCompiler = "2.0.0"
+coroutines = "1.8.1"
 dagger = "2.51.1"
 desugarJdkLibs = "2.0.4"
-kotlin = "1.9.22"
-kspPlugin = "1.9.22-1.0.17"
-lifecycleRuntimeKtx = "2.7.0"
+detekt = "1.23.1"
+kotlin = "2.0.0"
+kspPlugin = "2.0.0-1.0.22"
 material3 = "1.2.1"
 minSdk = "28"
 moshi = "1.15.0"
 orchestrator = "1.5.2"
 retrofit = "2.11.0"
-paging = "3.2.1"
+paging = "3.3.0"
 targetSdk = "33"
 
 [libraries]
 accompanist = { module = "com.google.accompanist:accompanist-placeholder-material", version = "0.13.0" }
+affectedModuleDetector = { module = "com.dropbox.affectedmoduledetector:affectedmoduledetector", version = "0.3.1" }
 androidGradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 androidx-compose-activity = "androidx.activity:activity-compose:1.9.0"
 androidx-compose-constraint-layout = { module = "androidx.constraintlayout:constraintlayout-compose", version = "1.0.1" }
@@ -29,13 +29,15 @@ androidx-compose-foundation = { module = "androidx.compose.foundation:foundation
 androidx-compose-foundation-layout = { module = "androidx.compose.foundation:foundation-layout", version.ref = "compose" }
 androidx-compose-material = { module = "androidx.compose.material3:material3", version.ref = "material3" }
 androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "compose" }
-androidx-compose-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
 androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
-androidx-compose-ui-testing-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
+androidx-compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
+androidx-compose-ui-test-junit4-android = { module = "androidx.compose.ui:ui-test-junit4-android", version.ref = "compose" }
+androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
 androidx-compose-uitooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
-androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-paging-common-android = { group = "androidx.paging", name = "paging-common-android", version.ref = "paging" }
+androidx-paging-compose-android = { group = "androidx.paging", name = "paging-compose-android", version.ref = "paging" }
+androidx-palette-ktx = { group = "androidx.palette", name = "palette-ktx", version = "1.0.0" }
 androidx-test-espresso-core = "androidx.test.espresso:espresso-core:3.5.1"
-anvil-gradlePlugin = { module = "com.squareup.anvil:gradle-plugin", version.ref = "anvil" }
 assertk = "com.willowtreeapps.assertk:assertk-jvm:0.28.1"
 circuitCodegen = { module = "com.slack.circuit:circuit-codegen", version.ref = "circuit" }
 circuitCodegenAnnotations = { module = "com.slack.circuit:circuit-codegen-annotations", version.ref = "circuit" }
@@ -46,17 +48,20 @@ circuitRuntimeUi = { module = "com.slack.circuit:circuit-runtime-ui", version.re
 circuitTest = { module = "com.slack.circuit:circuit-test", version.ref = "circuit" }
 circuitXEffects = { module = "com.slack.circuit:circuitx-effects", version.ref = "circuit" }
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
-dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
-dagger-lib = { module = "com.google.dagger:dagger", version.ref = "dagger" }
+composeCompiler-gradlePlugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
+core-splashscreen = "androidx.core:core-splashscreen:1.0.1"
+detekt-cli = { module = "io.gitlab.arturbosch.detekt:detekt-cli", version.ref = "detekt" }
+detektGradlePlugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
+graphAssert = { module = "com.jraska.module.graph.assertion:com.jraska.module.graph.assertion.gradle.plugin", version = "2.5.0" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "dagger" }
+hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "dagger" }
+hilt-androidCompiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "dagger" }
 junit4 = "junit:junit:4.13.2"
 kotlin-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlin-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
-kotlinReflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
 kspGradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "kspPlugin" }
-lottie-compose = { module = "com.airbnb.android:lottie-compose", version = "6.1.0" }
 material = "com.google.android.material:material:1.12.0"
 moshi = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
 moshiCodeGen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
@@ -64,10 +69,11 @@ paging-compose = { module = "androidx.paging:paging-compose", version.ref = "pag
 paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "paging" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
-core-splashscreen = "androidx.core:core-splashscreen:1.0.1"
+robolectric = { module = "org.robolectric:robolectric", version = "4.10.3" }
+sortDependenciesGradlePlugin = { module = "com.squareup:sort-dependencies-gradle-plugin", version = "0.6" }
 spotify-auth = { module = "com.spotify.android:auth", version = "2.1.0" }
 timber = "com.jakewharton.timber:timber:5.0.1"
-turbine = "app.cash.turbine:turbine:1.1.0"
+truth = "com.google.truth:truth:1.4.2"
 
 [bundles]
 circuit = ["circuitFoundation", "circuitRuntime", "circuitRuntimePresenter", "circuitRuntimeUi", "circuitXEffects"]

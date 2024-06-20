@@ -1,5 +1,6 @@
 package com.songify.library.spotify.internal.model
 
+import com.songify.library.spotify.model.SpotifyModel
 import com.squareup.moshi.Json
 
 /**
@@ -28,3 +29,11 @@ data class AlbumMetadataResponse(
         val name: String
     )
 }
+
+internal fun AlbumMetadataResponse.toAlbumCard() = SpotifyModel.Album(
+    id = id,
+    imageUrlString = images.firstOrNull()?.url,
+    caption = name,
+    artistsString = artists.joinToString(", ") { name },
+    yearOfRelease = releaseDate.substring(0..3) // yyyy-mm-dd
+)

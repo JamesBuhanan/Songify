@@ -1,0 +1,17 @@
+plugins {
+    id "songify.android.library"
+}
+
+songify {
+    jetpackCompose()
+    feature()
+    circuit()
+    hilt()
+}
+
+dependencies {
+    api projects.feature.nowplaying.public
+
+    implementation projects.library.design.public
+    implementation projects.library.design.public
+}

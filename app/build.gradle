@@ -6,8 +6,6 @@ dependencies {
     implementation libs.core.splashscreen
     implementation libs.material
     implementation libs.spotify.auth
-
-    implementation projects.common.retrofit
     implementation projects.common.session
     implementation projects.common.theme
     implementation projects.library.bottomNavigation.public

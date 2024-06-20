@@ -20,7 +20,8 @@ enum class SearchQueryType(val value: String) {
  * The query string is generated using the provided [types] param.
  */
 fun buildSearchQueryWithTypes(vararg types: SearchQueryType): String {
-    if (types.isEmpty()) throw IllegalArgumentException("The list cannot be empty")
+    require(types.isNotEmpty()) { "The list cannot be empty" }
+
     var query = types.first().value
     if (types.size == 1) return query
     // start with index one because the query string is initialized
@@ -28,5 +29,6 @@ fun buildSearchQueryWithTypes(vararg types: SearchQueryType): String {
     for (i in 1..types.lastIndex) {
         query += ",${types[i].value}"
     }
+
     return query
 }

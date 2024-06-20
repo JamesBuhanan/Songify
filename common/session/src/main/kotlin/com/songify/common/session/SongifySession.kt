@@ -1,10 +1,9 @@
 package com.songify.common.session
 
-import com.songify.common.di.AppScope
-import com.songify.common.di.SingleIn
 import javax.inject.Inject
+import javax.inject.Singleton
 
-@SingleIn(AppScope::class)
+@Singleton
 class SongifySession @Inject constructor() {
     var accessToken: String? = null
 

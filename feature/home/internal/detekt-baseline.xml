@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>MagicNumber:HomeFeedCard.kt$.66f</ID>
+    <ID>UnusedParameter:HomeView.kt$modifier: Modifier = Modifier</ID>
+  </CurrentIssues>
+</SmellBaseline>

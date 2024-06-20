@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>ComplexInterface:SpotifyService.kt$SpotifyService</ID>
+    <ID>LongParameterList:SpotifyService.kt$SpotifyService$( @Query("q") searchQuery: String, @Query("market") market: String, @Header("Authorization") token: String, @Query("limit") limit: Int = 20, @Query("offset") offset: Int = 0, @Query("type") type: String = SpotifyEndPoints.Defaults.defaultSearchQueryTypes, )</ID>
+    <ID>MagicNumber:AlbumMetadataResponse.kt$3</ID>
+    <ID>MagicNumber:AlbumResponse.kt$3</ID>
+    <ID>MagicNumber:SpotifyPagingSource.kt$SpotifyPagingSource$50</ID>
+    <ID>SpreadOperator:SpotifyEndPoints.kt$SpotifyEndPoints.Defaults$(*SearchQueryType.entries.toTypedArray())</ID>
+    <ID>TooManyFunctions:SpotifyService.kt$SpotifyService</ID>
+  </CurrentIssues>
+</SmellBaseline>

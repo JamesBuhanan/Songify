@@ -94,8 +94,11 @@ fun SongifyBottomNavigation(
                         icon = {
                             Icon(
                                 imageVector = ImageVector.vectorResource(
-                                    if (it == currentlySelectedItem) it.filledIconVariantResourceId
-                                    else it.outlinedIconVariantResourceId
+                                    if (it == currentlySelectedItem) {
+                                        it.filledIconVariantResourceId
+                                    } else {
+                                        it.outlinedIconVariantResourceId
+                                    }
                                 ),
                                 contentDescription = null
                             )

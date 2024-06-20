@@ -1,15 +1,14 @@
 package com.songify.common.coroutines.di
 
-import com.songify.common.di.AppScope
-import com.squareup.anvil.annotations.ContributesTo
 import dagger.Module
 import dagger.Provides
-import javax.inject.Singleton
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import javax.inject.Singleton
 
-
-@ContributesTo(AppScope::class)
+@InstallIn(SingletonComponent::class)
 @Module
 class CoroutinesModule {
     @[Provides Singleton IODispatcher]

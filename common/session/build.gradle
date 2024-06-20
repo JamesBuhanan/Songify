@@ -3,5 +3,5 @@ plugins {
 }
 
 songify {
-    anvil()
+    hilt()
 }

@@ -1,15 +1,14 @@
-/*
- * © 2023 Match Group, LLC.
- */
-
 import com.android.build.gradle.AppPlugin
 import com.songify.extension.allProjects
 import com.songify.extension.androidApplication
-import com.songify.extension.anvil
 import com.songify.extension.applyOnce
 import com.songify.extension.circuit
+import com.songify.extension.configureLint
 import com.songify.extension.coroutines
+import com.songify.extension.detekt
 import com.songify.extension.dynamicNamespace
+import com.songify.extension.graphAssert
+import com.songify.extension.hilt
 import com.songify.extension.jetpackCompose
 import com.songify.extension.libs
 import com.songify.extension.moduleNameFix
@@ -28,12 +27,13 @@ class SongifyAndroidApplicationPlugin : Plugin<Project> {
             allProjects()
             dynamicNamespace()
             moduleNameFix()
-            // configureLint()
-            // detekt()
+            configureLint()
+            detekt()
+            graphAssert()
             // checkstyle()
-            // gradleDependenciesSorter()
+//            gradleDependenciesSorter()
             circuit()
-            anvil()
+            hilt()
             moshi()
             jetpackCompose()
             coroutines()

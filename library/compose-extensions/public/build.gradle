@@ -1,0 +1,12 @@
+plugins {
+    id 'songify.android.library'
+}
+
+songify {
+    jetpackCompose()
+    circuit()
+}
+
+dependencies {
+    implementation libs.androidx.paging.common.android
+}

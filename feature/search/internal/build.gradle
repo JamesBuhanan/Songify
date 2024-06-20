@@ -6,14 +6,12 @@ songify {
     jetpackCompose()
     feature()
     circuit()
-    anvil()
+    hilt()
 }
 
 dependencies {
     api projects.feature.search.public
 
     implementation libs.coil
-    implementation projects.library.design.public
-    implementation projects.library.genre.public
-    implementation projects.library.spotify.public
+    implementation projects.library.search.public
 }

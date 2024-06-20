@@ -1,6 +1,3 @@
-/*
- * © 2023 Match Group, LLC.
- */
 package com.songify.extension
 
 import com.android.build.api.dsl.ApplicationExtension
@@ -11,6 +8,8 @@ import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.findByType
 
 fun Project.jetpackCompose() {
+    applyOnce("org.jetbrains.kotlin.plugin.compose")
+
     dependencies {
         "implementation"(libs.bundles.compose)
     }
@@ -24,7 +23,7 @@ fun Project.jetpackCompose() {
     }
 }
 
-fun CommonExtension<*, *, *, *, *>.jetpackComposeCompiler(compilerVersion: String) {
+fun CommonExtension<*, *, *, *, *, *>.jetpackComposeCompiler(compilerVersion: String) {
     buildFeatures.compose = true
 
     composeOptions {

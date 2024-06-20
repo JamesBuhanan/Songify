@@ -35,13 +35,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.slack.circuit.codegen.annotations.CircuitInject
 import com.slack.circuitx.effects.toastEffect
-import com.songify.common.di.AppScope
-import com.songify.common.ui.LoadingBar
 import com.songify.feature.premium.PremiumScreen
+import com.songify.library.loading.LoadingBar
 import com.songify.library.premium.PremiumPlan
+import dagger.hilt.components.SingletonComponent
 
 
-@CircuitInject(PremiumScreen::class, AppScope::class)
+@CircuitInject(PremiumScreen::class, SingletonComponent::class)
 @Composable
 fun PremiumView(
     postsState: PremiumState,
@@ -56,16 +56,16 @@ fun PremiumView(
 
 @Composable
 fun ShowPremium(
-    premiumState: PremiumState.Success,
+    state: PremiumState.Success,
     modifier: Modifier = Modifier,
 ) {
     BackHandler {
-        premiumState.eventSink(PremiumEvent.TappedBack)
+        state.eventSink(PremiumEvent.TappedBack)
     }
 
     GetPremiumScreen(
-        premiumPlans = premiumState.premiumPlans,
-        onPremiumPlanClicked = { premiumState.eventSink(PremiumEvent.TappedPremiumPlan(it)) }
+        premiumPlans = state.premiumPlans,
+        onPremiumPlanClicked = { state.eventSink(PremiumEvent.TappedPremiumPlan(it)) }
     )
 }
 

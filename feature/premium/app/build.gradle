@@ -4,10 +4,11 @@ plugins {
 
 songify {
     circuit()
-    anvil()
+    hilt()
 }
 
 dependencies {
     api projects.feature.premium.internal
-    api projects.library.premium.public
+
+    implementation projects.library.premium.public
 }

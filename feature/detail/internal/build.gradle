@@ -1,0 +1,24 @@
+plugins {
+    id "songify.android.library"
+}
+
+songify {
+    jetpackCompose()
+    feature()
+    circuit()
+    hilt()
+}
+
+dependencies {
+    api projects.feature.detail.public
+
+    implementation libs.accompanist
+    implementation libs.androidx.paging.compose.android
+    implementation libs.bundles.paging
+    implementation libs.coil
+    implementation libs.material
+    implementation projects.feature.nowplaying.public
+    implementation projects.library.composeExtensions.public
+    implementation projects.library.design.public
+    implementation projects.library.detail.public
+}

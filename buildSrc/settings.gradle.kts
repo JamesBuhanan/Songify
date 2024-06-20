@@ -1,4 +1,3 @@
-// Rename the main build file from build.gradle to buildSrc.gradle
 dependencyResolutionManagement {
     versionCatalogs {
         create("libs") {
@@ -13,3 +12,5 @@ buildCache {
         isPush = true
     }
 }
+
+rootProject.name = "songify-buildSrc"

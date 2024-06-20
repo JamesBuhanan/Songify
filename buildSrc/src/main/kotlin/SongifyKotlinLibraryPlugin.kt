@@ -1,10 +1,6 @@
-/*
- * © 2023 Match Group, LLC.
- */
-
 import com.songify.extension.allProjects
-import com.songify.extension.anvil
 import com.songify.extension.applyOnce
+import com.songify.extension.gradleDependenciesSorter
 import com.songify.extension.kotlinJvm
 import com.songify.extension.kotlinLibrary
 import com.songify.extension.libs
@@ -22,6 +18,7 @@ class SongifyKotlinLibraryPlugin : Plugin<Project> {
             kotlinLibrary()
             kotlinJvm()
             allProjects()
+            gradleDependenciesSorter()
 
             // detekt()
             circuitRuntime()
@@ -38,8 +35,6 @@ class SongifyKotlinLibraryPlugin : Plugin<Project> {
 }
 
 open class SongifyKotlinLibraryExtension(private val project: Project) {
-    fun anvil() = project.anvil()
-
     fun moshi() = project.moshi()
 
     fun retrofit() = project.retrofit()

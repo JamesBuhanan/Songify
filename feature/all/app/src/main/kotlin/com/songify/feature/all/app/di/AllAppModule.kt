@@ -1,14 +1,14 @@
 package com.songify.feature.all.app.di
 
 import com.slack.circuit.runtime.screen.Screen
-import com.songify.common.di.AppScope
 import com.songify.feature.home.HomeScreen
-import com.squareup.anvil.annotations.ContributesTo
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 
-@ContributesTo(AppScope::class)
 @Module
+@InstallIn(SingletonComponent::class)
 interface AllAppModule {
     companion object {
         @Provides

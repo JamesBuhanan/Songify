@@ -1,15 +1,12 @@
 package com.songify.library.premium.internal.usecase
 
 import androidx.compose.ui.graphics.Color
-import com.songify.common.di.AppScope
-import com.songify.common.di.SingleIn
 import com.songify.library.premium.PremiumPlan
 import com.songify.library.premium.usecase.GetPremiumPlans
-import com.squareup.anvil.annotations.ContributesBinding
 import javax.inject.Inject
+import javax.inject.Singleton
 
-@SingleIn(AppScope::class)
-@ContributesBinding(AppScope::class)
+@Singleton
 class GetPremiumPlansImpl @Inject constructor() : GetPremiumPlans {
     override suspend fun invoke(): List<PremiumPlan> = listOf(
         PremiumPlan(

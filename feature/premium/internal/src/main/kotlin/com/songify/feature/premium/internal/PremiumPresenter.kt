@@ -6,12 +6,12 @@ import androidx.compose.runtime.produceState
 import com.slack.circuit.codegen.annotations.CircuitInject
 import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.presenter.Presenter
-import com.songify.common.di.AppScope
 import com.songify.feature.premium.PremiumScreen
 import com.songify.library.premium.usecase.GetPremiumPlans
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
+import dagger.hilt.components.SingletonComponent
 
 class PremiumPresenter @AssistedInject constructor(
     private val getPremiumPlans: GetPremiumPlans,
@@ -34,7 +34,7 @@ class PremiumPresenter @AssistedInject constructor(
         return state
     }
 
-    @CircuitInject(PremiumScreen::class, AppScope::class)
+    @CircuitInject(PremiumScreen::class, SingletonComponent::class)
     @AssistedFactory
     interface Factory {
         fun create(navigator: Navigator): PremiumPresenter

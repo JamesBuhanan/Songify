@@ -1,5 +1,6 @@
 package com.songify.library.spotify.internal.model
 
+import com.songify.library.spotify.model.SpotifyModel.Track
 import com.squareup.moshi.Json
 
 /**
@@ -33,7 +34,7 @@ data class AlbumResponse(
     data class TrackResponseWithoutAlbumMetadataResponse(
         val id: String,
         val name: String,
-        @Json(name = "preview_url") val previewUrl: String?,
+        @Json(name = "preview_url") val previewUrl: String,
         @Json(name = "is_playable") val isPlayable: Boolean?,
         val explicit: Boolean,
         @Json(name = "duration_ms") val durationInMillis: Int
@@ -51,3 +52,34 @@ data class AlbumResponse(
         val followers: ArtistResponse.Followers?
     )
 }
+
+fun AlbumResponse.getTracks(): List<Track> =
+    tracks.items.map { trackResponse ->
+        trackResponse.toTrack(
+            albumArtImageUrlString = images.getImageResponseForImageSize(MapperImageSize.LARGE).url,
+            albumArtistsString = artists.joinToString(",") { it.name }
+        )
+    }
+
+fun AlbumResponse.TrackResponseWithoutAlbumMetadataResponse.toTrack(
+    albumArtImageUrlString: String,
+    albumArtistsString: String
+) = Track(
+    id = id,
+    caption = name,
+    imageUrlString = albumArtImageUrlString,
+    artistsString = albumArtistsString,
+    trackUrlString = previewUrl
+)
+
+fun List<ImageResponse>.getImageResponseForImageSize(imageSize: MapperImageSize): ImageResponse {
+    if (this.isEmpty()) error("The list of images is empty!")
+    if (this.size < 3) return this.last()
+    return when (imageSize) {
+        MapperImageSize.LARGE -> this[0]
+        MapperImageSize.MEDIUM -> this[1]
+        MapperImageSize.SMALL -> this[2]
+    }
+}
+
+enum class MapperImageSize { SMALL, MEDIUM, LARGE }

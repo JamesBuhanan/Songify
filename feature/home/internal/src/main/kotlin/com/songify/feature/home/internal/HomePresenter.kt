@@ -6,12 +6,13 @@ import androidx.compose.runtime.produceState
 import com.slack.circuit.codegen.annotations.CircuitInject
 import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.presenter.Presenter
-import com.songify.common.di.AppScope
 import com.songify.feature.home.HomeScreen
-import com.songify.library.spotify.usecase.GetHomeFeed
+import com.songify.feature.premium.DetailScreen
+import com.songify.library.home.usecase.GetHomeFeed
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
+import dagger.hilt.components.SingletonComponent
 
 class HomePresenter @AssistedInject constructor(
     private val getHomeFeed: GetHomeFeed,
@@ -25,8 +26,8 @@ class HomePresenter @AssistedInject constructor(
                     homeFeed = homeFeed,
                     eventSink = {
                         when (it) {
-                            HomeEvent.TappedBack -> navigator.pop()
-                            HomeEvent.TappedCard -> {}
+                            is HomeEvent.TappedBack -> navigator.pop()
+                            is HomeEvent.TappedCard -> navigator.goTo(DetailScreen(it.spotifyModel))
                         }
                     }
                 )
@@ -35,10 +36,11 @@ class HomePresenter @AssistedInject constructor(
             })
         }
 
+        // Cache all PagingData. Is there a better way to do this?
         return state
     }
 
-    @CircuitInject(HomeScreen::class, AppScope::class)
+    @CircuitInject(HomeScreen::class, SingletonComponent::class)
     @AssistedFactory
     interface Factory {
         fun create(navigator: Navigator): HomePresenter

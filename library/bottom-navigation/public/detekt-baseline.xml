@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>MagicNumber:SongifyBottomNavigation.kt$0.3f</ID>
+    <ID>MagicNumber:SongifyBottomNavigation.kt$0.5f</ID>
+    <ID>MagicNumber:SongifyBottomNavigation.kt$0.7f</ID>
+    <ID>MagicNumber:SongifyBottomNavigation.kt$0.9f</ID>
+  </CurrentIssues>
+</SmellBaseline>

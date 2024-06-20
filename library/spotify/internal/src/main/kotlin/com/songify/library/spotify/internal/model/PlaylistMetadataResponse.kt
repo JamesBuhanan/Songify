@@ -1,5 +1,6 @@
 package com.songify.library.spotify.internal.model
 
+import com.songify.library.spotify.model.SpotifyModel
 import com.squareup.moshi.Json
 
 /**
@@ -17,3 +18,12 @@ data class PlaylistMetadataResponse(
     data class TotalNumberOfTracksWrapper(@Json(name = "total") val value: Int)
     data class OwnerNameWrapper(@Json(name = "display_name") val value: String)
 }
+
+internal fun PlaylistMetadataResponse.toPlaylistCard() = SpotifyModel.Playlist(
+    id = id,
+    caption = name,
+    imageUrlString = images.firstOrNull()?.url,
+    name = name,
+    ownerName = ownerName.value,
+    totalNumberOfTracks = totalNumberOfTracks.value.toString(),
+)

@@ -4,14 +4,18 @@ plugins {
 
 songify {
     circuit()
-    anvil()
+    hilt()
 }
 
 dependencies {
+    api projects.feature.detail.internal
     api projects.feature.home.internal
+    api projects.feature.nowplaying.internal
     api projects.feature.premium.internal
     api projects.feature.search.internal
-    api projects.library.genre.internal
-    api projects.library.spotify.internal
+    api projects.library.detail.internal
+    api projects.library.home.internal
     api projects.library.premium.internal
+    api projects.library.search.internal
+    api projects.library.spotify.internal
 }

@@ -1,7 +1,6 @@
 package com.songify.app
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -19,27 +18,27 @@ import com.slack.circuit.foundation.CircuitCompositionLocals
 import com.slack.circuit.foundation.NavigableCircuitContent
 import com.slack.circuit.foundation.rememberCircuitNavigator
 import com.slack.circuit.runtime.screen.Screen
-import com.songify.common.di.ActivityKey
-import com.songify.common.di.AppScope
 import com.songify.common.session.SongifySession
 import com.songify.common.theme.SongifyTheme
 import com.songify.library.bottomnavigation.SongifyBottomNavigation
 import com.spotify.sdk.android.auth.AuthorizationClient
 import com.spotify.sdk.android.auth.AuthorizationRequest
 import com.spotify.sdk.android.auth.AuthorizationResponse
-import com.squareup.anvil.annotations.ContributesMultibinding
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 const val CLIENT_ID = "9ec02e7f10514c15842363d73f64f985"
 const val AUTH_TOKEN_REQUEST_CODE = 1337
 
-@ContributesMultibinding(AppScope::class, boundType = Activity::class)
-@ActivityKey(EntryPointActivity::class)
-class EntryPointActivity @Inject constructor(
-    private val circuit: Circuit,
-    private val songifySession: SongifySession,
-    private val startScreen: Screen,
-) : ComponentActivity() {
+@AndroidEntryPoint
+class EntryPointActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var circuit: Circuit
+    @Inject
+    lateinit var songifySession: SongifySession
+    @Inject
+    lateinit var startScreen: Screen
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

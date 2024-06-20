@@ -6,7 +6,7 @@ songify {
     jetpackCompose()
     feature()
     circuit()
-    anvil()
+    hilt()
 }
 
 dependencies {
