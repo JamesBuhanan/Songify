@@ -110,6 +110,24 @@ is tested in instrumented tests.  (See `HomePresenterTest` and `HomeViewTest`)
 - Detekt
 - Lint with K2
 
+## GraphAssert
+
+GraphAssert enforces our 4 sacred laws of modularization and will help as we scale to 1,000's of modules.
+
+You can check that the project is compliant either locally or on CI by running:
+
+`./gradlew assertModuleGraph`
+
+You can also generate a current module dependency graph by running:
+
+`./gradlew generateModulesGraphvizText --no-configure-on-demand`
+
+## Sort Dependencies
+
+As we scale to 1,000's of modules we can help keep our dependencies raked and tidy by using:
+
+`./gradlew sortDependencies`
+
 ## Libraries
 
 - Circuit
