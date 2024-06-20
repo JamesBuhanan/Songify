@@ -17,7 +17,7 @@ A "Spotify-ish" app to showcase massively scalable architecture for Android.
   leaf node to the main workflow and yet we can build it in isolation and launch directly to it.
 - You can see how many modules get unloaded when we "focus" on the Premium feature:
 
-![images/all.png](images/all.png)![images/premium.png](images%2Fpremium.png)
+![images/all.png](images/all.png)![images/premium.png](images/premium.png)
 
 ## affectedModuleDetector
 
