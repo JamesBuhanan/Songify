@@ -1,8 +1,13 @@
 plugins {
-    id 'songify.kotlin.library'
+    id 'songify.android.library'
 }
 
 songify {
     moshi()
     retrofit()
+    parcelize()
+}
+
+dependencies {
+    api libs.androidx.paging.common.android
 }

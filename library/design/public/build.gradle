@@ -1,15 +1,16 @@
 plugins {
-    id "songify.android.library"
+    id 'songify.android.library'
 }
 
 songify {
+    hilt()
     jetpackCompose()
 }
 
 dependencies {
-    implementation libs.accompanist
+    api libs.accompanist
+
+    implementation libs.androidx.palette.ktx
     implementation libs.coil
-    implementation libs.lottie.compose
-    implementation libs.material
-    implementation projects.common.theme
+    implementation projects.common.coroutines
 }

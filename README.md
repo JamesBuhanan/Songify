@@ -22,10 +22,11 @@ scale massively.
 `affectedModuleDetector` looks at the last commit of your branch to determine what modules are "
 affected".
 
-Here are 2 useful examples of running detekt and unit tests:
+Here are 3 useful examples of running detekt, unit tests, and android tests:
 
 `./gradlew runAffectedDetekt -Paffected_module_detector.enable --no-configure-on-demand --no-configuration-cache`
 `./gradlew runAffectedUnitTests -Paffected_module_detector.enable --no-configure-on-demand --no-configuration-cache`
+`./gradlew runAffectedAndroidTests -Paffected_module_detector.enable --no-configure-on-demand --no-configuration-cache`
 
 ## Architecture
 
@@ -40,11 +41,11 @@ https://speakerdeck.com/vrallev/android-at-scale-at-square
 This allows us to unload any modules that we are not currently working on.
 
 `:feature:*:public` - Just a `Screen` key data class.
-`:feature:*:internal` - Contract/Presenter/View/ui. Basically
+`:feature:*:internal` - Contract/Presenter/View/ui.
 `:feature:*:app` - Hilt module to "provide" a start screen or any other unsatisfied dependencies
 `:library:*:public` - interfaces for UseCases and data models that we have no choice but to expose
 `:library:*:internal` - implementations for UseCases
-`:common:*` - Probably shouldn't exist in this architecture. I dunno...
+`:common:*` - Probably shouldn't exist in this architecture.
 `:*:*:shared-test` - Shared stuff for `test` and `androidTest` to both depend on
 
 Rule 1: Feature modules cannot depend on other feature modules
@@ -85,20 +86,6 @@ across.
 We test each half of the Circuit in isolation. The "Presenter" is tested in UnitTests and the "View"
 is tested in instrumented tests.  (See `HomePresenterTest` and `HomeViewTest`)
 
-## Libraries
-
-- Circuit
-- Compose
-- Hilt/Dagger
-- Moshi
-- Retrofit
-- K2
-- Paging3
-- Material3
-- Accompanist
-- Robolectric
-- Spotify Auth
-
 ## Gradle
 
 - Convention Plugins
@@ -111,6 +98,19 @@ is tested in instrumented tests.  (See `HomePresenterTest` and `HomeViewTest`)
 - GraphAssert
 - Detekt
 - Lint with K2
+
+## Libraries
+
+- Circuit
+- Compose
+- Hilt/Dagger
+- Moshi
+- Retrofit
+- K2
+- Paging3
+- Material3
+- Accompanist
+- Robolectric
 
 ## Inspirations
 

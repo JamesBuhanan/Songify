@@ -9,8 +9,7 @@ songify {
 }
 
 dependencies {
-    api projects.library.retrofit.public
-    api projects.library.spotify.public
+    api projects.library.home.public
 
     implementation projects.common.session
 }
