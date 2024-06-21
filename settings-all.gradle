@@ -1,6 +1,5 @@
 include(
         ":app",
-        ":common:coroutines",
         ":common:session",
         ":common:theme",
         ":feature:all:app",
@@ -11,6 +10,7 @@ include(
         ":feature:search:public", ":feature:search:internal", ":feature:search:app",
         ":library:bottom-navigation:public",
         ":library:compose-extensions:public",
+        ":library:coroutines:public",
         ":library:design:public",
         ":library:detail:public", ":library:detail:internal",
         ":library:home:public", ":library:home:internal",

@@ -1,5 +1,7 @@
-package com.songify.common.coroutines.di
+package com.songify.library.coroutines.di
 
+import com.songify.library.coroutines.IODispatcher
+import com.songify.library.coroutines.MainDispatcher
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

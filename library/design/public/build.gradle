@@ -12,5 +12,5 @@ dependencies {
 
     implementation libs.androidx.palette.ktx
     implementation libs.coil
-    implementation projects.common.coroutines
+    implementation projects.library.coroutines.public
 }
