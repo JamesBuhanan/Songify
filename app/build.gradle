@@ -11,5 +11,5 @@ dependencies {
     implementation projects.library.theme.public
 
     // Which app do we load?
-    implementation projects.feature.detail.app
+    implementation projects.feature.search.app
 }

@@ -9,4 +9,5 @@ songify {
 
 dependencies {
     api projects.feature.search.internal
+    api projects.library.search.internal
 }

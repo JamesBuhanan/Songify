@@ -18,10 +18,10 @@ A "Spotify-ish" app to showcase massively scalable architecture for Android.
 - How much your sample apps pull in is up to you. e.g.- `:feature:detail:app` uses the ACTUAL
   Spotify API, but `:feature:home:app` just stubs the response. Is the faster build time worth not
   using real data?
-- You can see how many modules get unloaded when we "focus" on the Premium feature:
+- You can see how many modules get unloaded when we "focus" on the Search feature:
 
-| ![](images/all.png) | ![](images/premium.png) |
-|---------------------|-------------------------|
+| ![](images/all.png) | ![](images/search.png) |
+|---------------------|------------------------|
 
 ## affectedModuleDetector
 
