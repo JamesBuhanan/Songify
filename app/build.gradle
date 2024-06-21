@@ -6,9 +6,9 @@ dependencies {
     implementation libs.core.splashscreen
     implementation libs.material
     implementation libs.spotify.auth
-    implementation projects.common.theme
     implementation projects.library.bottomNavigation.public
     implementation projects.library.session.public
+    implementation projects.library.theme.public
 
     // Which app do we load?
     implementation projects.feature.all.app

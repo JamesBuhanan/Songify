@@ -23,11 +23,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.songify.common.theme.SongifyTheme
 import com.songify.feature.detail.internal.R
 import com.songify.library.design.dynamicTheme.dynamicbackgroundmodifier.DynamicBackgroundResource
 import com.songify.library.design.dynamicTheme.dynamicbackgroundmodifier.DynamicBackgroundStyle
 import com.songify.library.design.dynamicTheme.dynamicbackgroundmodifier.dynamicBackground
+import com.songify.library.theme.SongifyTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

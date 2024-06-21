@@ -18,9 +18,9 @@ import com.slack.circuit.foundation.CircuitCompositionLocals
 import com.slack.circuit.foundation.NavigableCircuitContent
 import com.slack.circuit.foundation.rememberCircuitNavigator
 import com.slack.circuit.runtime.screen.Screen
-import com.songify.library.session.SongifySession
-import com.songify.common.theme.SongifyTheme
 import com.songify.library.bottomnavigation.SongifyBottomNavigation
+import com.songify.library.session.SongifySession
+import com.songify.library.theme.SongifyTheme
 import com.spotify.sdk.android.auth.AuthorizationClient
 import com.spotify.sdk.android.auth.AuthorizationRequest
 import com.spotify.sdk.android.auth.AuthorizationResponse
@@ -35,8 +35,10 @@ class EntryPointActivity : ComponentActivity() {
 
     @Inject
     lateinit var circuit: Circuit
+
     @Inject
     lateinit var songifySession: SongifySession
+
     @Inject
     lateinit var startScreen: Screen
 
