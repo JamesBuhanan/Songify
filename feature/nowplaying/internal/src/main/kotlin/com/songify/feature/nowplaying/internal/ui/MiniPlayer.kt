@@ -37,7 +37,7 @@ import com.songify.library.spotify.model.Streamable
  * An object that contains constants related to the [MiniPlayer]
  * composable.
  */
-object MusifyMiniPlayerConstants {
+object MiniPlayerConstants {
     val miniPlayerHeight = 60.dp
 }
 
@@ -56,7 +56,7 @@ fun MiniPlayer(
     val dynamicBackgroundStyle = remember { DynamicBackgroundStyle.Filled() }
     Row(
         modifier = modifier
-            .height(MusifyMiniPlayerConstants.miniPlayerHeight) // the height of this composable is fixed
+            .height(MiniPlayerConstants.miniPlayerHeight) // the height of this composable is fixed
             .clip(RoundedCornerShape(8.dp))
             .dynamicBackground(dynamicBackgroundResource, dynamicBackgroundStyle),
         verticalAlignment = Alignment.CenterVertically

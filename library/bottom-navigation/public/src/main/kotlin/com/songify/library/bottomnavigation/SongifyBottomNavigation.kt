@@ -28,22 +28,6 @@ object SongifyBottomNavigationConstants {
     val navigationHeight = 60.dp
 }
 
-/**
- * A bottom navigation bar composable with a background gradient.
- * Note: The bottom navigation bar has a fixed height of 80dp.
- *
- * @param navigationItems the [BottomNavItem] to
- * display in the navigation bar.
- * @param currentlySelectedItem the currently selected [BottomNavItem].
- * The currently selected item will be highlighted and will also use the
- * [BottomNavItem.filledIconVariantResourceId] for the image resource.
- * @param onItemClick the lambda to execute when an item is clicked. A reference to
- * an instance of [BottomNavItem] that was clicked will be provided
- * as a parameter to the lambda.
- * @param modifier the modifier to be applied to the navigation bar. The height of the
- * composable is fixed at 80dp.
- * @see [com.example.musify.ui.navigation.MusifyBottomNavigationConnectedWithBackStack]
- */
 @Composable
 fun SongifyBottomNavigation(
     onClick: (Screen) -> Unit,
