@@ -10,5 +10,4 @@ songify {
 dependencies {
     api projects.feature.detail.internal
     api projects.library.detail.internal
-    api projects.library.spotify.internal
 }

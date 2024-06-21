@@ -4,7 +4,6 @@ plugins {
 
 songify {
     jetpackCompose()
-    feature()
     circuit()
     hilt()
 }
@@ -13,5 +12,7 @@ dependencies {
     api projects.feature.search.public
 
     implementation libs.coil
+    implementation projects.library.loading.public
     implementation projects.library.search.public
+    implementation projects.library.theme.public
 }

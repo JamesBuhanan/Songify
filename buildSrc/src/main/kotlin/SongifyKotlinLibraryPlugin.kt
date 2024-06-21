@@ -1,5 +1,6 @@
 import com.songify.extension.allProjects
 import com.songify.extension.applyOnce
+import com.songify.extension.detekt
 import com.songify.extension.gradleDependenciesSorter
 import com.songify.extension.kotlinJvm
 import com.songify.extension.kotlinLibrary
@@ -20,7 +21,7 @@ class SongifyKotlinLibraryPlugin : Plugin<Project> {
             allProjects()
             gradleDependenciesSorter()
 
-            // detekt()
+            detekt()
             circuitRuntime()
 
             extensions.create("songify", SongifyKotlinLibraryExtension::class.java, this)

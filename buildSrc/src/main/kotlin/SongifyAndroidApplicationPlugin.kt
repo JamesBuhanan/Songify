@@ -4,7 +4,6 @@ import com.songify.extension.androidApplication
 import com.songify.extension.applyOnce
 import com.songify.extension.circuit
 import com.songify.extension.configureLint
-import com.songify.extension.coroutines
 import com.songify.extension.detekt
 import com.songify.extension.dynamicNamespace
 import com.songify.extension.graphAssert
@@ -31,12 +30,10 @@ class SongifyAndroidApplicationPlugin : Plugin<Project> {
             detekt()
             graphAssert()
             // checkstyle()
-//            gradleDependenciesSorter()
             circuit()
             hilt()
             moshi()
             jetpackCompose()
-            coroutines()
 
             dependencies {
                 "implementation"(libs.timber)

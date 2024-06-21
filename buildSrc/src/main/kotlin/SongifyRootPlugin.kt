@@ -11,10 +11,9 @@ class SongifyRootPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         with(project) {
             applyOnce<JavaPlugin>()
-            affectedModules()
             applyOnce<DetektPlugin>()
-            // allProjects()
             // ktLint()
+            affectedModules()
             sortDependenciesAggregated()
             checkSortDependenciesAggregated()
         }

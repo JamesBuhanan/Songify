@@ -8,7 +8,6 @@ import com.songify.extension.configureLint
 import com.songify.extension.coroutines
 import com.songify.extension.detekt
 import com.songify.extension.dynamicNamespace
-import com.songify.extension.feature
 import com.songify.extension.gradleDependenciesSorter
 import com.songify.extension.hilt
 import com.songify.extension.jetpackCompose
@@ -51,7 +50,6 @@ class SongifyAndroidLibraryPlugin : Plugin<Project> {
 open class SongifyAndroidLibraryExtension(private val project: Project) {
     fun circuit() = project.circuit()
     fun coroutines() = project.coroutines()
-    fun feature() = project.feature()
     fun hilt() = project.hilt()
     fun jetpackCompose() = project.jetpackCompose()
     fun moshi() = project.moshi()

@@ -4,7 +4,6 @@ plugins {
 
 songify {
     jetpackCompose()
-    feature()
     circuit()
     hilt()
     test()
@@ -20,6 +19,8 @@ dependencies {
     implementation projects.feature.detail.public
     implementation projects.library.composeExtensions.public
     implementation projects.library.home.public
+    implementation projects.library.loading.public
+    implementation projects.library.theme.public
 
     testImplementation projects.feature.home.sharedTest
 
