@@ -1,4 +1,4 @@
-package com.songify.common.session
+package com.songify.library.session
 
 import javax.inject.Inject
 import javax.inject.Singleton

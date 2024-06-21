@@ -1,6 +1,6 @@
 package com.songify.library.spotify.internal.paging
 
-import com.songify.common.session.SongifySession
+import com.songify.library.session.SongifySession
 import com.songify.library.spotify.internal.SpotifyService
 import com.songify.library.spotify.internal.model.toTrack
 import com.songify.library.spotify.model.SpotifyModel.Track

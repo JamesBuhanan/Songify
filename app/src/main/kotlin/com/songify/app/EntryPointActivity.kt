@@ -18,7 +18,7 @@ import com.slack.circuit.foundation.CircuitCompositionLocals
 import com.slack.circuit.foundation.NavigableCircuitContent
 import com.slack.circuit.foundation.rememberCircuitNavigator
 import com.slack.circuit.runtime.screen.Screen
-import com.songify.common.session.SongifySession
+import com.songify.library.session.SongifySession
 import com.songify.common.theme.SongifyTheme
 import com.songify.library.bottomnavigation.SongifyBottomNavigation
 import com.spotify.sdk.android.auth.AuthorizationClient

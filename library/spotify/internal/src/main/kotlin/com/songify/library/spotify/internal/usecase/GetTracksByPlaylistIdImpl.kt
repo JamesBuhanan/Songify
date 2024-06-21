@@ -3,7 +3,7 @@ package com.songify.library.spotify.internal.usecase
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import com.songify.common.session.SongifySession
+import com.songify.library.session.SongifySession
 import com.songify.library.spotify.internal.SpotifyService
 import com.songify.library.spotify.internal.paging.PlaylistTracksPagingSource
 import com.songify.library.spotify.model.SpotifyModel.Track
