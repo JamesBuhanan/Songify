@@ -11,5 +11,5 @@ songify {
 dependencies {
     api projects.library.home.public
 
-    implementation projects.common.session
+    implementation projects.library.session.public
 }

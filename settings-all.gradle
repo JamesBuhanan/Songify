@@ -1,6 +1,5 @@
 include(
         ":app",
-        ":common:session",
         ":common:theme",
         ":feature:all:app",
         ":feature:detail:public", ":feature:detail:internal", ":feature:detail:app",
@@ -18,5 +17,6 @@ include(
         ":library:premium:public", ":library:premium:internal",
         ":library:retrofit:public",
         ":library:search:public", ":library:search:internal",
+        ":library:session:public",
         ":library:spotify:public", ":library:spotify:internal",
 )

@@ -12,5 +12,5 @@ dependencies {
     api projects.library.retrofit.public
     api projects.library.spotify.public
 
-    implementation projects.common.session
+    implementation projects.library.session.public
 }
