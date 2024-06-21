@@ -43,7 +43,7 @@ import com.songify.library.design.AsyncImageWithPlaceholder
 enum class ListItemCardType { ALBUM, ARTIST, TRACK, PLAYLIST }
 
 @Composable
-fun MusifyCompactListItemCard(
+fun CompactListItemCard(
     title: String,
     subtitle: String,
     onClick: () -> Unit,
@@ -132,7 +132,7 @@ fun MusifyCompactListItemCard(
 }
 
 @Composable
-fun MusifyCompactListItemCard(
+fun CompactListItemCard(
     cardType: ListItemCardType,
     title: String,
     subtitle: String,
@@ -151,7 +151,7 @@ fun MusifyCompactListItemCard(
     placeholderHighlight: PlaceholderHighlight = PlaceholderHighlight.shimmer(),
     contentPadding: PaddingValues = PaddingValues(8.dp)
 ) {
-    MusifyCompactListItemCard(
+    CompactListItemCard(
         modifier = modifier,
         backgroundColor = backgroundColor,
         shape = shape,

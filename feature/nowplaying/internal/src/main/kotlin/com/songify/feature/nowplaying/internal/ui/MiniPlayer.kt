@@ -34,7 +34,7 @@ import com.songify.library.design.dynamicTheme.dynamicbackgroundmodifier.dynamic
 import com.songify.library.spotify.model.Streamable
 
 /**
- * An object that contains constants related to the [MusifyMiniPlayer]
+ * An object that contains constants related to the [MiniPlayer]
  * composable.
  */
 object MusifyMiniPlayerConstants {
@@ -42,7 +42,7 @@ object MusifyMiniPlayerConstants {
 }
 
 @Composable
-fun MusifyMiniPlayer(
+fun MiniPlayer(
     streamable: Streamable,
     isPlaybackPaused: Boolean,
     modifier: Modifier = Modifier,
@@ -118,8 +118,11 @@ fun MusifyMiniPlayer(
                 modifier = Modifier
                     .size(32.dp)
                     .aspectRatio(1f),
-                painter = if (isPlaybackPaused) painterResource(R.drawable.ic_play_arrow_24)
-                else painterResource(R.drawable.ic_pause_24),
+                painter = if (isPlaybackPaused) {
+                    painterResource(R.drawable.ic_play_arrow_24)
+                } else {
+                    painterResource(R.drawable.ic_pause_24)
+                },
                 contentDescription = null
             )
         }

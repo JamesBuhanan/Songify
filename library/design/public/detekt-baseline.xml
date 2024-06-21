@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>LabeledExpression:DynamicBackgroundModifier.kt$@LaunchedEffect</ID>
+    <ID>MagicNumber:DynamicBackgroundModifier.kt$0xFF121212</ID>
+    <ID>MagicNumber:DynamicThemeManagerImpl.kt$DynamicThemeManagerImpl$0.5f</ID>
+    <ID>MagicNumber:DynamicThemeManagerImpl.kt$DynamicThemeManagerImpl$10</ID>
+  </CurrentIssues>
+</SmellBaseline>

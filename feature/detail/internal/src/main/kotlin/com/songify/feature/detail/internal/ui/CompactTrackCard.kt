@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import com.songify.library.spotify.model.SpotifyModel.Track
 
 @Composable
-fun MusifyCompactTrackCard(
+fun CompactTrackCard(
     track: Track,
     onClick: (Track) -> Unit,
     isLoadingPlaceholderVisible: Boolean,
@@ -32,7 +32,7 @@ fun MusifyCompactTrackCard(
         color = MaterialTheme.colorScheme.primary
     )
     // set alpha based on whether the track is available for playback
-    MusifyCompactListItemCard(
+    CompactListItemCard(
         modifier = modifier,
         backgroundColor = backgroundColor,
         shape = shape,
@@ -54,7 +54,7 @@ fun MusifyCompactTrackCard(
 }
 
 /**
- * Contains default values used by [MusifyCompactTrackCard].
+ * Contains default values used by [CompactTrackCard].
  */
 object MusifyCompactTrackCardDefaults {
     val defaultContentPadding = PaddingValues(

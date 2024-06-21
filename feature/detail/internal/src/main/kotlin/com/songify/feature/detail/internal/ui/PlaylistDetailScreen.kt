@@ -94,7 +94,7 @@ fun PlaylistDetailScreen(
             ) { index ->
                 val track = tracks[index]!!
 
-                MusifyCompactTrackCard(
+                CompactTrackCard(
                     track = track,
                     onClick = onTrackClicked,
                     isLoadingPlaceholderVisible = false,

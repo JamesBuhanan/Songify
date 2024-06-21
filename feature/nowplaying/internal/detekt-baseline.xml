@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>BracesOnIfStatements:NowPlayingScreen.kt$else</ID>
+    <ID>BracesOnIfStatements:NowPlayingScreen.kt$if</ID>
+    <ID>EmptyClassBlock:NowPlayingView.kt$NowPlayingConstants${ }</ID>
+    <ID>LongMethod:MusifyMiniPlayer.kt$@Composable fun MusifyMiniPlayer( streamable: Streamable, isPlaybackPaused: Boolean, modifier: Modifier = Modifier, onPlayButtonClicked: () -&gt; Unit, onPauseButtonClicked: () -&gt; Unit )</ID>
+    <ID>LongMethod:NowPlayingScreen.kt$@Composable fun NowPlayingScreen( streamable: Streamable, playbackProgressFlow: Flow&lt;Float&gt;, timeElapsedStringFlow: Flow&lt;String&gt;, playbackDurationRange: ClosedFloatingPointRange&lt;Float&gt;, isPlaybackPaused: Boolean, totalDurationOfCurrentTrackProvider: () -&gt; String, onCloseButtonClicked: () -&gt; Unit, onShuffleButtonClicked: () -&gt; Unit, onSkipPreviousButtonClicked: () -&gt; Unit, onPlayButtonClicked: () -&gt; Unit, onPauseButtonClicked: () -&gt; Unit, onSkipNextButtonClicked: () -&gt; Unit, onRepeatButtonClicked: () -&gt; Unit )</ID>
+    <ID>UnnecessaryParentheses:NowPlayingScreen.kt$(16)</ID>
+    <ID>UnusedParameter:NowPlayingView.kt$modifier: Modifier = Modifier</ID>
+  </CurrentIssues>
+</SmellBaseline>

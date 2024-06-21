@@ -34,7 +34,8 @@ class DynamicThemeManagerImpl(
         if (colorCache.get(url) != null) return colorCache.get(url)
         val bitmap = downloadDrawableFromUrlUseCase.invoke(url, context)
             .getOrNull()
-            ?.toBitmap() ?: return null
+            ?.toBitmap()
+            ?: return null
         return getBackgroundColorForBitmap(bitmap).also { colorCache.put(url, it) }
     }
 }

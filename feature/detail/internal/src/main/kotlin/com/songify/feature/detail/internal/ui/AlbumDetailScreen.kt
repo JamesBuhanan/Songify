@@ -86,7 +86,7 @@ fun AlbumDetailScreen(
             ) { index ->
                 val track = trackList[index]!!
 
-                MusifyCompactTrackCard(
+                CompactTrackCard(
                     track = track,
                     onClick = onTrackItemClick,
                     isLoadingPlaceholderVisible = false,
