@@ -15,6 +15,9 @@ A "Spotify-ish" app to showcase massively scalable architecture for Android.
 - All unnecessary modules have now been unloaded and you can iterate at maximum speed!
 - `:feature:detail:app` is an excellent example of the power of this architecture. `detail` is a  
   leaf node to the main workflow and yet we can build it in isolation and launch directly to it.
+- How much your sample apps pull in is up to you. e.g.- `:feature:detail:app` uses the ACTUAL
+  Spotify API, but `:feature:home:app` just stubs the response. Is the faster build time worth not
+  using real data?
 - You can see how many modules get unloaded when we "focus" on the Premium feature:
 
 | ![](images/all.png) | ![](images/premium.png) |
@@ -82,9 +85,8 @@ library modules needed to support it.
 Circuit was developed by Slack to implement the "Broadway Architecture" from CashApp.
 
 A "Circuit" is comprised of a "Presenter" and a "View". A `:feature:foo:internal` module
-contributes  
-a `FooPresenter` and a `FooView` that are tied to a specific "Screen Key" e.g.- `FooScreen`  
-from `:feature:foo:public`
+contributes a `FooPresenter` and a `FooView` that are tied to a specific "Screen Key"
+e.g.- `FooScreen` from `:feature:foo:public`
 
 When the app tries to launch `FooScreen` it will check if any Presenter/View combo was contributed  
 for that key. If that combo wasn't included as part of this launch, then it will display a toast  
@@ -93,9 +95,9 @@ that it was not found.
 This allows us to fail painlessly and only load the chunks of the app that we want to navigate  
 across.
 
-We test each half of the Circuit in isolation. The "Presenter" is tested in UnitTests and the "
-View"  
-is tested in instrumented tests.  (See `HomePresenterTest` and `HomeViewTest`)
+Circuit leverages Uni-directional Data Flow (UDF) and is highly testable. We test each half of the
+Circuit in isolation. The "Presenter" is tested in UnitTests and the "View" is tested in
+instrumented tests.  (See `HomePresenterTest` and `HomeViewTest`)
 
 ## Gradle
 
@@ -112,7 +114,8 @@ is tested in instrumented tests.  (See `HomePresenterTest` and `HomeViewTest`)
 
 ## GraphAssert
 
-GraphAssert enforces our 4 sacred laws of modularization and will help as we scale to 1,000's of modules.
+GraphAssert enforces our 4 sacred laws of modularization and will help as we scale to 1,000's of
+modules.
 
 You can check that the project is compliant either locally or on CI by running:
 
