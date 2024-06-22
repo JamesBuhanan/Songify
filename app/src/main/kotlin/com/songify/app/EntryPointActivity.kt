@@ -5,6 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -28,7 +30,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 const val CLIENT_ID = "9ec02e7f10514c15842363d73f64f985"
-const val AUTH_TOKEN_REQUEST_CODE = 1337
 
 @AndroidEntryPoint
 class EntryPointActivity : ComponentActivity() {
@@ -46,10 +47,28 @@ class EntryPointActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         installSplashScreen()
-        fetchToken()
+        login()
     }
 
-    private fun fetchToken() {
+    private fun login() {
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { activityResult: ActivityResult ->
+            // Check if result comes from the correct activity
+            if (activityResult.resultCode == RESULT_OK && activityResult.data != null) {
+                val resultCode = activityResult.resultCode
+                val response = AuthorizationClient.getResponse(resultCode, activityResult.data)
+                when (response.type) {
+                    AuthorizationResponse.Type.TOKEN -> setAndGo(response.accessToken)
+                    AuthorizationResponse.Type.ERROR -> println("Error")
+                    else -> println("Auth flow canceled")
+
+                }
+            } else {
+                println("No result returned")
+            }
+        }.launch(createLoginActivityIntent())
+    }
+
+    private fun createLoginActivityIntent(): Intent {
         val request = AuthorizationRequest.Builder(
             CLIENT_ID,
             AuthorizationResponse.Type.TOKEN,
@@ -60,19 +79,14 @@ class EntryPointActivity : ComponentActivity() {
             .setCampaign("your-campaign-token")
             .build()
 
-        AuthorizationClient.openLoginActivity(this, AUTH_TOKEN_REQUEST_CODE, request)
+        return AuthorizationClient.createLoginActivityIntent(this, request)
     }
 
-    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        val response = AuthorizationClient.getResponse(resultCode, data)
-        if (requestCode == AUTH_TOKEN_REQUEST_CODE) {
-            songifySession.accessToken = response.accessToken
+    private fun setAndGo(accessToken: String) {
+        songifySession.accessToken = accessToken
 
-            setContent {
-                ShowSpotify()
-            }
+        setContent {
+            ShowSpotify()
         }
     }
 
