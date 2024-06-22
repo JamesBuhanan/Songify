@@ -95,14 +95,14 @@ class EntryPointActivity : ComponentActivity() {
     fun ShowSpotify(
         modifier: Modifier = Modifier,
     ) {
+        val backStack = rememberSaveableBackStack(startScreen)
+        val navigator = rememberCircuitNavigator(backStack)
+
         SongifyTheme {
             Surface(
                 modifier = Modifier.fillMaxSize(),
                 color = MaterialTheme.colorScheme.background,
             ) {
-                val backStack = rememberSaveableBackStack(startScreen)
-                val navigator = rememberCircuitNavigator(backStack)
-
                 Scaffold(
                     bottomBar = { SongifyBottomNavigation({ navigator.resetRoot(it) }) }
                 ) {
