@@ -5,9 +5,8 @@ plugins {
 dependencies {
     implementation libs.core.splashscreen
     implementation libs.material
-    implementation libs.spotify.auth
     implementation projects.library.bottomNavigation.public
-    implementation projects.library.session.public
+    implementation projects.library.circuit.public
     implementation projects.library.theme.public
 
     // Which app do we load?

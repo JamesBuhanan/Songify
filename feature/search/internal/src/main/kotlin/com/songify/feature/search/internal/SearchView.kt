@@ -43,28 +43,28 @@ import dagger.hilt.components.SingletonComponent
 @CircuitInject(SearchScreen::class, SingletonComponent::class)
 @Composable
 fun SearchView(
-    postsState: SearchState,
+    state: SearchState,
     modifier: Modifier = Modifier,
 ) {
-    when (postsState) {
+    when (state) {
         is SearchState.Loading -> LoadingBar()
-        is SearchState.Error -> toastEffect()(postsState.message)
-        is SearchState.Success -> ShowSearch(postsState)
+        is SearchState.Error -> toastEffect()(state.message)
+        is SearchState.Success -> ShowSearch(state)
     }
 }
 
 @Composable
 fun ShowSearch(
-    searchState: SearchState.Success,
+    state: SearchState.Success,
     modifier: Modifier = Modifier,
 ) {
     BackHandler {
-        searchState.eventSink(SearchEvent.TappedBack)
+        state.eventSink(SearchEvent.TappedBack)
     }
 
     GenresGrid(
-        availableGenres = searchState.genres,
-        onGenreItemClick = { searchState.eventSink(SearchEvent.TappedCard) },
+        availableGenres = state.genres,
+        onGenreItemClick = { state.eventSink(SearchEvent.TappedCard) },
     )
 }
 

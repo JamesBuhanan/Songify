@@ -71,7 +71,7 @@ retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit
 retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
 robolectric = { module = "org.robolectric:robolectric", version = "4.10.3" }
 sortDependenciesGradlePlugin = { module = "com.squareup:sort-dependencies-gradle-plugin", version = "0.6" }
-spotify-auth = { module = "com.spotify.android:auth", version = "2.1.0" }
+spotify-auth = { module = "com.spotify.android:auth", version = "2.1.1" }
 timber = "com.jakewharton.timber:timber:5.0.1"
 truth = "com.google.truth:truth:1.4.2"
 

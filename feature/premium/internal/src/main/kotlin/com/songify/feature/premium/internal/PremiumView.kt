@@ -44,13 +44,13 @@ import dagger.hilt.components.SingletonComponent
 @CircuitInject(PremiumScreen::class, SingletonComponent::class)
 @Composable
 fun PremiumView(
-    postsState: PremiumState,
+    state: PremiumState,
     modifier: Modifier = Modifier,
 ) {
-    when (postsState) {
+    when (state) {
         is PremiumState.Loading -> LoadingBar()
-        is PremiumState.Error -> toastEffect()(postsState.message)
-        is PremiumState.Success -> ShowPremium(postsState)
+        is PremiumState.Error -> toastEffect()(state.message)
+        is PremiumState.Success -> ShowPremium(state)
     }
 }
 

@@ -10,6 +10,7 @@ songify {
 dependencies {
     api projects.feature.detail.internal
     api projects.feature.home.internal
+    api projects.feature.login.internal
     api projects.feature.nowplaying.internal
     api projects.feature.premium.internal
     api projects.feature.search.internal
