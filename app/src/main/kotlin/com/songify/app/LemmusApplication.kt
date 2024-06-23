@@ -7,8 +7,6 @@ import timber.log.Timber.DebugTree
 
 @HiltAndroidApp
 class SongifyApplication : Application() {
-
-
     override fun onCreate() {
         super.onCreate()
         Timber.plant(DebugTree())
