@@ -17,7 +17,7 @@ import dagger.hilt.components.SingletonComponent
 
 @CircuitInject(DetailScreen::class, SingletonComponent::class)
 @Composable
-fun DetailView(
+internal fun DetailView(
     state: DetailState,
     modifier: Modifier = Modifier,
 ) {
@@ -40,7 +40,7 @@ private fun DetailState.Success.cachePagingFlows(): DetailState.Success {
 }
 
 @Composable
-fun ShowDetail(
+internal fun ShowDetail(
     state: DetailState.Success,
     modifier: Modifier = Modifier,
 ) {

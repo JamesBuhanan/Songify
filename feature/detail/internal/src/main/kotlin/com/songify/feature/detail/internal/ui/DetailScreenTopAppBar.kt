@@ -31,7 +31,7 @@ import com.songify.library.theme.SongifyTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DetailScreenTopAppBar(
+internal fun DetailScreenTopAppBar(
     title: String,
     onBackButtonClicked: () -> Unit,
     modifier: Modifier = Modifier,
@@ -82,7 +82,7 @@ fun DetailScreenTopAppBar(
 
 @Preview
 @Composable
-fun DetailScreenTopAppBarPreview() {
+internal fun DetailScreenTopAppBarPreview() {
     SongifyTheme {
         DetailScreenTopAppBar(
             title = "Title",
@@ -93,7 +93,7 @@ fun DetailScreenTopAppBarPreview() {
 }
 
 @Composable
-fun Center(
+internal fun Center(
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit,
 ) {

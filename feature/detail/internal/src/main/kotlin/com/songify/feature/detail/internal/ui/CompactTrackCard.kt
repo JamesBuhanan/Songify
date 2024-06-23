@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import com.songify.library.spotify.model.SpotifyModel.Track
 
 @Composable
-fun CompactTrackCard(
+internal fun CompactTrackCard(
     track: Track,
     onClick: (Track) -> Unit,
     isLoadingPlaceholderVisible: Boolean,
@@ -56,7 +56,7 @@ fun CompactTrackCard(
 /**
  * Contains default values used by [CompactTrackCard].
  */
-object CompactTrackCardDefaults {
+internal object CompactTrackCardDefaults {
     val defaultContentPadding = PaddingValues(
         horizontal = 16.dp,
         vertical = 8.dp

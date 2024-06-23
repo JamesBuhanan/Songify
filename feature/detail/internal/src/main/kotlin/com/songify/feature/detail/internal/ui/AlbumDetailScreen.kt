@@ -41,7 +41,7 @@ import com.songify.library.spotify.model.SpotifyModel.Track
 import kotlinx.coroutines.launch
 
 @Composable
-fun AlbumDetailScreen(
+internal fun AlbumDetailScreen(
     albumName: String,
     artistsString: String,
     yearOfRelease: String,

@@ -35,7 +35,7 @@ sealed class HeaderImageSource {
 }
 
 @Composable
-fun ImageHeaderWithMetadata(
+internal fun ImageHeaderWithMetadata(
     title: String,
     headerImageSource: HeaderImageSource,
     subtitle: String,

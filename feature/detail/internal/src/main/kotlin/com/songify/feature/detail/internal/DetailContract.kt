@@ -7,12 +7,12 @@ import com.songify.library.spotify.model.SpotifyModel
 import com.songify.library.spotify.model.SpotifyModel.Track
 import kotlinx.coroutines.flow.Flow
 
-sealed interface DetailEvent : CircuitUiEvent {
+internal sealed interface DetailEvent : CircuitUiEvent {
     data object TappedBack : DetailEvent
     data class TappedTrack(val track: Track) : DetailEvent
 }
 
-sealed interface DetailState : CircuitUiState {
+internal sealed interface DetailState : CircuitUiState {
     data object Loading : DetailState
 
     data class Success(

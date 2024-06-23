@@ -41,7 +41,7 @@ import com.songify.library.spotify.model.SpotifyModel.Track
 import kotlinx.coroutines.launch
 
 @Composable
-fun PlaylistDetailScreen(
+internal fun PlaylistDetailScreen(
     playlistName: String,
     playlistImageUrlString: String?,
     nameOfPlaylistOwner: String,
@@ -137,7 +137,7 @@ fun PlaylistDetailScreen(
     }
 }
 
-private fun LazyListScope.headerWithImageItem(
+internal fun LazyListScope.headerWithImageItem(
     dynamicBackgroundResource: DynamicBackgroundResource,
     playlistName: String,
     playlistImageUrlString: String?,

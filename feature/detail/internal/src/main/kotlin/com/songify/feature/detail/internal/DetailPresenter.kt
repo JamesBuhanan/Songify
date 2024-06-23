@@ -1,6 +1,5 @@
 package com.songify.feature.detail.internal
 
-import android.annotation.SuppressLint
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
@@ -15,7 +14,7 @@ import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import dagger.hilt.components.SingletonComponent
 
-class DetailPresenter @AssistedInject constructor(
+internal class DetailPresenter @AssistedInject constructor(
     private val getTracks: GetTracks,
     @Assisted private val detailScreen: DetailScreen,
     @Assisted private val navigator: Navigator,
