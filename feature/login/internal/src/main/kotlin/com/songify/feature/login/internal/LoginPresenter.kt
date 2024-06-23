@@ -15,7 +15,7 @@ import androidx.compose.ui.platform.LocalContext
 import com.slack.circuit.codegen.annotations.CircuitInject
 import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.presenter.Presenter
-import com.songify.feature.home.HomeScreen
+import com.slack.circuit.runtime.screen.Screen
 import com.songify.feature.login.LoginScreen
 import com.songify.library.session.SongifySession
 import com.spotify.sdk.android.auth.AuthorizationClient
@@ -29,6 +29,7 @@ import dagger.hilt.components.SingletonComponent
 class LoginPresenter @AssistedInject constructor(
     private val songifySession: SongifySession,
     @Assisted private val navigator: Navigator,
+    private val afterLoginScreen: Screen,
 ) : Presenter<LoginState> {
     @Composable
     override fun present(): LoginState {
@@ -42,7 +43,7 @@ class LoginPresenter @AssistedInject constructor(
                     when (response.type) {
                         AuthorizationResponse.Type.TOKEN -> {
                             songifySession.accessToken = response.accessToken
-                            navigator.goTo(HomeScreen)
+                            navigator.goTo(afterLoginScreen)
                         }
 
                         AuthorizationResponse.Type.ERROR -> println("Error")

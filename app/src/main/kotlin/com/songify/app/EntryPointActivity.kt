@@ -16,7 +16,6 @@ import com.slack.circuit.foundation.Circuit
 import com.slack.circuit.foundation.CircuitCompositionLocals
 import com.slack.circuit.foundation.NavigableCircuitContent
 import com.slack.circuit.foundation.rememberCircuitNavigator
-import com.slack.circuit.runtime.screen.Screen
 import com.songify.feature.login.LoginScreen
 import com.songify.library.bottomnavigation.SongifyBottomNavigation
 import com.songify.library.theme.SongifyTheme
@@ -28,9 +27,6 @@ class EntryPointActivity : ComponentActivity() {
 
     @Inject
     lateinit var circuit: Circuit
-
-    @Inject
-    lateinit var startScreen: Screen
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
