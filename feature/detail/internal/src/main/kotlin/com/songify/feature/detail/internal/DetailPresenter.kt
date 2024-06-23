@@ -14,7 +14,7 @@ import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import dagger.hilt.components.SingletonComponent
 
-internal class DetailPresenter @AssistedInject constructor(
+class DetailPresenter @AssistedInject constructor(
     private val getTracks: GetTracks,
     @Assisted private val detailScreen: DetailScreen,
     @Assisted private val navigator: Navigator,

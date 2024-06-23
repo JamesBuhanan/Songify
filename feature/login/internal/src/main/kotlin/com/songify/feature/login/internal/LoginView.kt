@@ -9,7 +9,7 @@ import dagger.hilt.components.SingletonComponent
 
 @CircuitInject(LoginScreen::class, SingletonComponent::class)
 @Composable
-internal fun LoginView(
+fun LoginView(
     state: LoginState,
     modifier: Modifier = Modifier,
 ) {

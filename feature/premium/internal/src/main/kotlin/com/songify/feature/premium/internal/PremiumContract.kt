@@ -4,12 +4,12 @@ import com.slack.circuit.runtime.CircuitUiEvent
 import com.slack.circuit.runtime.CircuitUiState
 import com.songify.library.premium.PremiumPlan
 
-internal sealed interface PremiumEvent : CircuitUiEvent {
+sealed interface PremiumEvent : CircuitUiEvent {
     data object TappedBack : PremiumEvent
     data class TappedPremiumPlan(val premiumPlan: PremiumPlan) : PremiumEvent
 }
 
-internal sealed interface PremiumState : CircuitUiState {
+sealed interface PremiumState : CircuitUiState {
     data object Loading : PremiumState
 
     data class Success(

@@ -10,10 +10,9 @@ import com.songify.feature.premium.internal.ui.PremiumColumn
 import com.songify.library.loading.LoadingBar
 import dagger.hilt.components.SingletonComponent
 
-
 @CircuitInject(PremiumScreen::class, SingletonComponent::class)
 @Composable
-internal fun PremiumView(
+fun PremiumView(
     state: PremiumState,
     modifier: Modifier = Modifier,
 ) {

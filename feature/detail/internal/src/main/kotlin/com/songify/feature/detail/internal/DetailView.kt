@@ -17,7 +17,7 @@ import dagger.hilt.components.SingletonComponent
 
 @CircuitInject(DetailScreen::class, SingletonComponent::class)
 @Composable
-internal fun DetailView(
+fun DetailView(
     state: DetailState,
     modifier: Modifier = Modifier,
 ) {
