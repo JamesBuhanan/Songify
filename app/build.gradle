@@ -4,6 +4,7 @@ plugins {
 
 dependencies {
     implementation libs.core.splashscreen
+    implementation projects.feature.login.internal
     implementation projects.library.bottomNavigation.public
     implementation projects.library.circuit.public
     implementation projects.library.theme.public
