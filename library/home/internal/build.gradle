@@ -10,6 +10,4 @@ songify {
 
 dependencies {
     api projects.library.home.public
-
-    implementation projects.library.session.public
 }
