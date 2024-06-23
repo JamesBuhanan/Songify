@@ -26,7 +26,7 @@ import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import dagger.hilt.components.SingletonComponent
 
-class LoginPresenter @AssistedInject constructor(
+internal class LoginPresenter @AssistedInject constructor(
     private val songifySession: SongifySession,
     @Assisted private val navigator: Navigator,
     private val afterLoginScreen: Screen,
