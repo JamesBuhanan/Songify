@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.dp
 import com.songify.library.premium.PremiumPlan
 
 @Composable
-internal fun PlanInformationCard(
+internal fun PremiumCard(
     card: PremiumPlan,
     modifier: Modifier = Modifier,
     onViewPlansButtonClick: () -> Unit
