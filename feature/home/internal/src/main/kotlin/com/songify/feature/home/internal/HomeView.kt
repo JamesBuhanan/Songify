@@ -49,11 +49,7 @@ fun HomeView(
 @Composable
 private fun HomeState.Success.cachePagingFlows(): HomeState.Success {
     val newCarousels: List<HomeFeedCarousel> = homeFeed.carousels.map {
-        HomeFeedCarousel(
-            id = it.id,
-            title = it.title,
-            spotifyModels = it.spotifyModels.rememberRetainedCachedPagingFlow()
-        )
+        it.copy(spotifyModels = it.spotifyModels.rememberRetainedCachedPagingFlow())
     }
 
     return HomeState.Success(HomeFeed(newCarousels), eventSink)

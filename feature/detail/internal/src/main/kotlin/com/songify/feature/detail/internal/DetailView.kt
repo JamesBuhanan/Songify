@@ -73,14 +73,12 @@ fun ShowDetail(
                 imageResToUseWhenImageUrlStringIsNull = R.drawable.ic_outline_account_circle_24,
                 tracks = state.tracks.collectAsLazyPagingItems(),
                 currentlyPlayingTrack = null,
-                onBackButtonClicked = { /*TODO*/ },
-                onTrackClicked = { /*TODO*/ },
+                onTrackClicked = { state.eventSink(DetailEvent.TappedTrack(it)) },
+                onBackButtonClicked = { state.eventSink(DetailEvent.TappedBack) },
             )
         }
 
         is SpotifyModel.Podcast -> TODO()
         is SpotifyModel.Track -> TODO()
     }
-
-
 }

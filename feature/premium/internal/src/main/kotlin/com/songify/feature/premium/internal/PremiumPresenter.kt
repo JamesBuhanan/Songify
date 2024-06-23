@@ -13,7 +13,7 @@ import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import dagger.hilt.components.SingletonComponent
 
-class PremiumPresenter @AssistedInject constructor(
+internal class PremiumPresenter @AssistedInject constructor(
     private val getPremiumPlans: GetPremiumPlans,
     @Assisted private val navigator: Navigator,
 ) : Presenter<PremiumState> {
