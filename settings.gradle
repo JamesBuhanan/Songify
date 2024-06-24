@@ -1,22 +1,10 @@
 pluginManagement {
     repositories {
-        mavenCentral()
         google()
         gradlePluginPortal()
     }
 
     includeBuild("build-logic")
-
-    def conventionVersion = "1.0.0"
-
-    plugins {
-        id "songify.settings" version conventionVersion
-        id "songify.root" version conventionVersion
-        id "songify.android.application" version conventionVersion
-        id "songify.android.library" version conventionVersion
-        id "songify.kotlin.library" version conventionVersion
-        id "songify.java.library" version conventionVersion
-    }
 }
 
 plugins {
