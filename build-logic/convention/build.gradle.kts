@@ -32,6 +32,7 @@ dependencies {
     implementation(libs.hilt.android.gradle.plugin)
     implementation(libs.kotlin.gradle)
     implementation(libs.kspGradlePlugin)
+    implementation(libs.moduleGraph)
     implementation(libs.sortDependenciesGradlePlugin)
 
     implementation(localGroovy())

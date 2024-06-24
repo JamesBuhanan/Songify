@@ -2,6 +2,7 @@ import com.songify.extension.affectedModules
 import com.songify.extension.applyOnce
 import com.songify.extension.checkSortDependenciesAggregated
 import com.songify.extension.detekt
+import com.songify.extension.moduleGraph
 import com.songify.extension.sortDependenciesAggregated
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -16,6 +17,7 @@ class SongifyRootPlugin : Plugin<Project> {
             affectedModules()
             sortDependenciesAggregated()
             checkSortDependenciesAggregated()
+            moduleGraph()
         }
     }
 }
