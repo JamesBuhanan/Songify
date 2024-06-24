@@ -36,6 +36,7 @@ dependencies {
     implementation(libs.composeCompiler.gradlePlugin)
     implementation(libs.detektGradlePlugin)
 //    implementation(libs.graphAssert)
+//    implementation(libs.develocityPlugin)
     implementation(libs.hilt.android.gradle.plugin)
     implementation(libs.kotlin.gradle)
     implementation(libs.kspGradlePlugin)

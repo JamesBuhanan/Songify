@@ -52,6 +52,8 @@ composeCompiler-gradlePlugin = { module = "org.jetbrains.kotlin:compose-compiler
 core-splashscreen = "androidx.core:core-splashscreen:1.0.1"
 detekt-cli = { module = "io.gitlab.arturbosch.detekt:detekt-cli", version.ref = "detekt" }
 detektGradlePlugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
+develocityPlugin = { module = "com.gradle:develocity-gradle-plugin", version = "3.17.4" }
+focusPlugin = { module = "com.dropbox.focus:com.dropbox.focus.gradle.plugin", version = "0.6.0" }
 graphAssert = { module = "com.jraska.module.graph.assertion:com.jraska.module.graph.assertion.gradle.plugin", version = "2.5.0" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "dagger" }
 hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "dagger" }
@@ -61,8 +63,9 @@ kotlin-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines
 kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlin-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-kspGradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "kspPlugin" }
+kspGradlePlugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "kspPlugin" }
 material = "com.google.android.material:material:1.12.0"
+moduleGraph = { module = "dev.iurysouza.modulegraph:dev.iurysouza.modulegraph.gradle.plugin", version = "0.10.0" }
 moshi = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
 moshiCodeGen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
 paging-compose = { module = "androidx.paging:paging-compose", version.ref = "paging" }

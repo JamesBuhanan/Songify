@@ -1,8 +1,8 @@
 /*
  * © 2023 Match Group, LLC.
  */
-import com.songify.extension.dependencyResolutionManagement
 //import com.songify.extension.develocity
+import com.songify.extension.dependencyResolutionManagement
 import com.songify.extension.focus
 import org.gradle.api.Plugin
 import org.gradle.api.initialization.Settings
@@ -12,7 +12,7 @@ class SongifySettingsPlugin : Plugin<Settings> {
         with(settings) {
             dependencyResolutionManagement()
 
-            //develocity()
+//            develocity()
             focus()
 
             enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
