@@ -23,19 +23,13 @@ tasks.withType<KotlinCompile>().configureEach {
     }
 }
 
-repositories {
-    gradlePluginPortal()
-    mavenCentral()
-    google()
-}
-
 dependencies {
     implementation(gradleApi())
     implementation(libs.affectedModuleDetector)
     implementation(libs.androidGradlePlugin)
     implementation(libs.composeCompiler.gradlePlugin)
     implementation(libs.detektGradlePlugin)
-//    implementation(libs.graphAssert)
+    implementation(libs.graphAssert)
 //    implementation(libs.develocityPlugin)
     implementation(libs.hilt.android.gradle.plugin)
     implementation(libs.kotlin.gradle)

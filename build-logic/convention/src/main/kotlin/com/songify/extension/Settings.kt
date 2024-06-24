@@ -8,6 +8,8 @@ fun Settings.dependencyResolutionManagement() {
         repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
         repositories {
             mavenCentral()
+            gradlePluginPortal()
+            google()
         }
     }
 }

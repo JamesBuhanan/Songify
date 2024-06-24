@@ -1,10 +1,8 @@
-import org.gradle.api.initialization.resolve.RepositoriesMode
-
 pluginManagement {
     repositories {
         mavenCentral()
         google()
-        mavenLocal()
+        gradlePluginPortal()
     }
 
     includeBuild("build-logic")
@@ -23,8 +21,4 @@ pluginManagement {
 
 plugins {
     id "songify.settings"
-}
-
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
 }
