@@ -51,13 +51,12 @@ This allows us to unload any modules that we are not currently working on.
 
 `:feature:*:public` - Just a `Screen` key data class.  
 `:feature:*:internal` - Contract/Presenter/View/ui.  
-`:feature:*:app` - Hilt module to "provide" a start screen or any other unsatisfied dependencies  
-`:library:*:public` - interfaces for UseCases and data models that we have no choice but to expose  
-`:library:*:internal` - implementations for UseCases  
-`:common:*` - Probably shouldn't exist in this architecture.  
-`:*:*:shared-test` - Shared stuff for `test` and `androidTest` to both depend on
+`:feature:*:app` - Hilt module to "provide" a start screen or any other unsatisfied dependencies. 
+`:library:*:public` - interfaces for UseCases and data models that we have no choice but to expose.  
+`:library:*:internal` - implementations for UseCases.
+`:*:*:shared-test` - Shared stuff for `test` and `androidTest` to both depend on.
 
-Basically anytime we want to jump screens, we should consider making it a new feature module and
+Basically anytime we want to jump screens/workflows, we should consider making it a new feature module and
 any library modules needed to support it.
 
 ### Circuit
@@ -91,7 +90,7 @@ instrumented tests.  (See `HomePresenterTest` and `HomeViewTest`)
 - GraphAssert
 - Detekt
 - Lint with K2
-- "Project Isolation" can be turned on soon. (https://github.com/google/ksp/issues/1752)
+- "Isolated Projects" can be turned on soon. (https://github.com/google/ksp/issues/1752)
 
 ## GraphAssert
 
@@ -117,7 +116,7 @@ You can check that the project is compliant either locally or on CI by running:
 
 `./gradlew assertModuleGraph`
 
-You can also generate a module dependency graphs by running:
+You can also generate a module dependency graph by running:
 
 `./gradlew generateModulesGraphvizText --no-configure-on-demand`
 
