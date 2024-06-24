@@ -3,11 +3,13 @@ plugins {
 }
 
 dependencies {
+    // DO NOT ADD ANY MORE DEPENDENCIES!!!
     implementation libs.core.splashscreen
     implementation projects.feature.login.internal
     implementation projects.library.bottomNavigation.public
     implementation projects.library.circuit.public
     implementation projects.library.theme.public
+    // DO NOT ADD ANY MORE DEPENDENCIES!!!
 
     // Which app do we load?
     implementation projects.feature.all.app
