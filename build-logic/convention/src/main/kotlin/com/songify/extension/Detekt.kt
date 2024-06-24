@@ -7,6 +7,10 @@ import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
 
 fun Project.detekt() {
+    if (isIsolatedProjects()) {
+        return
+    }
+
     applyOnce<DetektPlugin>()
 
     configure<DetektExtension>() {

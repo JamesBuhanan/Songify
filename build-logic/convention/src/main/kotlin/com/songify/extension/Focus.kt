@@ -7,7 +7,7 @@ import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 
 fun Settings.focus() {
-    if (useProjectIsolation()) {
+    if (isIsolatedProjects()) {
         apply(from = "settings-all.gradle")
         return
     }

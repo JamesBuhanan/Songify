@@ -6,6 +6,10 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 
 fun Project.affectedModules() {
+    if (isIsolatedProjects()) {
+        return
+    }
+
     applyOnce<AffectedModuleDetectorPlugin>()
 
     configure<AffectedModuleConfiguration> {

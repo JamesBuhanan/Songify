@@ -24,14 +24,14 @@ fun ProviderFactory.getStringGradleProperty(property: String, default: String): 
     return gradleProperty(property).map { it }.getOrElse(default)
 }
 
-val ProviderFactory.useProjectIsolation: Boolean
+val ProviderFactory.isIsolatedProjects: Boolean
     get() = getBooleanGradleProperty(
         "org.gradle.unsafe.isolated-projects",
         false
     )
 
-fun Project.useProjectIsolation(): Boolean = providers.useProjectIsolation
+fun Project.isIsolatedProjects(): Boolean = providers.isIsolatedProjects
 
 
-fun Settings.useProjectIsolation(): Boolean = providers.useProjectIsolation
+fun Settings.isIsolatedProjects(): Boolean = providers.isIsolatedProjects
 

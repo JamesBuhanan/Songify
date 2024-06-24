@@ -6,9 +6,9 @@ import org.gradle.api.initialization.Settings
 import org.gradle.kotlin.dsl.configure
 
 fun Settings.develocity() {
-//    if (useProjectIsolation()) {
-//        return
-//    }
+    if (isIsolatedProjects()) {
+        return
+    }
 
     applyOnce<DevelocityPlugin>()
 
