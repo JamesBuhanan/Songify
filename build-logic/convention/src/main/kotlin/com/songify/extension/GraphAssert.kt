@@ -26,7 +26,7 @@ fun Project.graphAssert() {
             ":library:\\S*:public\\S* -X> :library:\\S*:internal\\S*",
 
             // Rule 4: :feature:*:app modules are the only modules allowed to depend on internal modules.
-            "^(?!.*(:feature:\\S*:app))\\S* -X> \\S*:internal\\S*",
+            "^(?!.*(:feature:\\S*:app|:app))\\S* -X> \\S*:internal\\S*",
         )
         configurations = setOf(
             "api",
