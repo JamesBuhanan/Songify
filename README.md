@@ -111,6 +111,7 @@ instrumented tests.  (See `HomePresenterTest` and `HomeViewTest`)
 - GraphAssert
 - Detekt
 - Lint with K2
+- "Project Isolation" can be turned on soon. (https://github.com/google/ksp/issues/1752)
 
 ## GraphAssert
 
@@ -153,10 +154,8 @@ As we scale to 1,000's of modules we can help keep our dependencies raked and ti
 
 ## TODO
 
-- Project Isolation
 - Flow tests?
 - Snapshot tests?
 - ModuleChecker?
 - Dynamic Feature Modules?
-- Refactor login flow into its own feature
 - Make :public modules be Kotlin only. (No Android)
