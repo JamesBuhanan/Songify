@@ -122,9 +122,15 @@ You can check that the project is compliant either locally or on CI by running:
 
 `./gradlew assertModuleGraph`
 
-You can also generate a current module dependency graph by running:
+You can also generate a module dependency graphs by running:
 
 `./gradlew generateModulesGraphvizText --no-configure-on-demand`
+
+## ModuleGraph
+
+Generate prettier module dependency graphs with:
+
+`./gradlew createModuleGraph`
 
 ## Sort Dependencies
 
