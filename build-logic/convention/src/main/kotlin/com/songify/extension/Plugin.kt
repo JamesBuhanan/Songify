@@ -2,6 +2,7 @@ package com.songify.extension
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.initialization.Settings
 import org.gradle.api.plugins.PluginContainer
 
 fun PluginContainer.applyOnce(id: String) {
@@ -19,6 +20,12 @@ fun Project.applyOnce(id: String) {
 }
 
 inline fun <reified T : Plugin<*>> Project.applyOnce() {
+    with(plugins) {
+        applyOnce<T>()
+    }
+}
+
+inline fun <reified T : Plugin<*>> Settings.applyOnce() {
     with(plugins) {
         applyOnce<T>()
     }

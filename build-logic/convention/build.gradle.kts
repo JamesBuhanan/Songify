@@ -7,9 +7,6 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "com.songify.buildlogic"
-version = "1.0.0"
-
 // Configure the build-logic plugins to target JDK 17
 // This matches the JDK used to build the project, and is not related to what is running on device.
 java {
@@ -29,8 +26,9 @@ dependencies {
     implementation(libs.androidGradlePlugin)
     implementation(libs.composeCompiler.gradlePlugin)
     implementation(libs.detektGradlePlugin)
+    implementation(libs.develocityPlugin)
+    implementation(libs.focusPlugin)
     implementation(libs.graphAssert)
-//    implementation(libs.develocityPlugin)
     implementation(libs.hilt.android.gradle.plugin)
     implementation(libs.kotlin.gradle)
     implementation(libs.kspGradlePlugin)
