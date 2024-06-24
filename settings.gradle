@@ -1,0 +1,30 @@
+import org.gradle.api.initialization.resolve.RepositoriesMode
+
+pluginManagement {
+    repositories {
+        mavenCentral()
+        google()
+        mavenLocal()
+    }
+
+    includeBuild("build-logic")
+
+    def conventionVersion = "1.0.0"
+
+    plugins {
+        id "songify.settings" version conventionVersion
+        id "songify.root" version conventionVersion
+        id "songify.android.application" version conventionVersion
+        id "songify.android.library" version conventionVersion
+        id "songify.kotlin.library" version conventionVersion
+        id "songify.java.library" version conventionVersion
+    }
+}
+
+plugins {
+    id "songify.settings"
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+}

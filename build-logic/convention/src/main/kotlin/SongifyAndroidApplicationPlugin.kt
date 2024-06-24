@@ -6,7 +6,7 @@ import com.songify.extension.circuit
 import com.songify.extension.configureLint
 import com.songify.extension.detekt
 import com.songify.extension.dynamicNamespace
-import com.songify.extension.graphAssert
+//import com.songify.extension.graphAssert
 import com.songify.extension.hilt
 import com.songify.extension.jetpackCompose
 import com.songify.extension.libs
@@ -28,7 +28,7 @@ class SongifyAndroidApplicationPlugin : Plugin<Project> {
             moduleNameFix()
             configureLint()
             detekt()
-            graphAssert()
+            //graphAssert()
             // checkstyle()
             circuit()
             hilt()

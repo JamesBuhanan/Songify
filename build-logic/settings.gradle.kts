@@ -1,4 +1,10 @@
 dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        mavenCentral()
+        google()
+        gradlePluginPortal()
+    }
     versionCatalogs {
         create("libs") {
             from(files("../gradle/libs.versions.toml"))
@@ -13,4 +19,6 @@ buildCache {
     }
 }
 
-rootProject.name = "songify-buildSrc"
+rootProject.name = "build-logic"
+
+include(":convention")
