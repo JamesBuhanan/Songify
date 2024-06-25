@@ -1,6 +1,3 @@
-/*
- * © 2023 Match Group, LLC.
- */
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {

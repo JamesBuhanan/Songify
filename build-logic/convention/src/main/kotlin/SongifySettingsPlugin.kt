@@ -1,7 +1,3 @@
-/*
- * © 2023 Match Group, LLC.
- */
-//import com.songify.extension.develocity
 import com.songify.extension.buildCacheConfig
 import com.songify.extension.dependencyResolutionManagement
 import com.songify.extension.develocity
