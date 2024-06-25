@@ -51,13 +51,14 @@ This allows us to unload any modules that we are not currently working on.
 
 `:feature:*:public` - Just a `Screen` key data class.  
 `:feature:*:internal` - Contract/Presenter/View/ui.  
-`:feature:*:app` - Hilt module to "provide" a start screen or any other unsatisfied dependencies. 
-`:library:*:public` - interfaces for UseCases and data models that we have no choice but to expose.  
+`:feature:*:app` - Hilt module to "provide" a start screen or any other unsatisfied dependencies.
+`:library:*:public` - interfaces for UseCases and data models that we have no choice but to
+expose.  
 `:library:*:internal` - implementations for UseCases.
 `:*:*:shared-test` - Shared stuff for `test` and `androidTest` to both depend on.
 
-Basically anytime we want to jump screens/workflows, we should consider making it a new feature module and
-any library modules needed to support it.
+Basically anytime we want to jump screens/workflows, we should consider making it a new feature
+module and any library modules needed to support it.
 
 ### Circuit
 

@@ -32,12 +32,16 @@ interface SpotifyModule {
 
     @Binds
     fun bindsGetFeaturedPlaylistsImpl(impl: GetFeaturedPlaylistsImpl): GetFeaturedPlaylists
+
     @Binds
     fun bindsGetNewReleasesImpl(impl: GetNewReleasesImpl): GetNewReleases
+
     @Binds
     fun bindsGetPlaylistsForCategoryImpl(impl: GetPlaylistsForCategoryImpl): GetPlaylistsForCategory
+
     @Binds
     fun bindsGetTracksByAlbumIdImpl(impl: GetTracksByAlbumIdImpl): GetTracksByAlbumId
+
     @Binds
     fun bindsGetTracksByPlaylistIdImpl(impl: GetTracksByPlaylistIdImpl): GetTracksByPlaylistId
 

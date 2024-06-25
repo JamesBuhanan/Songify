@@ -1,8 +1,8 @@
 package com.songify.library.spotify.internal
 
-import com.songify.library.spotify.internal.model.ArtistResponse
 import com.songify.library.spotify.internal.model.AlbumResponse
 import com.songify.library.spotify.internal.model.AlbumsMetadataResponse
+import com.songify.library.spotify.internal.model.ArtistResponse
 import com.songify.library.spotify.internal.model.BrowseCategoriesResponse
 import com.songify.library.spotify.internal.model.EpisodeResponse
 import com.songify.library.spotify.internal.model.EpisodesWithPreviewUrlResponse
@@ -18,14 +18,6 @@ import retrofit2.http.Header
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-/**
- * An enum that contains all the generes supported by the spotify api.
- * Note: It is not an exhaustive collection of all the genres supported
- * by the spotify api.
- * @param queryStringValue depicts the actual string value that will be
- * appended to the query when the GET request is made. This value will
- * be the returned when [SupportedSpotifyGenres.toString] is called.
- */
 enum class SupportedSpotifyGenres(private val queryStringValue: String) {
     AMBIENT("ambient"),
     CHILL("chill"),
@@ -99,7 +91,6 @@ interface SpotifyService {
     @GET("v1/browse/new-releases")
     suspend fun getNewReleases(
         @Header("Authorization") token: String,
-//        @Query("country") market: String,
         @Query("limit") limit: Int = 20,
         @Query("offset") offset: Int = 0
     ): NewReleasesResponse
