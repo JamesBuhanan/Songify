@@ -88,7 +88,6 @@ instrumented tests.  (See `HomePresenterTest` and `HomeViewTest`)
 - "Configuration Cache"
 - No KAPT. All KSP. KSP2 can be turned on soon. (https://github.com/google/ksp/issues/1956)
 - Dependencies sorting in all modules except `:app`
-- GraphAssert
 - Detekt
 - Lint with K2
 - "Isolated Projects" can be turned on soon. (https://github.com/google/ksp/issues/1752)
@@ -155,8 +154,8 @@ As we scale to 1,000's of modules we can help keep our dependencies tidy by usin
 
 ## TODO
 
+- Make :public modules be Kotlin only. (No Android)
 - Flow tests?
 - Snapshot tests?
 - Dynamic Feature Modules?
-- Make :public modules be Kotlin only. (No Android)
 - Rake dependencies?

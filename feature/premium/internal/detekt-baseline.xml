@@ -2,8 +2,8 @@
 <SmellBaseline>
   <ManuallySuppressedIssues></ManuallySuppressedIssues>
   <CurrentIssues>
-    <ID>LongMethod:PremiumView.kt$@Composable private fun PlanInformationCard( card: PremiumPlan, modifier: Modifier = Modifier, onViewPlansButtonClick: () -&gt; Unit )</ID>
-    <ID>MagicNumber:PremiumView.kt$50</ID>
+    <ID>LongMethod:PremiumCard.kt$@Composable internal fun PremiumCard( card: PremiumPlan, modifier: Modifier = Modifier, onViewPlansButtonClick: () -&gt; Unit )</ID>
+    <ID>MagicNumber:PremiumCard.kt$50</ID>
     <ID>UnusedParameter:PremiumView.kt$modifier: Modifier = Modifier</ID>
   </CurrentIssues>
 </SmellBaseline>

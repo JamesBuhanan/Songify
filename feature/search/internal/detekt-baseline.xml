@@ -2,7 +2,7 @@
 <SmellBaseline>
   <ManuallySuppressedIssues></ManuallySuppressedIssues>
   <CurrentIssues>
-    <ID>MagicNumber:SearchView.kt$30f</ID>
+    <ID>MagicNumber:GenreCard.kt$30f</ID>
     <ID>UnusedParameter:SearchView.kt$modifier: Modifier = Modifier</ID>
   </CurrentIssues>
 </SmellBaseline>
