@@ -4,9 +4,9 @@ plugins {
 
 android {
     dynamicFeatures = [
-            ":feature:home_internal",
-            ":feature:login_internal",
-            ":feature:premium_internal",
+            ":feature:home",
+            ":feature:login",
+            ":feature:premium",
     ]
 }
 

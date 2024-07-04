@@ -1,9 +1,9 @@
 include(
         ":app",
         ":feature:all:app",
-        ":feature:home_public", ":feature:home_internal",
-        ":feature:login_public", ":feature:login_internal",
-        ":feature:premium_public", ":feature:premium_internal",
+        ":feature:home_public", ":feature:home",
+        ":feature:login_public", ":feature:login",
+        ":feature:premium_public", ":feature:premium",
         ":library:bottom-navigation:public",
         ":library:compose-extensions:public",
         ":library:coroutines:public",

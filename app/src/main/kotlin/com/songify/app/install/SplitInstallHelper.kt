@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
-import com.google.android.play.core.ktx.requestDeferredUninstall
 import com.google.android.play.core.ktx.requestInstall
 import com.google.android.play.core.ktx.status
 import com.google.android.play.core.splitinstall.SplitInstallManager
@@ -12,9 +11,6 @@ import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import com.google.android.play.core.splitinstall.SplitInstallStateUpdatedListener
 import com.google.android.play.core.splitinstall.model.SplitInstallSessionStatus
 import com.slack.circuit.runtime.screen.Screen
-import com.songify.feature.home.HomeScreen
-import com.songify.feature.login.LoginScreen
-import com.songify.feature.premium.PremiumScreen
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.delay
@@ -52,35 +48,35 @@ internal class SplitInstallHelper(
         }
     }
 
-    suspend fun requestUninstall(module: Module) {
-        splitInstallManager.requestDeferredUninstall(moduleNames = listOf(module.id))
-    }
+//    suspend fun requestUninstall(module: Module) {
+//        splitInstallManager.requestDeferredUninstall(moduleNames = listOf(module.id))
+//    }
 
     fun requestInstall(
         screen: Screen,
         scope: CoroutineScope,
         onInstalled: suspend () -> Unit
     ) {
-        scope.launch {
-            var listener: SplitInstallStateUpdatedListener? = null
-            listener = SplitInstallStateUpdatedListener {
-                if (it.status == SplitInstallSessionStatus.INSTALLED) {
-                    scope.launch {
-                        delay(200)
-                        onInstalled()
-                        splitInstallManager.unregisterListener(listener!!)
-                    }
+        // Hopefully the screenPrefix maps to the module we are trying to load...
+        val moduleId = screen::class.java.simpleName.removeSuffix("Screen").toLowerCase()
+        if (splitInstallManager.installedModules.contains(moduleId)) {
+            scope.launch { onInstalled() }
+            return
+        }
+
+        var listener: SplitInstallStateUpdatedListener? = null
+        listener = SplitInstallStateUpdatedListener {
+            if (it.status == SplitInstallSessionStatus.INSTALLED) {
+                scope.launch {
+                    delay(200)
+                    onInstalled()
+                    splitInstallManager.unregisterListener(listener!!)
                 }
             }
+        }
 
-            val moduleId = when (screen) {
-                LoginScreen -> "login_internal"
-                HomeScreen -> "home_internal"
-                PremiumScreen -> "premium_internal"
-                else -> ""
-            }
-
-            splitInstallManager.registerListener(listener)
+        splitInstallManager.registerListener(listener)
+        scope.launch {
             splitInstallManager.requestInstall(modules = listOf(moduleId))
         }
     }
