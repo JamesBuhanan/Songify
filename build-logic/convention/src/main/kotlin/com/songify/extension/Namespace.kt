@@ -1,16 +1,10 @@
 package com.songify.extension
 
-import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.dsl.CommonExtension
-import com.android.build.gradle.LibraryExtension
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.findByType
 
 internal fun Project.dynamicNamespace() {
-    extensions.findByType(LibraryExtension::class)?.apply {
-        dynamicNamespace2(this)
-    }
-    extensions.findByType(ApplicationExtension::class)?.apply {
+    android {
         dynamicNamespace2(this)
     }
 }

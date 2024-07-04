@@ -14,12 +14,12 @@ fun Project.androidApplication() {
                 storePassword = "android"
                 keyAlias = "androiddebugkey"
                 keyPassword = "android"
-
             }
         }
 
         buildTypes {
             debug {
+                isMinifyEnabled = false
                 isDebuggable = true
                 signingConfig = signingConfigs.getByName("debug")
             }
@@ -53,16 +53,6 @@ fun Project.androidApplication() {
             }
 
             execution = "ANDROIDX_TEST_ORCHESTRATOR"
-        }
-
-        buildConfigFields()
-    }
-}
-
-fun Project.buildConfigFields() {
-    configure<ApplicationExtension> {
-        defaultConfig {
-            // buildConfigField("int", "BUILD_NUMBER", "" + project.extra["buildNumber"] + "")
         }
     }
 }

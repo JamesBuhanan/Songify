@@ -1,0 +1,26 @@
+plugins {
+    id "songify.dynamic.feature"
+}
+
+songify {
+    jetpackCompose()
+    circuit()
+    anvil()
+}
+
+android {
+    defaultConfig {
+        manifestPlaceholders = [
+                redirectSchemeName: "songify",
+                redirectHostName  : "callback",
+        ]
+    }
+}
+
+dependencies {
+    api projects.feature.loginPublic
+
+    implementation libs.spotify.auth
+    implementation projects.app
+    implementation projects.library.session.public
+}

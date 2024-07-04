@@ -3,7 +3,6 @@ package com.songify.library.bottomnavigation
 import com.slack.circuit.runtime.screen.Screen
 import com.songify.feature.home.HomeScreen
 import com.songify.feature.premium.PremiumScreen
-import com.songify.feature.search.SearchScreen
 
 val bottomNavItems = listOf(
     BottomNavItem.Home,
@@ -25,7 +24,7 @@ sealed class BottomNavItem(
     )
 
     object Search : BottomNavItem(
-        screen = SearchScreen,
+        screen = PremiumScreen,
         label = "Search",
         outlinedIconVariantResourceId = R.drawable.ic_outline_search_24,
         filledIconVariantResourceId = R.drawable.ic_outline_search_24

@@ -2,15 +2,33 @@ plugins {
     id 'songify.android.application'
 }
 
-dependencies {
-    // DO NOT ADD ANY MORE DEPENDENCIES!!!
-    implementation libs.core.splashscreen
-    implementation projects.feature.login.internal
-    implementation projects.library.bottomNavigation.public
-    implementation projects.library.circuit.public
-    implementation projects.library.theme.public
-    // DO NOT ADD ANY MORE DEPENDENCIES!!!
+android {
+    dynamicFeatures = [
+            ":feature:home_internal",
+            ":feature:login_internal",
+            ":feature:premium_internal",
+    ]
+}
 
-    // Which app do we load?
-    implementation projects.feature.all.app
+betterDynamicFeatures {
+    externalResources {
+        style("Theme_Translucent_NoTitleBar")
+    }
+}
+
+dependencies {
+    api projects.feature.homePublic
+    api projects.feature.premiumPublic
+    api projects.library.loading.public
+    api projects.library.spotify.internal
+    api projects.library.session.public
+
+    implementation libs.betterDynamicFeaturesRuntime
+    implementation libs.core.splashscreen
+    implementation libs.featureDelivery
+    implementation libs.material
+    implementation projects.feature.loginPublic
+    implementation projects.library.bottomNavigation.public
+    implementation projects.library.di.public
+    implementation projects.library.theme.public
 }

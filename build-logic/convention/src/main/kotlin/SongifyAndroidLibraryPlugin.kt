@@ -2,6 +2,7 @@ import com.android.build.gradle.LibraryPlugin
 import com.songify.extension.allProjects
 import com.songify.extension.androidLibrary
 import com.songify.extension.androidTest
+import com.songify.extension.anvil
 import com.songify.extension.applyOnce
 import com.songify.extension.circuit
 import com.songify.extension.configureLint
@@ -48,9 +49,10 @@ class SongifyAndroidLibraryPlugin : Plugin<Project> {
 }
 
 open class SongifyAndroidLibraryExtension(private val project: Project) {
+    fun anvil() = project.anvil()
     fun circuit() = project.circuit()
     fun coroutines() = project.coroutines()
-    fun hilt() = project.hilt()
+//    fun hilt() = project.hilt()
     fun jetpackCompose() = project.jetpackCompose()
     fun moshi() = project.moshi()
     fun parcelize() = project.parcelize()

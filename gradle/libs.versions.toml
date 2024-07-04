@@ -4,16 +4,16 @@ circuit = "0.22.2"
 coil = "2.5.0"
 compileSdk = "34"
 compose = "1.7.0-beta03"
-composeCompiler = "2.0.0"
+composeCompiler = "1.5.14"
 coroutines = "1.8.1"
 dagger = "2.51.1"
 desugarJdkLibs = "2.0.4"
 detekt = "1.23.1"
-kotlin = "2.0.0"
-kspPlugin = "2.0.0-1.0.22"
+kotlin = "1.9.24"
+kspPlugin = "1.9.24-1.0.20"
 material3 = "1.2.1"
 minSdk = "28"
-moshi = "1.15.0"
+moshi = "1.15.1"
 orchestrator = "1.5.2"
 retrofit = "2.11.0"
 paging = "3.3.0"
@@ -38,7 +38,10 @@ androidx-paging-common-android = { group = "androidx.paging", name = "paging-com
 androidx-paging-compose-android = { group = "androidx.paging", name = "paging-compose-android", version.ref = "paging" }
 androidx-palette-ktx = { group = "androidx.palette", name = "palette-ktx", version = "1.0.0" }
 androidx-test-espresso-core = "androidx.test.espresso:espresso-core:3.5.1"
+anvilGradlePlugin = "com.squareup.anvil:gradle-plugin:2.4.9"
 assertk = "com.willowtreeapps.assertk:assertk-jvm:0.28.1"
+betterDynamicFeaturesRuntime = { module = "app.cash.better.dynamic.features:runtime", version = "0.4.1" }
+betterDynamicFeaturesPlugin = { module = "app.cash.better.dynamic.features:gradle-plugin", version = "0.4.1" }
 circuitCodegen = { module = "com.slack.circuit:circuit-codegen", version.ref = "circuit" }
 circuitCodegenAnnotations = { module = "com.slack.circuit:circuit-codegen-annotations", version.ref = "circuit" }
 circuitFoundation = { module = "com.slack.circuit:circuit-foundation", version.ref = "circuit" }
@@ -48,13 +51,16 @@ circuitRuntimeUi = { module = "com.slack.circuit:circuit-runtime-ui", version.re
 circuitTest = { module = "com.slack.circuit:circuit-test", version.ref = "circuit" }
 circuitXEffects = { module = "com.slack.circuit:circuitx-effects", version.ref = "circuit" }
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
-composeCompiler-gradlePlugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
+#composeCompiler-gradlePlugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
 core-splashscreen = "androidx.core:core-splashscreen:1.0.1"
+daggerCompiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
 detekt-cli = { module = "io.gitlab.arturbosch.detekt:detekt-cli", version.ref = "detekt" }
 detektGradlePlugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 develocityPlugin = { module = "com.gradle:develocity-gradle-plugin", version = "3.17.4" }
+featureDelivery = { module = "com.google.android.play:feature-delivery-ktx", version = "2.1.0" }
 focusPlugin = { module = "com.dropbox.focus:com.dropbox.focus.gradle.plugin", version = "0.6.0" }
 graphAssert = { module = "com.jraska.module.graph.assertion:com.jraska.module.graph.assertion.gradle.plugin", version = "2.5.0" }
+dagger = { module = "com.google.dagger:dagger", version.ref = "dagger" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "dagger" }
 hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "dagger" }
 hilt-androidCompiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "dagger" }
@@ -68,6 +74,7 @@ material = "com.google.android.material:material:1.12.0"
 moduleGraph = { module = "dev.iurysouza.modulegraph:dev.iurysouza.modulegraph.gradle.plugin", version = "0.10.0" }
 moshi = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
 moshiCodeGen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
+okio = { module = "com.squareup.okio:okio", version = "3.7.0" }
 paging-compose = { module = "androidx.paging:paging-compose", version.ref = "paging" }
 paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "paging" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }

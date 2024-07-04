@@ -1,0 +1,21 @@
+plugins {
+    id "songify.dynamic.feature"
+}
+
+songify {
+    jetpackCompose()
+    circuit()
+    anvil()
+}
+//kapt {
+//    generateStubs = true
+//}
+dependencies {
+    api projects.feature.premiumPublic
+
+    implementation libs.dagger
+    implementation projects.app
+    implementation projects.library.di.public
+//    implementation projects.library.premium.internal
+    implementation projects.library.theme.public
+}

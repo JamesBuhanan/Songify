@@ -1,0 +1,7 @@
+plugins {
+    id 'songify.android.library'
+}
+
+dependencies {
+    implementation libs.dagger
+}

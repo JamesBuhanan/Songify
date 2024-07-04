@@ -1,13 +1,14 @@
 import com.android.build.gradle.AppPlugin
 import com.songify.extension.allProjects
 import com.songify.extension.androidApplication
+import com.songify.extension.anvil
 import com.songify.extension.applyOnce
+import com.songify.extension.betterDynamicFeatures
 import com.songify.extension.circuit
 import com.songify.extension.configureLint
 import com.songify.extension.detekt
 import com.songify.extension.dynamicNamespace
 import com.songify.extension.graphAssert
-import com.songify.extension.hilt
 import com.songify.extension.jetpackCompose
 import com.songify.extension.libs
 import com.songify.extension.moduleNameFix
@@ -31,9 +32,10 @@ class SongifyAndroidApplicationPlugin : Plugin<Project> {
             graphAssert()
             // checkstyle()
             circuit()
-            hilt()
+            anvil()
             moshi()
             jetpackCompose()
+            betterDynamicFeatures()
 
             dependencies {
                 "implementation"(libs.timber)

@@ -2,6 +2,7 @@ package com.songify.extension
 
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.dsl.CommonExtension
+import com.android.build.api.dsl.DynamicFeatureExtension
 import com.android.build.api.dsl.LibraryExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
@@ -68,6 +69,9 @@ fun Project.android(androidBlock: CommonExtension<*, *, *, *, *, *>.() -> Unit) 
         androidBlock()
     }
     extensions.findByType(ApplicationExtension::class)?.apply {
+        androidBlock()
+    }
+    extensions.findByType(DynamicFeatureExtension::class)?.apply {
         androidBlock()
     }
 }

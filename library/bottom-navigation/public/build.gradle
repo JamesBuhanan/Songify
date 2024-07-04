@@ -8,7 +8,7 @@ songify {
 }
 
 dependencies {
-    implementation projects.feature.home.public
-    implementation projects.feature.premium.public
-    implementation projects.feature.search.public
+    implementation projects.feature.homePublic
+    implementation projects.feature.premiumPublic
+//    implementation projects.feature.search.public
 }

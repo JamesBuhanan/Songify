@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<SmellBaseline>
-  <ManuallySuppressedIssues></ManuallySuppressedIssues>
-  <CurrentIssues>
-    <ID>MagicNumber:GenreCard.kt$30f</ID>
-    <ID>UnusedParameter:SearchView.kt$modifier: Modifier = Modifier</ID>
-  </CurrentIssues>
-</SmellBaseline>

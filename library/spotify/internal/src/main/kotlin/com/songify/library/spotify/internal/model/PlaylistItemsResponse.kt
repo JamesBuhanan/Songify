@@ -9,4 +9,3 @@ import com.squareup.moshi.Json
 data class PlaylistItemsResponse(val items: List<TrackResponseWithAlbumMetadataWrapper>) {
     data class TrackResponseWithAlbumMetadataWrapper(@Json(name = "track") val track: TrackResponseWithAlbumMetadata)
 }
-

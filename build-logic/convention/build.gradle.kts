@@ -21,7 +21,9 @@ dependencies {
     implementation(gradleApi())
     implementation(libs.affectedModuleDetector)
     implementation(libs.androidGradlePlugin)
-    implementation(libs.composeCompiler.gradlePlugin)
+    implementation(libs.anvilGradlePlugin)
+    implementation(libs.betterDynamicFeaturesPlugin)
+//    implementation(libs.composeCompiler.gradlePlugin)
     implementation(libs.detektGradlePlugin)
     implementation(libs.develocityPlugin)
     implementation(libs.focusPlugin)
@@ -57,6 +59,10 @@ gradlePlugin {
         register("songifyKotlinLibrary") {
             id = "songify.kotlin.library"
             implementationClass = "SongifyKotlinLibraryPlugin"
+        }
+        register("songifyDynamicFeature") {
+            id = "songify.dynamic.feature"
+            implementationClass = "SongifyDynamicFeaturePlugin"
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.songify.library.spotify.internal.paging
 
+import com.songify.library.di.AppScope
 import com.songify.library.session.SongifySession
 import com.songify.library.spotify.internal.SpotifyService
 import com.songify.library.spotify.internal.model.toAlbumCard
@@ -7,9 +8,8 @@ import com.songify.library.spotify.model.SpotifyModel
 import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
+@AppScope
 class NewReleasesPagingSource @Inject constructor(
     songifySession: SongifySession,
     spotifyService: SpotifyService
