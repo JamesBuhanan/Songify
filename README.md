@@ -20,6 +20,7 @@ A "Spotify-ish" app to showcase massively scalable architecture for Android.
   using real data?
 - You can see how many modules get unloaded when we "focus" on the Search feature:
 
+
 | ![](images/all.png) | ![](images/search.png) |
 |---------------------|------------------------|
 
