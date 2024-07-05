@@ -10,7 +10,7 @@ fun Project.androidApplication() {
 
         signingConfigs {
             maybeCreate("debug").apply {
-                storeFile = file("debug.keystore")
+                storeFile = file("debug2.keystore")
                 storePassword = "android"
                 keyAlias = "androiddebugkey"
                 keyPassword = "android"

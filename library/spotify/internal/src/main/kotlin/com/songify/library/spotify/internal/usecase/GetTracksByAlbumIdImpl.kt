@@ -7,6 +7,7 @@ import com.songify.library.spotify.internal.model.getTracks
 import com.songify.library.spotify.model.SpotifyModel
 import com.songify.library.spotify.usecase.GetTracksByAlbumId
 import com.squareup.anvil.annotations.ContributesBinding
+import okio.IOException
 import retrofit2.HttpException
 import javax.inject.Inject
 
@@ -25,7 +26,7 @@ class GetTracksByAlbumIdImpl @Inject constructor(
             Result.success(tracks)
         } catch (httpException: HttpException) {
             Result.failure(httpException)
-        } catch (ioException: java.io.IOException) {
+        } catch (ioException: IOException) {
             Result.failure(ioException)
         }
 }
