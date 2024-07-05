@@ -4,7 +4,7 @@
         dist:instant="false"
         dist:title="@string/login_title">
         <dist:delivery>
-            <!-- <dist:on-demand /> -->
+            <!--            <dist:on-demand />-->
             <dist:install-time />
         </dist:delivery>
         <dist:fusing dist:include="true" />

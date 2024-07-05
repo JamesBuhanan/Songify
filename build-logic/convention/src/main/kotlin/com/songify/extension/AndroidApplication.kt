@@ -27,6 +27,7 @@ fun Project.androidApplication() {
 
         defaultConfig {
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
+            resConfigs("en")
 
             targetSdk = libs.versions.targetSdk.get().toInt()
             versionCode = 1
