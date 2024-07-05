@@ -31,7 +31,6 @@ import com.songify.feature.login.LoginScreen
 import com.songify.library.bottomnavigation.SongifyBottomNavigation
 import com.songify.library.theme.SongifyTheme
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 class EntryPointActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -88,7 +87,7 @@ class EntryPointActivity : ComponentActivity() {
                 Scaffold(
                     bottomBar = {
                         SongifyBottomNavigation({
-                            ensureInstalledAndThen(it, scope, splitInstallHelper) {
+                            splitInstallHelper.requestInstall(it, scope) {
                                 navigator.resetRoot(it)
                             }
                         })
@@ -101,23 +100,6 @@ class EntryPointActivity : ComponentActivity() {
             }
         }
     }
-}
-
-private fun ensureInstalledAndThen(
-    screen: Screen,
-    scope: CoroutineScope,
-    splitInstallHelper: SplitInstallHelper,
-    action: () -> Unit
-) {
-//    try {
-//        action()
-//    } catch (ex: Exception) {
-    scope.launch {
-        splitInstallHelper.requestInstall(screen, scope) {
-            action()
-        }
-    }
-//    }
 }
 
 @Composable
@@ -141,25 +123,10 @@ internal class DynamicNavigator(
     private val splitInstallHelper: SplitInstallHelper
 ) : Navigator by delegate {
     override fun goTo(screen: Screen): Boolean {
-        return ensureInstalledAndThen(screen, scope) {
+        splitInstallHelper.requestInstall(screen, scope) {
             delegate.goTo(screen)
         }
-    }
 
-    private fun ensureInstalledAndThen(
-        screen: Screen,
-        scope: CoroutineScope,
-        action: (Screen) -> Boolean,
-    ): Boolean {
-        return try {
-            action(screen)
-        } catch (ex: Exception) {
-            scope.launch {
-                splitInstallHelper.requestInstall(screen, scope) {
-                    action(screen)
-                }
-            }
-            true // <--- LOL
-        }
+        return true
     }
 }
