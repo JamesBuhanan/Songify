@@ -17,18 +17,18 @@ betterDynamicFeatures {
 }
 
 dependencies {
-    api projects.feature.homePublic
-    api projects.feature.premiumPublic
-    api projects.library.loading.public
-    api projects.library.spotify.internal
-    api projects.library.session.public
+    api projects.feature.home.api
+    api projects.feature.premium.api
+    api projects.library.loading.api
+    api projects.library.spotify.impl
+    api projects.library.session.api
 
     implementation libs.betterDynamicFeaturesRuntime
     implementation libs.core.splashscreen
     implementation libs.featureDelivery
     implementation libs.material
-    implementation projects.feature.loginPublic
-    implementation projects.library.bottomNavigation.public
-    implementation projects.library.di.public
-    implementation projects.library.theme.public
+    implementation projects.feature.login.api
+    implementation projects.library.bottomNavigation.api
+    implementation projects.library.di.api
+    implementation projects.library.theme.api
 }

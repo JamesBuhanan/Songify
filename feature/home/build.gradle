@@ -14,9 +14,9 @@ dependencies {
     implementation libs.bundles.paging
     implementation libs.coil
     implementation libs.material
-//    implementation projects.feature.detail.public
+//    implementation projects.feature.detail.api
     implementation projects.app
-    implementation projects.library.composeExtensions.public
-    implementation projects.library.spotify.public
-    implementation projects.library.theme.public
+    implementation projects.library.composeExtensions.api
+    implementation projects.library.spotify.api
+    implementation projects.library.theme.api
 }

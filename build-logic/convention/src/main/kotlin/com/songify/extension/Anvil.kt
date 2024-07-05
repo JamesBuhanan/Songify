@@ -23,7 +23,7 @@ fun Project.anvil() {
     dependencies {
         "implementation"(libs.dagger)
         "kapt"(libs.daggerCompiler)
-        "implementation"(project(":library:di:public"))
+        "implementation"(project(":library:di:api"))
     }
 //        "implementation"(libs.hilt.android)
 //        "ksp"(libs.hilt.androidCompiler)

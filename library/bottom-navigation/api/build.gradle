@@ -1,0 +1,14 @@
+plugins {
+    id 'songify.android.library'
+}
+
+songify {
+    circuit()
+    jetpackCompose()
+}
+
+dependencies {
+    implementation projects.feature.home.api
+    implementation projects.feature.premium.api
+//    implementation projects.feature.search.api
+}

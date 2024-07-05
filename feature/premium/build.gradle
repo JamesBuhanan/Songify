@@ -11,11 +11,10 @@ songify {
 //    generateStubs = true
 //}
 dependencies {
-    api projects.feature.premiumPublic
+    api projects.feature.premium.api
 
     implementation libs.dagger
     implementation projects.app
-    implementation projects.library.di.public
-//    implementation projects.library.premium.internal
-    implementation projects.library.theme.public
+    implementation projects.library.di.api
+    implementation projects.library.theme.api
 }

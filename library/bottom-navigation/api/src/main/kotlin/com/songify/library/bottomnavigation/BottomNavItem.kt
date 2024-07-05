@@ -3,6 +3,7 @@ package com.songify.library.bottomnavigation
 import com.slack.circuit.runtime.screen.Screen
 import com.songify.feature.home.HomeScreen
 import com.songify.feature.premium.PremiumScreen
+import com.songify.library.bottomnavigation.api.R
 
 val bottomNavItems = listOf(
     BottomNavItem.Home,

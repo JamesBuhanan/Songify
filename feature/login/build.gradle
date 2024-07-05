@@ -18,9 +18,9 @@ android {
 }
 
 dependencies {
-    api projects.feature.loginPublic
+    api projects.feature.login.api
 
     implementation libs.spotify.auth
     implementation projects.app
-    implementation projects.library.session.public
+    implementation projects.library.session.api
 }
