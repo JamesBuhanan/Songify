@@ -11,3 +11,5 @@ bundletool build-apks --local-testing --bundle=app-debug.aab --output=app-debug.
 bundletool install-apks --apks app-debug.apks
 
 popd
+
+adb shell am start -n com.songify/com.songify.app.EntryPointActivity

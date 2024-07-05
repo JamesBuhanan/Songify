@@ -1,30 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:dist="http://schemas.android.com/apk/distribution">
-
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <application>
-        <activity
-            android:name="com.songify.app.EntryPointActivity"
-            android:exported="true"
-            android:theme="@style/Theme.App.Starting">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="callback"
-                    android:scheme="songify" />
-            </intent-filter>
-        </activity>
-    </application>
+<manifest xmlns:dist="http://schemas.android.com/apk/distribution">
 
     <dist:module
         dist:instant="false"
