@@ -4,7 +4,7 @@ A "Spotify-ish" app to showcase massively scalable architecture for Android.
 
 ## Sample apps
 
-- This scheme should keep build times hovering around 2 minutes even as we scale to 1,000's of  
+- This scheme should keep build times hovering around 2 minutes even as we scale to 1,000's of
   modules...
 - Set which sample app you want to build in `:app/build.gradle`
 - Now "Focus" it by running:
@@ -20,15 +20,17 @@ A "Spotify-ish" app to showcase massively scalable architecture for Android.
   using real data?
 - You can see how many modules get unloaded when we "focus" on the Search feature:
 
-| ![](images/all.png) | ![](images/search.png) |
-|---------------------|------------------------|
+| Before and After "Focusing" |
+|-----------------------------|
+| ![](images/all.webp)         |
+| ![](images/search.webp)      |
 
 ## affectedModuleDetector
 
 `affectedModuleDetector` is an excellent way to cut down on CI times and expenses so that an app
 can scale massively.
 
-`affectedModuleDetector` looks at the last commit of your branch to determine what modules are "  
+`affectedModuleDetector` looks at the last commit of your branch to determine what modules are "
 affected".
 
 Here are 3 useful examples of running detekt, unit tests, and android tests:
@@ -42,10 +44,11 @@ Here are 3 useful examples of running detekt, unit tests, and android tests:
 ### Modularization
 
 Modularizing by feature using the "public/impl" (aka api/impl aka public/internal) scheme was
-first described by Ralf Wondratschek of Square in a talk titled "Android at Scale":  
-https://speakerdeck.com/vrallev/android-at-scale-at-square
+first described by Ralf Wondratschek of Square in a talk titled "Android at Scale":
+[https://speakerdeck.com/vrallev/android-at-scale-at-square](https://speakerdeck.com/vrallev/android-at-scale-at-square)
 
-![](images/api-impl.png)
+
+![](images/api-impl.webp)
 
 This allows us to unload any modules that we are not currently working on.
 
@@ -79,6 +82,12 @@ Circuit leverages Unidirectional Data Flow (UDF) and is highly testable. We test
 Circuit in isolation. The "Presenter" is tested in UnitTests and the "View" is tested in
 instrumented tests.  (See `HomePresenterTest` and `HomeViewTest`)
 
+### S.O.L.I.D. Principles
+![](images/solid.webp)
+
+### Uncle Bob's Clean Architecture
+![](images/clean.webp)
+
 ## Gradle
 
 - Convention Plugins
@@ -86,11 +95,11 @@ instrumented tests.  (See `HomePresenterTest` and `HomeViewTest`)
 - Sample apps with the "Focus" gradle plugin
 - "Configure on Demand"
 - "Configuration Cache"
-- No KAPT. All KSP. KSP2 can be turned on soon. (https://github.com/google/ksp/issues/1956)
+- No KAPT. All KSP. KSP2 can be turned on soon. [https://github.com/google/ksp/issues/1956](https://github.com/google/ksp/issues/1956)
 - Dependencies sorting in all modules except `:app`
 - Detekt
 - Lint with K2
-- "Isolated Projects" can be turned on soon. (https://github.com/google/ksp/issues/1752)
+- "Isolated Projects" can be turned on soon. [https://github.com/google/ksp/issues/1752](https://github.com/google/ksp/issues/1752)
 
 ## GraphAssert
 
@@ -147,10 +156,10 @@ As we scale to 1,000's of modules we can help keep our dependencies tidy by usin
 
 ## Inspirations
 
-- Now in Android: https://github.com/android/nowinandroid
-- CatchUp: https://github.com/ZacSweers/CatchUp
-- TiVi: https://github.com/chrisbanes/tivi
-- Circuit: https://github.com/slackhq/circuit
+- Now in Android: [https://github.com/android/nowinandroid](https://github.com/android/nowinandroid)
+- CatchUp: [https://github.com/ZacSweers/CatchUp](https://github.com/ZacSweers/CatchUp)
+- TiVi: [https://github.com/chrisbanes/tivi](https://github.com/chrisbanes/tivi)
+- Circuit: [https://github.com/slackhq/circuit](https://github.com/slackhq/circuit)
 
 ## TODO
 

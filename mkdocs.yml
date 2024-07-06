@@ -1,0 +1,61 @@
+# pip install mkdocs mkdocs-material
+# mkdocs serve
+# mkdocs build
+#
+# Alternative, because python environments are fun and we're a bunch of android devs
+# python3 -m pip install mkdocs mkdocs-material
+# python3 -m mkdocs serve
+
+# Project information
+site_name: Songify Documentation
+docs_dir: docs
+repo_name: "JamesBuhanan/Songify"
+repo_url: "https://github.com/JamesBuhanan/Songify"
+site_url: "https://github.com/JamesBuhanan/Songify"
+
+# Configuration
+theme:
+  name: material
+  features:
+    - content.code.copy
+    - navigation.instant
+    - navigation.footer
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: white
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: white
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - toc:
+      permalink: true
+
+# Page tree
+nav:
+  - Home: README.md
