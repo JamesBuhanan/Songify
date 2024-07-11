@@ -47,13 +47,14 @@ class EntryPointActivity : ComponentActivity() {
     fun ShowSpotify(
         modifier: Modifier = Modifier,
     ) {
-        val installHelper = rememberSplitInstallHelper()
+        val splitInstallHelper = rememberSplitInstallHelper()
+        val scope = rememberCoroutineScope()
 
         val features by remember {
-            installHelper.splitInstallManager.dynamicImplementations<CircuitFeature>()
+            splitInstallHelper.splitInstallManager.dynamicImplementations<CircuitFeature>()
         }.collectAsState(initial = emptyList())
 
-        val isSplitInstalling by installHelper.isInstalling.collectAsState(initial = false)
+        val isSplitInstalling by splitInstallHelper.isInstalling.collectAsState(initial = false)
 
         val circuit = Circuit.Builder()
             .apply {
@@ -73,8 +74,8 @@ class EntryPointActivity : ComponentActivity() {
         val backStack = rememberSaveableBackStack(LoginScreen)
         val navigator = rememberDynamicNavigator(
             delegate = rememberCircuitNavigator(backStack),
-            scope = rememberCoroutineScope(),
-            splitInstallHelper = rememberSplitInstallHelper(),
+            scope = scope,
+            splitInstallHelper = splitInstallHelper,
         )
 
         SongifyTheme {
@@ -82,8 +83,6 @@ class EntryPointActivity : ComponentActivity() {
                 modifier = Modifier.fillMaxSize(),
                 color = MaterialTheme.colorScheme.background,
             ) {
-                val splitInstallHelper = rememberSplitInstallHelper()
-                val scope = rememberCoroutineScope()
                 Scaffold(
                     bottomBar = {
                         SongifyBottomNavigation({
