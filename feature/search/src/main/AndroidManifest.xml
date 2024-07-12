@@ -1,0 +1,13 @@
+<manifest xmlns:dist="http://schemas.android.com/apk/distribution">
+
+    <dist:module
+        dist:instant="false"
+        dist:title="@string/search_title">
+        <dist:delivery>
+            <dist:on-demand />
+            <!-- <dist:install-time /> -->
+        </dist:delivery>
+        <dist:fusing dist:include="true" />
+        <!--        <dist:removable dist:value="true" />-->
+    </dist:module>
+</manifest>

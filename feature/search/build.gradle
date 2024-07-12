@@ -1,0 +1,18 @@
+plugins {
+    id "songify.dynamic.feature"
+}
+
+songify {
+    jetpackCompose()
+    circuit()
+    anvil()
+}
+
+dependencies {
+    api projects.feature.search.api
+
+    implementation libs.dagger
+    implementation projects.app
+    implementation projects.library.di.api
+    implementation projects.library.theme.api
+}

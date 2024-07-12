@@ -10,7 +10,6 @@ import com.songify.extension.coroutines
 import com.songify.extension.detekt
 import com.songify.extension.dynamicNamespace
 import com.songify.extension.gradleDependenciesSorter
-import com.songify.extension.hilt
 import com.songify.extension.jetpackCompose
 import com.songify.extension.libs
 import com.songify.extension.moduleNameFix
@@ -52,7 +51,6 @@ open class SongifyAndroidLibraryExtension(private val project: Project) {
     fun anvil() = project.anvil()
     fun circuit() = project.circuit()
     fun coroutines() = project.coroutines()
-//    fun hilt() = project.hilt()
     fun jetpackCompose() = project.jetpackCompose()
     fun moshi() = project.moshi()
     fun parcelize() = project.parcelize()

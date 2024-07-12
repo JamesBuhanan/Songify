@@ -1,11 +1,11 @@
 package com.songify.extension
 
-import com.android.build.gradle.LibraryExtension
+import com.android.build.api.dsl.DynamicFeatureExtension
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 
-fun Project.androidLibrary() {
-    configure<LibraryExtension> {
+fun Project.dynamicFeatureModule() {
+    configure<DynamicFeatureExtension> {
         buildTypes {
             debug {
                 isShrinkResources = false
@@ -14,9 +14,7 @@ fun Project.androidLibrary() {
         }
 
         kotlinAndroid(this)
-        defaultConfig {
-            targetSdk = libs.versions.targetSdk.get().toInt()
-        }
+
         sourceSets {
             getByName("main") {
                 java.srcDir("src/main/kotlin")

@@ -4,6 +4,7 @@ include(
         ":feature:home:api", ":feature:home",
         ":feature:login:api", ":feature:login",
         ":feature:premium:api", ":feature:premium",
+        ":feature:search:api", ":feature:search",
         ":library:bottom-navigation:api",
         ":library:compose-extensions:api",
         ":library:coroutines:api",

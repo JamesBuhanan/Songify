@@ -20,6 +20,7 @@ fun Project.androidApplication() {
         buildTypes {
             debug {
                 isMinifyEnabled = false
+                isShrinkResources = false
                 isDebuggable = true
                 signingConfig = signingConfigs.getByName("debug")
             }
