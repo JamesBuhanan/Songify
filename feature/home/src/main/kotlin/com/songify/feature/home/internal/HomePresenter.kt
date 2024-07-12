@@ -6,6 +6,7 @@ import androidx.compose.runtime.produceState
 import com.slack.circuit.codegen.annotations.CircuitInject
 import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.presenter.Presenter
+import com.songify.feature.detail.DetailScreen
 import com.songify.feature.home.HomeScreen
 import com.songify.feature.home.internal.usecase.GetHomeFeed
 import com.songify.library.di.FeatureScope
@@ -26,7 +27,7 @@ class HomePresenter @AssistedInject constructor(
                     eventSink = {
                         when (it) {
                             is HomeEvent.TappedBack -> navigator.pop()
-                            is HomeEvent.TappedCard -> {}//navigator.goTo(DetailScreen(it.spotifyModel))
+                            is HomeEvent.TappedCard -> navigator.goTo(DetailScreen(it.spotifyModel))
                         }
                     }
                 )

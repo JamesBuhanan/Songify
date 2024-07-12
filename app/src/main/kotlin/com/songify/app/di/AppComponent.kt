@@ -6,6 +6,8 @@ import com.songify.library.spotify.usecase.GetCategories
 import com.songify.library.spotify.usecase.GetFeaturedPlaylists
 import com.songify.library.spotify.usecase.GetNewReleases
 import com.songify.library.spotify.usecase.GetPlaylistsForCategory
+import com.songify.library.spotify.usecase.GetTracksByAlbumId
+import com.songify.library.spotify.usecase.GetTracksByPlaylistId
 import com.squareup.anvil.annotations.MergeComponent
 
 @AppScope
@@ -17,6 +19,7 @@ interface AppComponent {
     val getFeaturedPlaylists: GetFeaturedPlaylists
     val getCategories: GetCategories
     val getPlaylistsForCategory: GetPlaylistsForCategory
-    @AppScope
     val songifySession: SongifySession
+    val getTracksByAlbumId: GetTracksByAlbumId
+    val getTracksByPlaylistId: GetTracksByPlaylistId
 }

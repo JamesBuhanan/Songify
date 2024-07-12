@@ -42,6 +42,7 @@ class SongifyDynamicFeaturePlugin : Plugin<Project> {
 
             dependencies {
                 "implementation"(libs.timber)
+                "implementation"(project(":app"))
             }
 
             extensions.create("songify", SongifyDynamicFeatureExtension::class.java, this)

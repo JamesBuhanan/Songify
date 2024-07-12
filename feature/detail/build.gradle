@@ -1,0 +1,23 @@
+plugins {
+    id "songify.dynamic.feature"
+}
+
+songify {
+    anvil()
+    circuit()
+    jetpackCompose()
+}
+
+dependencies {
+    api projects.feature.detail.api
+
+    implementation libs.androidx.paging.compose.android
+    implementation libs.bundles.paging
+    implementation libs.coil
+    implementation libs.material
+//    implementation projects.feature.nowplaying.api
+    implementation projects.library.design.api
+    implementation projects.library.loading.api
+    implementation projects.library.theme.api
+//    implementation projects.library.spotify.api(':library:spotify:api')
+}

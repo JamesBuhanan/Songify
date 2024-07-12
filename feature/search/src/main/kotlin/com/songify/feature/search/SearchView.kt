@@ -5,6 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import com.google.android.play.core.splitcompat.SplitCompat
 import com.slack.circuit.codegen.annotations.CircuitInject
 import com.slack.circuitx.effects.toastEffect
 import com.songify.feature.search.ui.GenresGrid
@@ -19,7 +20,9 @@ fun SearchView(
     modifier: Modifier = Modifier,
 ) {
     // This is CRAZY.  Why do I have to do this just so we can access Resources from DFMs?
-    val newContext = LocalContext.current.createPackageContext("com.songify", 0)
+    val newContext =
+        LocalContext.current.createPackageContext("com.songify", 0)
+            .also { SplitCompat.install(it) }
 
     CompositionLocalProvider(
         LocalContext provides newContext

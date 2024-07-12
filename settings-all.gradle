@@ -1,6 +1,7 @@
 include(
         ":app",
         ":feature:all:app",
+        ":feature:detail:api", ":feature:detail",
         ":feature:home:api", ":feature:home",
         ":feature:login:api", ":feature:login",
         ":feature:premium:api", ":feature:premium",

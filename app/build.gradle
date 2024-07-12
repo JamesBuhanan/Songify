@@ -4,6 +4,7 @@ plugins {
 
 android {
     dynamicFeatures = [
+            ":feature:detail",
             ":feature:home",
             ":feature:login",
             ":feature:premium",
@@ -18,11 +19,16 @@ betterDynamicFeatures {
 }
 
 dependencies {
+    api libs.accompanist
+    api libs.bundles.paging
+    api libs.coil
+    api projects.feature.detail.api
     api projects.feature.home.api
     api projects.feature.premium.api
+    api projects.library.composeExtensions.api
     api projects.library.loading.api
-    api projects.library.spotify.impl
     api projects.library.session.api
+    api projects.library.spotify.impl
 
     implementation libs.betterDynamicFeaturesRuntime
     implementation libs.core.splashscreen

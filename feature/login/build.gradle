@@ -21,6 +21,6 @@ dependencies {
     api projects.feature.login.api
 
     implementation libs.spotify.auth
-    implementation projects.app
+//    implementation projects.app
     implementation projects.library.session.api
 }

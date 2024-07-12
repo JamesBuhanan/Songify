@@ -1,6 +1,7 @@
 <resources>
     <!-- These are really dumb... Can we autogenerate string resources for each DFM and put them here? -->
     <string name="app_name">Songify</string>
+    <string name="detail_title">Detail</string>
     <string name="home_title">Home</string>
     <string name="login_title">Login</string>
     <string name="premium_title">Premium</string>

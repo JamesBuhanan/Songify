@@ -1,0 +1,11 @@
+plugins {
+    id 'songify.android.library'
+}
+
+songify {
+    circuit()
+}
+
+dependencies {
+    api projects.library.spotify.api
+}
