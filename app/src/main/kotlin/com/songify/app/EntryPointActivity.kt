@@ -29,6 +29,7 @@ import com.songify.app.install.SplitInstallHelper
 import com.songify.app.install.rememberSplitInstallHelper
 import com.songify.feature.login.LoginScreen
 import com.songify.library.bottomnavigation.SongifyBottomNavigation
+import com.songify.library.loading.InstallingDfmBar
 import com.songify.library.theme.SongifyTheme
 import kotlinx.coroutines.CoroutineScope
 
@@ -53,8 +54,6 @@ class EntryPointActivity : ComponentActivity() {
         val features by remember {
             splitInstallHelper.splitInstallManager.dynamicImplementations<CircuitFeature>()
         }.collectAsState(initial = emptyList())
-
-        val isSplitInstalling by splitInstallHelper.isInstalling.collectAsState(initial = false)
 
         val circuit = Circuit.Builder()
             .apply {
@@ -92,8 +91,13 @@ class EntryPointActivity : ComponentActivity() {
                         })
                     }
                 ) {
-                    CircuitCompositionLocals(circuit) {
-                        NavigableCircuitContent(navigator, backStack)
+                    val isSplitInstalling by splitInstallHelper.isInstalling.collectAsState(initial = false)
+                    if (isSplitInstalling) {
+                        InstallingDfmBar()
+                    } else {
+                        CircuitCompositionLocals(circuit) {
+                            NavigableCircuitContent(navigator, backStack)
+                        }
                     }
                 }
             }
