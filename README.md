@@ -168,3 +168,5 @@ As we scale to 1,000's of modules we can help keep our dependencies tidy by usin
 - Snapshot tests?
 - Dynamic Feature Modules?
 - Rake dependencies?
+- Single Activity benefits?
+- Benchmarking

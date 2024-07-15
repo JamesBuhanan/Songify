@@ -36,7 +36,6 @@ class HomePresenter @AssistedInject constructor(
             })
         }
 
-        // Cache all PagingData. Is there a better way to do this?
         return state
     }
 
