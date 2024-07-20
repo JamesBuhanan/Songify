@@ -1,7 +1,7 @@
 package com.songify.feature.premium.app.di
 
 import com.slack.circuit.runtime.screen.Screen
-import com.songify.feature.premium.DetailScreen
+import com.songify.feature.detail.DetailScreen
 import com.songify.library.spotify.model.SpotifyModel.Album
 import com.songify.library.spotify.model.SpotifyModel.Playlist
 import dagger.Module

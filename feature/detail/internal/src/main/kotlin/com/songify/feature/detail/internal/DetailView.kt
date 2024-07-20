@@ -9,7 +9,7 @@ import com.slack.circuit.codegen.annotations.CircuitInject
 import com.slack.circuitx.effects.toastEffect
 import com.songify.feature.detail.internal.ui.AlbumDetailScreen
 import com.songify.feature.detail.internal.ui.PlaylistDetailScreen
-import com.songify.feature.premium.DetailScreen
+import com.songify.feature.detail.DetailScreen
 import com.songify.library.composeextensions.rememberRetainedCachedPagingFlow
 import com.songify.library.loading.LoadingBar
 import com.songify.library.spotify.model.SpotifyModel

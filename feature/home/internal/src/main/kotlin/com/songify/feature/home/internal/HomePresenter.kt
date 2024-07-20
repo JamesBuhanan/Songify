@@ -7,7 +7,7 @@ import com.slack.circuit.codegen.annotations.CircuitInject
 import com.slack.circuit.runtime.Navigator
 import com.slack.circuit.runtime.presenter.Presenter
 import com.songify.feature.home.HomeScreen
-import com.songify.feature.premium.DetailScreen
+import com.songify.feature.detail.DetailScreen
 import com.songify.library.home.usecase.GetHomeFeed
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory

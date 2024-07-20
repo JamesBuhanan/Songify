@@ -1,4 +1,4 @@
-package com.songify.feature.premium
+package com.songify.feature.detail
 
 import com.slack.circuit.runtime.screen.Screen
 import com.songify.library.spotify.model.SpotifyModel

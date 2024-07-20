@@ -6,7 +6,7 @@ import com.slack.circuit.test.test
 import com.songify.feature.home.HomeScreen
 import com.songify.feature.home.sharedtest.FakeGetHomeFeed
 import com.songify.feature.home.sharedtest.TestData
-import com.songify.feature.premium.DetailScreen
+import com.songify.feature.detail.DetailScreen
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 import org.junit.runner.RunWith
