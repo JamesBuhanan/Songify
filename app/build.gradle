@@ -5,6 +5,7 @@ plugins {
 dependencies {
     // DO NOT ADD ANY MORE DEPENDENCIES!!!
     implementation libs.core.splashscreen
+    implementation libs.material
     implementation projects.feature.login.internal
     implementation projects.library.bottomNavigation.public
     implementation projects.library.circuit.public
@@ -12,5 +13,5 @@ dependencies {
     // DO NOT ADD ANY MORE DEPENDENCIES!!!
 
     // Which app do we load?
-    implementation projects.feature.all.app
+    implementation projects.feature.search.app
 }
