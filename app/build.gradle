@@ -13,5 +13,5 @@ dependencies {
     // DO NOT ADD ANY MORE DEPENDENCIES!!!
 
     // Which app do we load?
-    implementation projects.feature.search.app
+    implementation projects.feature.all.app
 }

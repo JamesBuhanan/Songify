@@ -34,6 +34,6 @@ internal fun AlbumMetadataResponse.toAlbumCard() = SpotifyModel.Album(
     id = id,
     imageUrlString = images.firstOrNull()?.url,
     caption = name,
-    artistsString = artists.joinToString(", ") { name },
+    artistsString = artists.joinToString(", ") { it.name },
     yearOfRelease = releaseDate.substring(0..3) // yyyy-mm-dd
 )
