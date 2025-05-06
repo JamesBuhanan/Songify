@@ -22,7 +22,7 @@ dependencies {
     implementation projects.library.loading.public
     implementation projects.library.theme.public
 
-    testImplementation projects.feature.home.sharedTest
+    testImplementation projects.library.home.fake
 
-    androidTestImplementation projects.feature.home.sharedTest
+    androidTestImplementation projects.library.home.fake
 }

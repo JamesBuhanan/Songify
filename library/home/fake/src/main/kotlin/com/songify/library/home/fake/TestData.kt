@@ -1,7 +1,7 @@
-package com.songify.feature.home.sharedtest
+package com.songify.library.home.fake
 
 import androidx.paging.PagingData
-import com.songify.feature.home.sharedtest.TestData.homeFeed
+import com.songify.library.home.fake.TestData.homeFeed
 import com.songify.library.home.model.HomeFeed
 import com.songify.library.home.model.HomeFeedCarousel
 import com.songify.library.home.usecase.GetHomeFeed

@@ -34,7 +34,7 @@ data class AlbumResponse(
     data class TrackResponseWithoutAlbumMetadataResponse(
         val id: String,
         val name: String,
-        @Json(name = "preview_url") val previewUrl: String,
+        @Json(name = "preview_url") val previewUrl: String?,
         @Json(name = "is_playable") val isPlayable: Boolean?,
         val explicit: Boolean,
         @Json(name = "duration_ms") val durationInMillis: Int

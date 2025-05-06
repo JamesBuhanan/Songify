@@ -12,8 +12,8 @@ import com.slack.circuit.test.TestEventSink
 import com.songify.feature.home.internal.HomeConstants.CARD_TAG
 import com.songify.feature.home.internal.HomeConstants.HOME_TAG
 import com.songify.feature.home.internal.HomeConstants.ROW_HEADLINE_TAG
-import com.songify.feature.home.sharedtest.TestData
-import com.songify.feature.home.sharedtest.TestData.NEW_RELEASES
+import com.songify.library.home.fake.TestData
+import com.songify.library.home.fake.TestData.NEW_RELEASES
 import com.songify.library.loading.PROGRESS_TAG
 import org.junit.Rule
 import org.junit.Test

@@ -12,7 +12,6 @@ dependencies {
     api projects.feature.login.public
 
     implementation libs.spotify.auth
-    implementation projects.feature.home.public
     implementation projects.library.loading.public
     implementation projects.library.session.public
 }

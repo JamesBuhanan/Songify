@@ -45,7 +45,7 @@ sealed class SpotifyModel : Parcelable {
         override val caption: String,
         override val imageUrlString: String,
         val artistsString: String,
-        val trackUrlString: String,
+        val trackUrlString: String?,
     ) : SpotifyModel(), Streamable {
         override val streamInfo = StreamInfo(
             streamUrl = trackUrlString,
