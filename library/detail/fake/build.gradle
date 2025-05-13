@@ -1,0 +1,11 @@
+plugins {
+    id 'songify.android.library'
+}
+
+songify {
+    hilt()
+}
+
+dependencies {
+    api projects.library.detail.public
+}

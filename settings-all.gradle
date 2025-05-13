@@ -1,6 +1,6 @@
 include(
         ":app",
-        ":feature:detail:public", ":feature:detail:internal", ":feature:detail:app",
+        ":feature:detail:public", ":feature:detail:internal",
         ":feature:home:public", ":feature:home:internal",
         ":feature:login:public", ":feature:login:internal",
         ":feature:nowplaying:public", ":feature:nowplaying:internal", ":feature:nowplaying:app",
@@ -11,7 +11,7 @@ include(
         ":library:compose-extensions:public",
         ":library:coroutines:public",
         ":library:design:public",
-        ":library:detail:public", ":library:detail:internal",
+        ":library:detail:public", ":library:detail:internal", ":library:detail:fake",
         ":library:home:public", ":library:home:internal", ":library:home:fake",
         ":library:loading:public",
         ":library:premium:public", ":library:premium:internal",
