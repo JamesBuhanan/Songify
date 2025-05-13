@@ -35,7 +35,7 @@ class HomeViewTest {
     @Test
     fun homeView_show_screen_for_success() {
         val testSink = TestEventSink<HomeEvent>()
-        val success = HomeState.Success(TestData.homeFeed, testSink)
+        val success = HomeState.Success(TestData.fakeHomeFeed, testSink)
         composeTestRule.run {
             setContent { HomeView(success) }
 
@@ -48,7 +48,7 @@ class HomeViewTest {
     @Test
     fun homeView_emits_event_when_tapping_on_card() {
         val testSink = TestEventSink<HomeEvent>()
-        val success = HomeState.Success(TestData.homeFeed, testSink)
+        val success = HomeState.Success(TestData.fakeHomeFeed, testSink)
         composeTestRule.run {
             setContent { HomeView(success) }
 

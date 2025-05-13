@@ -1,7 +1,7 @@
 include(
         ":app",
         ":feature:detail:public", ":feature:detail:internal", ":feature:detail:app",
-        ":feature:home:public", ":feature:home:internal", ":feature:home:app",
+        ":feature:home:public", ":feature:home:internal",
         ":feature:login:public", ":feature:login:internal",
         ":feature:nowplaying:public", ":feature:nowplaying:internal", ":feature:nowplaying:app",
         ":feature:premium:public", ":feature:premium:internal", ":feature:premium:app",

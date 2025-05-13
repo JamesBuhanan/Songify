@@ -1,11 +1,10 @@
 package com.songify.library.home.fake
 
 import androidx.paging.PagingData
-import com.songify.library.home.fake.TestData.homeFeed
 import com.songify.library.home.model.HomeFeed
 import com.songify.library.home.model.HomeFeedCarousel
-import com.songify.library.home.usecase.GetHomeFeed
 import com.songify.library.spotify.model.SpotifyModel
+import com.songify.library.spotify.model.SpotifyModel.Playlist
 import kotlinx.coroutines.flow.flowOf
 
 object TestData {
@@ -18,24 +17,32 @@ object TestData {
         "yearOfRelease"
     )
 
-    val homeFeed = HomeFeed(
-        carousels = listOf(
+    val fakeHomeFeed = HomeFeed(
+        listOf(
             HomeFeedCarousel(
-                id = "id",
-                title = NEW_RELEASES,
-                spotifyModels = flowOf(
+                "1", "Thing", flowOf(
                     PagingData.from(
                         listOf(
-                            album
+                            Playlist(
+                                "1a",
+                                "caption",
+                                null,
+                                "name",
+                                "ownerName",
+                                "totalNumberOfTracks"
+                            ),
+                            Playlist(
+                                "1b",
+                                "caption",
+                                null,
+                                "name",
+                                "ownerName",
+                                "totalNumberOfTracks"
+                            )
                         )
                     )
                 )
             )
         )
     )
-}
-
-
-class FakeGetHomeFeed : GetHomeFeed {
-    override suspend operator fun invoke() = Result.success(homeFeed)
 }

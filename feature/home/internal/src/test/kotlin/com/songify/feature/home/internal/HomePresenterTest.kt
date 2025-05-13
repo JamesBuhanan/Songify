@@ -3,10 +3,10 @@ package com.songify.feature.home.internal
 import com.google.common.truth.Truth.assertThat
 import com.slack.circuit.test.FakeNavigator
 import com.slack.circuit.test.test
-import com.songify.feature.home.HomeScreen
-import com.songify.library.home.fake.FakeGetHomeFeed
-import com.songify.library.home.fake.TestData
 import com.songify.feature.detail.DetailScreen
+import com.songify.feature.home.HomeScreen
+import com.songify.library.home.fake.TestData
+import com.songify.library.home.fake.usecase.FakeGetHomeFeed
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -16,7 +16,7 @@ import org.robolectric.RobolectricTestRunner
 class HomePresenterTest {
     private val fakeNavigator = FakeNavigator(HomeScreen)
     private val presenter = HomePresenter(
-        getHomeFeed = FakeGetHomeFeed(),
+        getHomeFeed = FakeGetHomeFeed,
         navigator = fakeNavigator,
     )
 
@@ -28,7 +28,7 @@ class HomePresenterTest {
 
             // HomeFeed returns Success
             val successState = awaitItem() as HomeState.Success
-            assertThat(successState.homeFeed).isEqualTo(TestData.homeFeed)
+            assertThat(successState.homeFeed).isEqualTo(TestData.fakeHomeFeed)
 
             // Tap an Album go to DetailScreen
             successState.eventSink(HomeEvent.TappedCard(TestData.album))
