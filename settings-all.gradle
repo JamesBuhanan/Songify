@@ -1,6 +1,5 @@
 include(
         ":app",
-        ":feature:all:app",
         ":feature:detail:public", ":feature:detail:internal", ":feature:detail:app",
         ":feature:home:public", ":feature:home:internal", ":feature:home:app",
         ":feature:login:public", ":feature:login:internal",

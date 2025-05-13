@@ -1,4 +1,5 @@
 import com.android.build.gradle.LibraryPlugin
+import com.songify.extension.addStartScreen
 import com.songify.extension.allProjects
 import com.songify.extension.androidLibrary
 import com.songify.extension.androidTest
@@ -37,6 +38,7 @@ class SongifyAndroidLibraryPlugin : Plugin<Project> {
             gradleDependenciesSorter()
             dynamicNamespace()
             coroutines()
+            addStartScreen()
 
             dependencies {
                 "implementation"(libs.timber)

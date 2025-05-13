@@ -1,4 +1,4 @@
-package com.songify.feature.all.app.di
+package com.songify.feature.home.internal
 
 import com.slack.circuit.runtime.screen.Screen
 import com.songify.feature.home.HomeScreen
@@ -9,7 +9,7 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-interface AllAppModule {
+interface StartScreenModule {
     companion object {
         @Provides
         fun providesStartScreen(): Screen = HomeScreen
