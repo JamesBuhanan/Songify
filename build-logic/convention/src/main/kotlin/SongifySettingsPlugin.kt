@@ -1,7 +1,7 @@
 import com.songify.extension.buildCacheConfig
 import com.songify.extension.dependencyResolutionManagement
 import com.songify.extension.develocity
-import com.songify.extension.focus
+import com.songify.extension.spotlight
 import org.gradle.api.Plugin
 import org.gradle.api.initialization.Settings
 
@@ -10,7 +10,7 @@ class SongifySettingsPlugin : Plugin<Settings> {
         with(settings) {
             dependencyResolutionManagement()
             develocity()
-            focus()
+            spotlight()
             buildCacheConfig()
 
             enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")

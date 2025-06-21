@@ -14,10 +14,10 @@ dependencies {
 
     // Which app do we load?
     implementation projects.feature.detail.internal
-    implementation projects.feature.home.internal
-    implementation projects.feature.nowplaying.internal
-    implementation projects.feature.premium.internal
-    implementation projects.feature.search.internal
+//    implementation projects.feature.home.internal
+//    implementation projects.feature.nowplaying.internal
+//    implementation projects.feature.premium.internal
+//    implementation projects.feature.search.internal
     implementation projects.library.detail.internal
     implementation projects.library.home.internal
     implementation projects.library.premium.internal
