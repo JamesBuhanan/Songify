@@ -31,7 +31,7 @@ dependencies {
     implementation(libs.kspGradlePlugin)
     implementation(libs.moduleGraph)
     implementation(libs.sortDependenciesGradlePlugin)
-    implementation(libs.spotlight)
+    implementation(libs.spotlightGradlePlugin)
 
     implementation(localGroovy())
     implementation(files(libs.javaClass.superclass.protectionDomain.codeSource.location))

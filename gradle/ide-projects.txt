@@ -1,1 +1,3 @@
 :app
+:feature:detail:internal
+:feature:login:internal

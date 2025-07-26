@@ -1,5 +1,5 @@
 :app
-:feature:detail:public 
+:feature:detail:public
 :feature:detail:internal
 :feature:home:public
 :feature:home:internal
@@ -8,8 +8,8 @@
 :feature:nowplaying:public
 :feature:nowplaying:internal
 :feature:premium:public
-:feature:premium:internal 
-:feature:search:public 
+:feature:premium:internal
+:feature:search:public
 :feature:search:internal
 :library:bottom-navigation:public
 :library:circuit:public
@@ -23,7 +23,7 @@
 :library:home:internal
 :library:home:fake
 :library:loading:public
-:library:premium:public 
+:library:premium:public
 :library:premium:internal
 :library:retrofit:public
 :library:search:public
