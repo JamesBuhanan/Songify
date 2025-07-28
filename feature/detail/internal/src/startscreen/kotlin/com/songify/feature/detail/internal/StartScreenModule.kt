@@ -31,6 +31,6 @@ interface StartScreenModule {
         )
 
         @Provides
-        fun providesStartScreen(): Screen = DetailScreen(playlist)
+        fun providesStartScreen(): Screen = DetailScreen(album)
     }
 }

@@ -10,5 +10,6 @@ fun Settings.spotlight() {
 
     configure<SpotlightExtension> {
 //        typeSafeAccessorInference.set(TypeSafeAccessorInference.STRICT)
+//        typeSafeAccessorInference.set(TypeSafeAccessorInference.FULL)
     }
 }
